@@ -1,0 +1,11 @@
+--- a/vendor/magento/module-price-permissions/Observer/AdminhtmlBlockHtmlBeforeObserver.php	2022-06-01 09:32:40.263817310 +0700
++++ b/vendor/magento/module-price-permissions/Observer/AdminhtmlBlockHtmlBeforeObserver.php	2022-06-01 09:32:06.267000000 +0700
+@@ -122,7 +122,7 @@
+         $this->_filterByBlockName($block);
+
+         // Handle prices that are shown when admin reviews customers shopping cart
+-        if (stripos($block->getNameInLayout(), 'customer_cart_') === 0) {
++        if (stripos((string)$block->getNameInLayout(), 'customer_cart_') === 0) {
+             if (!$this->observerData->isCanReadProductPrice()) {
+                 if ($block->getParentBlock()->getNameInLayout() == 'admin.customer.carts') {
+                     $this->_removeColumnFromGrid($block, 'price');

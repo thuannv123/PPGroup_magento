@@ -1,0 +1,10 @@
+--- a/vendor/magento/module-catalog/view/frontend/templates/product/list/toolbar.phtml      2022-03-16 10:18:03.794544671 +0700
++++ b/vendor/magento/module-catalog/view/frontend/templates/product/list/toolbar.phtml      2022-03-16 10:18:31.918339583 +0700
+@@ -21,6 +21,7 @@
+             <?= $block->fetchView($block->getTemplateFile('Magento_Catalog::product/list/toolbar/limiter.phtml')) ?>
+         <?php else: ?>
+             <?php if ($block->isExpanded()): ?>
++                <?= $block->getPagerHtml() ?>
+                 <?= $block->fetchView($block->getTemplateFile('Magento_Catalog::product/list/toolbar/viewmode.phtml')) ?>
+             <?php endif ?>
+             <?= $block->fetchView($block->getTemplateFile('Magento_Catalog::product/list/toolbar/amount.phtml')) ?>

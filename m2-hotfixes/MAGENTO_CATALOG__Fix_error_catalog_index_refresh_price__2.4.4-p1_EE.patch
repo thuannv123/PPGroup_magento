@@ -1,0 +1,11 @@
+--- a/vendor/magento/module-catalog/Cron/RefreshSpecialPrices.php   2022-08-24 14:15:42.827763614 +0700
++++ b/vendor/magento/module-catalog/Cron/RefreshSpecialPrices.php      2022-08-24 14:17:28.720494120 +0700
+@@ -164,7 +164,7 @@
+             $attrConditionValue
+         );
+
+-        $selectData = $connection->fetchCol($select, $identifierField);
++        $selectData = $connection->fetchCol($select);
+
+         if (!empty($selectData)) {
+             $this->_processor->getIndexer()->reindexList($selectData);
