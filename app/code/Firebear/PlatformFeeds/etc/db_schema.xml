@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * db_schema.xml
+ *
+ * @copyright Copyright © 2021 Firebear Studio. All rights reserved.
+ * @author    Firebear Studio <fbeardev@gmail.com>
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="firebear_feed_category_mapping"
+           resource="default"
+           engine="innodb"
+           charset="utf8"
+           comment="Feed Category Mapping">
+        <column xsi:type="int" name="id" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Name Category Mapping"/>
+        <column xsi:type="int" name="type_id" nullable="false" comment="Feed Entity Id"/>
+        <column xsi:type="text" name="credentials_data" nullable="true" comment="Credentials Data (json)"/>
+        <column xsi:type="text" name="mapping_data" nullable="false" comment="Mapping Data (json)"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>

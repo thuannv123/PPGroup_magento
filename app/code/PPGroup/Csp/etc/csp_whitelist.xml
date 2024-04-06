@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp:etc/csp_whitelist.xsd">
+    <policies>
+        <policy id="script-src">
+            <values>
+                <value id="js-agent-newrelic" type="host">https://js-agent.newrelic.com</value>
+                <value id="bam-nr-data-script" type="host">https://bam.nr-data.net</value>
+                <value id="connect-facebook" type="host">https://connect.facebook.net</value>
+                <value id="static-hotjar" type="host">*.hotjar.com</value>
+                <value id="google-script" type="host">https://www.google.com</value>
+                <value id="google-vn-script" type="host">https://www.google.com.vn</value>
+                <value id="google-th-script" type="host">https://www.google.co.th</value>
+                <value id="googleads-g-doubleclick-script" type="host">https://googleads.g.doubleclick.net</value>
+            </values>
+        </policy>
+        <policy id="connect-src">
+            <values>
+                <value id="stats-g-doubleclick" type="host">https://stats.g.doubleclick.net</value>
+                <value id="bam-nr-data-connect" type="host">https://bam.nr-data.net</value>
+                <value id="hotjar-connect" type="host">https://in.hotjar.com</value>
+                <value id="facebook-connect" type="host">https://www.facebook.com</value>
+            </values>
+        </policy>
+        <policy id="img-src">
+            <values>
+                <value id="i-ibb" type="host">https://i.ibb.co</value>
+                <value id="googleads-g-doubleclick" type="host">https://googleads.g.doubleclick.net</value>
+                <value id="google-img" type="host">https://www.google.com</value>
+                <value id="google-th-img" type="host">https://www.google.co.th</value>
+                <value id="facebook-img" type="host">https://www.facebook.com</value>
+                <value id="google-vn-img" type="host">https://www.google.com.vn</value>
+            </values>
+        </policy>
+        <policy id="frame-src">
+            <values>
+                <value id="vars-hotjar" type="host">https://vars.hotjar.com</value>
+                <value id="bid-g-doubleclick" type="host">https://bid.g.doubleclick.net</value>
+            </values>
+        </policy>
+    </policies>
+</csp_whitelist>

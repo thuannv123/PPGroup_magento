@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Author: Son Nguyen
+ * Copyright © Wiki Solution All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="catalog" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Catalog</label>
+            <tab>catalog</tab>
+            <resource>Magento_Catalog::config_catalog</resource>
+            <group id="antispam_catalog_search" translate="AntiSpam Catalog Search" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>AntiSpam Catalog Search</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <comment>Enable/Disable AntiSpam Catalog Search.</comment>
+                </field>
+                <field id="list_words_disallow" translate="List Words Disallow" type="textarea" sortOrder="20" showInDefault="1" canRestore="1">
+                    <label>List Words Disallow</label>
+                    <comment>This setting allows you to enter the list of comma-separated blacklist words that you don't want customers to search on your website.
+                        For example "gambling", "http://","https://"
+                    </comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="disallow_chinese_words" translate="Disallow Chinese Words" type="select" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Disallow Chinese Words</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <comment>This setting controls whether customers can search with Chinese words or not</comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="disallow_foreign_words" translate="Disallow Foreign Words" type="select" sortOrder="40" showInDefault="1" canRestore="1">
+                    <label>Disallow Foreign Words</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <comment>This setting controls whether customers can search with foreign words or not</comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

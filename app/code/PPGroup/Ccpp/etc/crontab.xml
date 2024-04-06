@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+<group id="default">
+    <job name="ccpp_123service_order_reupdate" instance="PPGroup\Ccpp\Cron\P123ServiceTransactionReupdate" method="execute">
+        <config_path>payment/ccpp/123service_crontab</config_path>
+    </job>
+    <job name="ccpp_qrcode_order_reupdate" instance="PPGroup\Ccpp\Cron\QRCodeTransactionReupdate" method="execute">
+        <config_path>payment/qrcode/qrcode_crontab</config_path>
+    </job>
+</group>
+</config>

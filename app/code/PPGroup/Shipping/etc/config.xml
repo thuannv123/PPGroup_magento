@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<carriers>
+			<standardshipping>
+				<model>PPGroup\Shipping\Model\Carrier\StandardShipping</model>
+				<active>1</active>
+				<title>Standard Shipping</title>
+				<name>Standard Shipping</name>
+				<price>150</price>
+				<minimum_amount_for_free>4000</minimum_amount_for_free>
+				<specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
+				<sallowspecific>0</sallowspecific>
+			</standardshipping>
+		</carriers>
+	</default>
+</config>

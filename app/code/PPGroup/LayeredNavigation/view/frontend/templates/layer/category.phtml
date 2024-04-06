@@ -1,0 +1,53 @@
+<?php
+/**
+ * @var $viewModel PPGroup\LayeredNavigation\ViewModel\Navigation\Category
+ */
+$viewModel = $block->getViewModel();
+$currentCat = $block->getData('currentCategory');
+$brandCategory = $viewModel->getBrandRootCategory($currentCat);
+?>
+
+<?php if (!is_null($brandCategory)): ?>
+    <?php $childCats = $brandCategory->getChildrenCategories(); ?>
+
+    <?php if ($childCats->getSize()): ?>
+        <strong role="heading" aria-level="2" class="block-subtitle filter-subtitle"><?= __('Category') ?></strong>
+        <div class="filter-options" id="catalog-nav-category" data-role="content"
+            data-mage-init='{"accordion":{"openedState": "active", "collapsible": true, "active": "[]", "multipleCollapsible": true}}'>
+            <?php foreach ($childCats as $childCat): ?>
+                <?php $childSubCats = $childCat->getChildrenCategories() ?>
+                <?php if ($childSubCats->getSize()): ?>
+                    <div data-role="collapsible" class="filter-options-item">
+                        <div class="filter-options-title">
+                            <a href="<?= $block->escapeUrl($childCat->getUrl()) ?>"><?= $childCat->getName() ?></a>
+                        </div>
+                        <div data-role="content" class="filter-options-content">
+                            <ol class="items">
+                                <?php foreach ($childSubCats as $childSubCat): ?>
+                                    <li class="item">
+                                        <a href="<?= $block->escapeUrl($childSubCat->getUrl()) ?>"><?= $childSubCat->getName() ?></a>
+                                    </li>
+                                <?php endforeach; ?>
+                                <li class="item last">
+                                    <a href="<?= $block->escapeUrl($childCat->getUrl()) ?>"><?= __("View All") ?></a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                <?php else: ?>
+                    <div class="filter-options-item">
+                        <div class="filter-options-title filter-options-title-empty">
+                            <a href="<?= $block->escapeUrl($childCat->getUrl()) ?>"><?= $childCat->getName() ?></a>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+    <script>
+        require(['jquery', 'domReady!'], function ($) {
+            $('.item.last').show();
+        });
+    </script>
+<?php endif; ?>
+

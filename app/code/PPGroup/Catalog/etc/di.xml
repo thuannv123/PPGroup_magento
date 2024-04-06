@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Wishlist\Pricing\Render\ConfiguredPriceBox"
+        type="PPGroup\Catalog\Pricing\Render\FinalPriceBox" />
+    <preference for="Magento\ReCaptchaUser\Observer\LoginObserver"
+        type="PPGroup\Catalog\Observer\LoginObserver" />
+    <preference for="Magento\ReCaptchaUi\Model\RequestHandler"
+        type="PPGroup\Catalog\Model\ReCaptchaUi\RequestHandler" />
+
+    <preference for="Magento\ReCaptchaUi\Model\CaptchaResponseResolver"
+        type="PPGroup\Catalog\Model\CaptchaResponseResolver" />
+
+    <!-- <type name="Magento\CatalogRule\Controller\Adminhtml\Promo\Catalog\Save">
+        <plugin name="reindex_catalog_rule_after_save" type="PPGroup\Catalog\Plugin\Rule\CatalogRuleSaveAfterPlugin"/>
+    </type>
+
+    <type name="Magento\CatalogRuleStaging\Controller\Adminhtml\Update\Save">
+        <plugin name="reindex_catalog_rule_after_save" type="PPGroup\Catalog\Plugin\Rule\Update\CatalogRuleUpdateAfterPlugin"/>
+    </type> -->
+</config>

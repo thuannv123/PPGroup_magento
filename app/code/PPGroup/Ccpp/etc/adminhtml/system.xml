@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="ccpp">
+                <field id="logo" translate="label" type="image" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Custom Logo</label>
+                    <backend_model>PPGroup\Ccpp\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">ccpp</upload_dir>
+                    <base_url type="media" scope_info="1">ccpp</base_url>
+                    <!-- Comment about allowed extensions of uploaded files which are defined in the backend model -->
+                    <comment><![CDATA[Allowed file types: jpg, jpeg, gif, png, svg]]></comment>
+                </field>
+                <field id="123service_crontab" translate="label" type="text" sortOrder="255" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>123Service Crontab</label>
+                </field>
+                <field id="additional_info" translate="label comment" sortOrder="510" type="editor" showInStore="0" showInWebsite="1" showInDefault="1" >
+                    <label>Additional Info</label>
+                    <frontend_model>PPGroup\Ccpp\Block\Adminhtml\System\Config\Editor</frontend_model>
+                </field>
+            </group>
+            <group id="qrcode">
+                <field id="qrcode_crontab" translate="label" type="text" sortOrder="250" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>QRCode Crontab</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

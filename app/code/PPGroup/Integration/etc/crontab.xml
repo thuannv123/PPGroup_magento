@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="inventory_sync" instance="PPGroup\Integration\Cron\InventorySync" method="execute">
+            <config_path>integration/inventory_sync/inventory_sync_cron</config_path>
+        </job>
+        <job name="sales_order_status_sync" instance="PPGroup\Integration\Cron\OrderStatus" method="execute">
+            <config_path>integration/sale_order_status/sale_order_status_sync_cron</config_path>
+        </job>
+        <job name="sales_order_export" instance="PPGroup\Integration\Cron\OrderExport" method="execute">
+            <config_path>integration/sale_order_export/sale_order_export_cron</config_path>
+        </job>
+    </group>
+</config>

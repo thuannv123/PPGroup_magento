@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) Amasty (https://www.amasty.com)
+ * @package Custom Product Sorting for Shop by Brand (Add-On) for Magento 2
+ */-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="amasty_brand_product" resource="default" engine="innodb" comment="Brand Product Table">
+        <column xsi:type="int" name="ambrand_id" padding="11" unsigned="false" nullable="false" identity="false"
+                onCreate="migrateDataFrom(brand_id)" comment="Brand Link ID"/>
+        <column xsi:type="int" name="product_id" padding="10" unsigned="true" nullable="false" identity="false"
+                comment="Product Link ID"/>
+        <column xsi:type="int" name="store_id" padding="11" unsigned="false" nullable="false" identity="false"
+                comment="Store ID"/>
+        <column xsi:type="int" name="position" padding="11" unsigned="false" nullable="false" identity="false"
+                default="0" comment="Product Position for Brand"/>
+        <column xsi:type="int" name="is_pinned" padding="11" unsigned="false" nullable="false" identity="false"
+                default="0" comment="Brand Link ID"/>
+        <constraint xsi:type="foreign" referenceId="AMASTY_BRAND_PRD_PRD_ID_CAT_PRD_ENTT_ENTT_ID"
+                    table="amasty_brand_product" column="product_id" referenceTable="catalog_product_entity"
+                    referenceColumn="entity_id" onDelete="CASCADE"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="ambrand_id"/>
+            <column name="product_id"/>
+            <column name="store_id"/>
+        </constraint>
+        <index referenceId="AMASTY_BRAND_PRODUCT_AMBRAND_ID" indexType="btree">
+            <column name="ambrand_id"/>
+        </index>
+        <index referenceId="AMASTY_BRAND_PRODUCT_PRODUCT_ID" indexType="btree">
+            <column name="product_id"/>
+        </index>
+        <index referenceId="AMASTY_BRAND_PRODUCT_STORE_ID" indexType="btree">
+            <column name="store_id"/>
+        </index>
+    </table>
+
+    <!--it expands Amasty_ShopbyBase module's schema-->
+    <table name="amasty_amshopby_option_setting" resource="default">
+        <column xsi:type="int" name="sorting" padding="11" unsigned="false" nullable="false" identity="false"
+                default="0" comment="Sorting value"/>
+        <column xsi:type="smallint" name="use_default_store_sorting" padding="6" unsigned="false" nullable="true"
+                identity="false" default="0" comment="Use Default Store Sorting"/>
+    </table>
+</schema>

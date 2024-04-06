@@ -1,0 +1,23 @@
+{
+    "name": "ppgroup/ccpp",
+    "description": "",
+    "require": {
+        "acommerce/ccpp": "~2.3.3"
+    },
+    "suggest": {
+
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "PPGroup\\Ccpp\\": ""
+        }
+    }
+}

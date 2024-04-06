@@ -1,0 +1,38 @@
+{
+    "name": "amasty/module-improved-layered-navigation-cloud-premium",
+    "description": "Improved Layered Navigation Enterprise Cloud Premium by Amasty",
+    "require": {
+        "php": ">=7.3",
+        "amasty/base": ">=1.14.7",
+        "amasty/module-shopby-premium": ">=1.12.3"
+    },
+    "suggest": {
+        "amasty/module-shopby-livesearch-root-category": "Install ShopbyLivesearchRootCategory module to activate LiveSearch for all Products Page and Shop By Brand integration.",
+        "amasty/module-shop-by-live-search": "Install ShopByLiveSearch module to activate LiveSearch and Shop By Brand integration.",
+        "amasty/module-shopby-hyva-compatibility": "Install module-shopby-hyva-compatibility module to activate the integration with Hyva Theme",
+        "amasty/module-shop-by-base-hyva-compatibility": "Install module-shop-by-base-hyva-compatibility module to activate the integration Base module with Hyva Theme.",
+        "amasty/module-shop-by-brand-hyva-compatibility": "Install module-shop-by-brand-hyva-compatibility module to activate the integration Brand module with Hyva Theme",
+        "amasty/module-shopby-grouped-options-hyva": "Install module-shop-by-brand-hyva-compatibility module to activate the integration Grouper Options module with Hyva Theme",
+        "amasty/module-shop-by-filter-highlight": "Install this package in order to use custom filter highlight color functionality",
+        "amasty/shop-by-redirect": "Install this package to enable 301 redirect for SEO-optimized Urls functionality",
+        "amasty/module-shopby-setting-export-entity": "Install this package for Export compatibility",
+        "amasty/module-shopby-setting-import-entity": "Install this package for Import compatibility",
+        "amasty/module-scroll-hyva": "Install this package to ensure the Ajax Scroll extension works with Hyv\u00e4 Theme.",
+        "amasty/shop-by-brand-widget": "Install this package in order to manage Slider Widget Brands."
+
+    },
+    "homepage": "https://amasty.com/",
+    "type": "magento2-module",
+    "version": "1.1.1",
+    "license": [
+        "proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Amasty\\ImprovedLayeredNavigationCloudPremium\\": ""
+        }
+    }
+}

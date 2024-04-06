@@ -1,0 +1,24 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) Amasty (https://www.amasty.com)
+ * @package Infinite Scroll for Magento 2
+ */
+/**
+ * @var \Amasty\Scroll\Block\Init $block
+ */
+if ($block->isEnabled()): ?>
+    <script>
+        require([
+            'jquery',
+            'mixins!amScrollScript'
+        ], function ($) {
+            var bodyElem = $('body');
+            if ($.data(bodyElem[0], 'mage-amScrollScript')) {
+                bodyElem.amScrollScript('initialize');
+            } else {
+                bodyElem.amScrollScript(<?= /** @noEscape */ $block->getConfig(); ?>);
+            }
+        });
+    </script>
+<?php endif; ?>

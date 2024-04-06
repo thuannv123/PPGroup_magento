@@ -1,0 +1,59 @@
+<!--
+/**
+ * @copyright: Copyright © 2019 Firebear Studio. All rights reserved.
+ * @author   : Firebear Studio <fbeardev@gmail.com>
+ */
+-->
+<select id="feed_template_selector">
+    <option selected value="default">Default template</option>
+    <option value="google_shopping">Google Shopping Feed</option>
+    <option value="ebay_shopping">Ebay</option>
+    <option value="amazon_marketplace">Amazon Marketplace</option>
+    <option value="amazon_inventory">Amazon Inventory</option>
+    <option value="amazon_ads">Amazon Ads</option>
+    <option value="facebook_shopping">Facebook</option>
+    <option value="yandex">Yandex</option>
+</select>
+
+<textarea class="admin__control-textarea" data-bind="
+    value: value,
+    valueUpdate: valueUpdate,
+    hasFocus: focused,
+    afterRender: afterRender,
+    attr: {
+        name: inputName,
+        cols: cols,
+        rows: rows,
+        'aria-describedby': noticeId,
+        placeholder: placeholder,
+        id: uid,
+        disabled: disabled
+    }"
+></textarea>
+
+<br>
+
+<div id="feed_template_modifiers_helper_container">
+    <label for="feed_template_modifiers_helper">
+        Select value modifier
+    </label>
+
+    <select id="feed_template_modifiers_helper" multiple>
+    </select>
+</div>
+
+<div id="feed_template_var_helper_container">
+    <label for="feed_template_var_helper">
+        Select variable and get the example of code
+    </label>
+
+    <select id="feed_template_var_helper" size="4">
+        <option selected value="default">Select template variable</option>
+    </select>
+
+    <input type="text" id="feed_template_var_code">
+</div>
+
+<div class="firebear-tooltip"></div>
+
+<div class="feed_clearfix"></div>

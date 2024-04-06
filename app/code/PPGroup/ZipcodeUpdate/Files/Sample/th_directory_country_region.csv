@@ -1,0 +1,1198 @@
+1,US,AL,Alabama
+2,US,AK,Alaska
+3,US,AS,American Samoa
+4,US,AZ,Arizona
+5,US,AR,Arkansas
+6,US,AE,Armed Forces Africa
+7,US,AA,Armed Forces Americas
+8,US,AE,Armed Forces Canada
+9,US,AE,Armed Forces Europe
+10,US,AE,Armed Forces Middle East
+11,US,AP,Armed Forces Pacific
+12,US,CA,California
+13,US,CO,Colorado
+14,US,CT,Connecticut
+15,US,DE,Delaware
+16,US,DC,District of Columbia
+17,US,FM,Federated States Of Micronesia
+18,US,FL,Florida
+19,US,GA,Georgia
+20,US,GU,Guam
+21,US,HI,Hawaii
+22,US,ID,Idaho
+23,US,IL,Illinois
+24,US,IN,Indiana
+25,US,IA,Iowa
+26,US,KS,Kansas
+27,US,KY,Kentucky
+28,US,LA,Louisiana
+29,US,ME,Maine
+30,US,MH,Marshall Islands
+31,US,MD,Maryland
+32,US,MA,Massachusetts
+33,US,MI,Michigan
+34,US,MN,Minnesota
+35,US,MS,Mississippi
+36,US,MO,Missouri
+37,US,MT,Montana
+38,US,NE,Nebraska
+39,US,NV,Nevada
+40,US,NH,New Hampshire
+41,US,NJ,New Jersey
+42,US,NM,New Mexico
+43,US,NY,New York
+44,US,NC,North Carolina
+45,US,ND,North Dakota
+46,US,MP,Northern Mariana Islands
+47,US,OH,Ohio
+48,US,OK,Oklahoma
+49,US,OR,Oregon
+50,US,PW,Palau
+51,US,PA,Pennsylvania
+52,US,PR,Puerto Rico
+53,US,RI,Rhode Island
+54,US,SC,South Carolina
+55,US,SD,South Dakota
+56,US,TN,Tennessee
+57,US,TX,Texas
+58,US,UT,Utah
+59,US,VT,Vermont
+60,US,VI,Virgin Islands
+61,US,VA,Virginia
+62,US,WA,Washington
+63,US,WV,West Virginia
+64,US,WI,Wisconsin
+65,US,WY,Wyoming
+66,CA,AB,Alberta
+67,CA,BC,British Columbia
+68,CA,MB,Manitoba
+69,CA,NL,Newfoundland and Labrador
+70,CA,NB,New Brunswick
+71,CA,NS,Nova Scotia
+72,CA,NT,Northwest Territories
+73,CA,NU,Nunavut
+74,CA,ON,Ontario
+75,CA,PE,Prince Edward Island
+76,CA,QC,Quebec
+77,CA,SK,Saskatchewan
+78,CA,YT,Yukon Territory
+79,DE,NDS,Niedersachsen
+80,DE,BAW,Baden-Württemberg
+81,DE,BAY,Bayern
+82,DE,BER,Berlin
+83,DE,BRG,Brandenburg
+84,DE,BRE,Bremen
+85,DE,HAM,Hamburg
+86,DE,HES,Hessen
+87,DE,MEC,Mecklenburg-Vorpommern
+88,DE,NRW,Nordrhein-Westfalen
+89,DE,RHE,Rheinland-Pfalz
+90,DE,SAR,Saarland
+91,DE,SAS,Sachsen
+92,DE,SAC,Sachsen-Anhalt
+93,DE,SCN,Schleswig-Holstein
+94,DE,THE,Thüringen
+95,AT,WI,Wien
+96,AT,NO,Niederösterreich
+97,AT,OO,Oberösterreich
+98,AT,SB,Salzburg
+99,AT,KN,Kärnten
+100,AT,ST,Steiermark
+101,AT,TI,Tirol
+102,AT,BL,Burgenland
+103,AT,VB,Vorarlberg
+104,CH,AG,Aargau
+105,CH,AI,Appenzell Innerrhoden
+106,CH,AR,Appenzell Ausserrhoden
+107,CH,BE,Bern
+108,CH,BL,Basel-Landschaft
+109,CH,BS,Basel-Stadt
+110,CH,FR,Friburg
+111,CH,GE,Geneva
+112,CH,GL,Glarus
+113,CH,GR,Graubünden
+114,CH,JU,Jura
+115,CH,LU,Lucerne
+116,CH,NE,Neuchâtel
+117,CH,NW,Nidwalden
+118,CH,OW,Obwalden
+119,CH,SG,St. Gallen
+120,CH,SH,Schaffhausen
+121,CH,SO,Solothurn
+122,CH,SZ,Schwyz
+123,CH,TG,Thurgau
+124,CH,TI,Ticino
+125,CH,UR,Uri
+126,CH,VD,Vaud
+127,CH,VS,Wallis
+128,CH,ZG,Zug
+129,CH,ZH,Zürich
+130,ES,A Coruсa,A Coruña
+131,ES,Alava,Alava
+132,ES,Albacete,Albacete
+133,ES,Alicante,Alicante
+134,ES,Almeria,Almeria
+135,ES,Asturias,Asturias
+136,ES,Avila,Avila
+137,ES,Badajoz,Badajoz
+138,ES,Baleares,Baleares
+139,ES,Barcelona,Barcelona
+140,ES,Burgos,Burgos
+141,ES,Caceres,Caceres
+142,ES,Cadiz,Cadiz
+143,ES,Cantabria,Cantabria
+144,ES,Castellon,Castellon
+145,ES,Ceuta,Ceuta
+146,ES,Ciudad Real,Ciudad Real
+147,ES,Cordoba,Cordoba
+148,ES,Cuenca,Cuenca
+149,ES,Girona,Girona
+150,ES,Granada,Granada
+151,ES,Guadalajara,Guadalajara
+152,ES,Guipuzcoa,Guipuzcoa
+153,ES,Huelva,Huelva
+154,ES,Huesca,Huesca
+155,ES,Jaen,Jaen
+156,ES,La Rioja,La Rioja
+157,ES,Las Palmas,Las Palmas
+158,ES,Leon,Leon
+159,ES,Lleida,Lleida
+160,ES,Lugo,Lugo
+161,ES,Madrid,Madrid
+162,ES,Malaga,Malaga
+163,ES,Melilla,Melilla
+164,ES,Murcia,Murcia
+165,ES,Navarra,Navarra
+166,ES,Ourense,Ourense
+167,ES,Palencia,Palencia
+168,ES,Pontevedra,Pontevedra
+169,ES,Salamanca,Salamanca
+170,ES,Santa Cruz de Tenerife,Santa Cruz de Tenerife
+171,ES,Segovia,Segovia
+172,ES,Sevilla,Sevilla
+173,ES,Soria,Soria
+174,ES,Tarragona,Tarragona
+175,ES,Teruel,Teruel
+176,ES,Toledo,Toledo
+177,ES,Valencia,Valencia
+178,ES,Valladolid,Valladolid
+179,ES,Vizcaya,Vizcaya
+180,ES,Zamora,Zamora
+181,ES,Zaragoza,Zaragoza
+182,FR,1,Ain
+183,FR,2,Aisne
+184,FR,3,Allier
+185,FR,4,Alpes-de-Haute-Provence
+186,FR,5,Hautes-Alpes
+187,FR,6,Alpes-Maritimes
+188,FR,7,Ardèche
+189,FR,8,Ardennes
+190,FR,9,Ariège
+191,FR,10,Aube
+192,FR,11,Aude
+193,FR,12,Aveyron
+194,FR,13,Bouches-du-Rhône
+195,FR,14,Calvados
+196,FR,15,Cantal
+197,FR,16,Charente
+198,FR,17,Charente-Maritime
+199,FR,18,Cher
+200,FR,19,Corrèze
+201,FR,2A,Corse-du-Sud
+202,FR,2B,Haute-Corse
+203,FR,21,Côte-d\'Or
+204,FR,22,Côtes-d\'Armor
+205,FR,23,Creuse
+206,FR,24,Dordogne
+207,FR,25,Doubs
+208,FR,26,Drôme
+209,FR,27,Eure
+210,FR,28,Eure-et-Loir
+211,FR,29,Finistère
+212,FR,30,Gard
+213,FR,31,Haute-Garonne
+214,FR,32,Gers
+215,FR,33,Gironde
+216,FR,34,Hérault
+217,FR,35,Ille-et-Vilaine
+218,FR,36,Indre
+219,FR,37,Indre-et-Loire
+220,FR,38,Isère
+221,FR,39,Jura
+222,FR,40,Landes
+223,FR,41,Loir-et-Cher
+224,FR,42,Loire
+225,FR,43,Haute-Loire
+226,FR,44,Loire-Atlantique
+227,FR,45,Loiret
+228,FR,46,Lot
+229,FR,47,Lot-et-Garonne
+230,FR,48,Lozère
+231,FR,49,Maine-et-Loire
+232,FR,50,Manche
+233,FR,51,Marne
+234,FR,52,Haute-Marne
+235,FR,53,Mayenne
+236,FR,54,Meurthe-et-Moselle
+237,FR,55,Meuse
+238,FR,56,Morbihan
+239,FR,57,Moselle
+240,FR,58,Nièvre
+241,FR,59,Nord
+242,FR,60,Oise
+243,FR,61,Orne
+244,FR,62,Pas-de-Calais
+245,FR,63,Puy-de-Dôme
+246,FR,64,Pyrénées-Atlantiques
+247,FR,65,Hautes-Pyrénées
+248,FR,66,Pyrénées-Orientales
+249,FR,67,Bas-Rhin
+250,FR,68,Haut-Rhin
+251,FR,69,Rhône
+252,FR,70,Haute-Saône
+253,FR,71,Saône-et-Loire
+254,FR,72,Sarthe
+255,FR,73,Savoie
+256,FR,74,Haute-Savoie
+257,FR,75,Paris
+258,FR,76,Seine-Maritime
+259,FR,77,Seine-et-Marne
+260,FR,78,Yvelines
+261,FR,79,Deux-Sèvres
+262,FR,80,Somme
+263,FR,81,Tarn
+264,FR,82,Tarn-et-Garonne
+265,FR,83,Var
+266,FR,84,Vaucluse
+267,FR,85,Vendée
+268,FR,86,Vienne
+269,FR,87,Haute-Vienne
+270,FR,88,Vosges
+271,FR,89,Yonne
+272,FR,90,Territoire-de-Belfort
+273,FR,91,Essonne
+274,FR,92,Hauts-de-Seine
+275,FR,93,Seine-Saint-Denis
+276,FR,94,Val-de-Marne
+277,FR,95,Val-d\'Oise
+278,RO,AB,Alba
+279,RO,AR,Arad
+280,RO,AG,Argeş
+281,RO,BC,Bacău
+282,RO,BH,Bihor
+283,RO,BN,Bistriţa-Năsăud
+284,RO,BT,Botoşani
+285,RO,BV,Braşov
+286,RO,BR,Brăila
+287,RO,B,Bucureşti
+288,RO,BZ,Buzău
+289,RO,CS,Caraş-Severin
+290,RO,CL,Călăraşi
+291,RO,CJ,Cluj
+292,RO,CT,Constanţa
+293,RO,CV,Covasna
+294,RO,DB,Dâmboviţa
+295,RO,DJ,Dolj
+296,RO,GL,Galaţi
+297,RO,GR,Giurgiu
+298,RO,GJ,Gorj
+299,RO,HR,Harghita
+300,RO,HD,Hunedoara
+301,RO,IL,Ialomiţa
+302,RO,IS,Iaşi
+303,RO,IF,Ilfov
+304,RO,MM,Maramureş
+305,RO,MH,Mehedinţi
+306,RO,MS,Mureş
+307,RO,NT,Neamţ
+308,RO,OT,Olt
+309,RO,PH,Prahova
+310,RO,SM,Satu-Mare
+311,RO,SJ,Sălaj
+312,RO,SB,Sibiu
+313,RO,SV,Suceava
+314,RO,TR,Teleorman
+315,RO,TM,Timiş
+316,RO,TL,Tulcea
+317,RO,VS,Vaslui
+318,RO,VL,Vâlcea
+319,RO,VN,Vrancea
+320,FI,Lappi,Lappi
+321,FI,Pohjois-Pohjanmaa,Pohjois-Pohjanmaa
+322,FI,Kainuu,Kainuu
+323,FI,Pohjois-Karjala,Pohjois-Karjala
+324,FI,Pohjois-Savo,Pohjois-Savo
+325,FI,Etelä-Savo,Etelä-Savo
+326,FI,Etelä-Pohjanmaa,Etelä-Pohjanmaa
+327,FI,Pohjanmaa,Pohjanmaa
+328,FI,Pirkanmaa,Pirkanmaa
+329,FI,Satakunta,Satakunta
+330,FI,Keski-Pohjanmaa,Keski-Pohjanmaa
+331,FI,Keski-Suomi,Keski-Suomi
+332,FI,Varsinais-Suomi,Varsinais-Suomi
+333,FI,Etelä-Karjala,Etelä-Karjala
+334,FI,Päijät-Häme,Päijät-Häme
+335,FI,Kanta-Häme,Kanta-Häme
+336,FI,Uusimaa,Uusimaa
+337,FI,Itä-Uusimaa,Itä-Uusimaa
+338,FI,Kymenlaakso,Kymenlaakso
+339,FI,Ahvenanmaa,Ahvenanmaa
+340,EE,EE-37,Harjumaa
+341,EE,EE-39,Hiiumaa
+342,EE,EE-44,Ida-Virumaa
+343,EE,EE-49,Jõgevamaa
+344,EE,EE-51,Järvamaa
+345,EE,EE-57,Läänemaa
+346,EE,EE-59,Lääne-Virumaa
+347,EE,EE-65,Põlvamaa
+348,EE,EE-67,Pärnumaa
+349,EE,EE-70,Raplamaa
+350,EE,EE-74,Saaremaa
+351,EE,EE-78,Tartumaa
+352,EE,EE-82,Valgamaa
+353,EE,EE-84,Viljandimaa
+354,EE,EE-86,Võrumaa
+355,LV,LV-DGV,Daugavpils
+356,LV,LV-JEL,Jelgava
+357,LV,Jēkabpils,Jēkabpils
+358,LV,LV-JUR,Jūrmala
+359,LV,LV-LPX,Liepāja
+360,LV,LV-LE,Liepājas novads
+361,LV,LV-REZ,Rēzekne
+362,LV,LV-RIX,Rīga
+363,LV,LV-RI,Rīgas novads
+364,LV,Valmiera,Valmiera
+365,LV,LV-VEN,Ventspils
+366,LV,Aglonas novads,Aglonas novads
+367,LV,LV-AI,Aizkraukles novads
+368,LV,Aizputes novads,Aizputes novads
+369,LV,Aknīstes novads,Aknīstes novads
+370,LV,Alojas novads,Alojas novads
+371,LV,Alsungas novads,Alsungas novads
+372,LV,LV-AL,Alūksnes novads
+373,LV,Amatas novads,Amatas novads
+374,LV,Apes novads,Apes novads
+375,LV,Auces novads,Auces novads
+376,LV,Babītes novads,Babītes novads
+377,LV,Baldones novads,Baldones novads
+378,LV,Baltinavas novads,Baltinavas novads
+379,LV,LV-BL,Balvu novads
+380,LV,LV-BU,Bauskas novads
+381,LV,Beverīnas novads,Beverīnas novads
+382,LV,Brocēnu novads,Brocēnu novads
+383,LV,Burtnieku novads,Burtnieku novads
+384,LV,Carnikavas novads,Carnikavas novads
+385,LV,Cesvaines novads,Cesvaines novads
+386,LV,Ciblas novads,Ciblas novads
+387,LV,LV-CE,Cēsu novads
+388,LV,Dagdas novads,Dagdas novads
+389,LV,LV-DA,Daugavpils novads
+390,LV,LV-DO,Dobeles novads
+391,LV,Dundagas novads,Dundagas novads
+392,LV,Durbes novads,Durbes novads
+393,LV,Engures novads,Engures novads
+394,LV,Garkalnes novads,Garkalnes novads
+395,LV,Grobiņas novads,Grobiņas novads
+396,LV,LV-GU,Gulbenes novads
+397,LV,Iecavas novads,Iecavas novads
+398,LV,Ikšķiles novads,Ikšķiles novads
+399,LV,Ilūkstes novads,Ilūkstes novads
+400,LV,Inčukalna novads,Inčukalna novads
+401,LV,Jaunjelgavas novads,Jaunjelgavas novads
+402,LV,Jaunpiebalgas novads,Jaunpiebalgas novads
+403,LV,Jaunpils novads,Jaunpils novads
+404,LV,LV-JL,Jelgavas novads
+405,LV,LV-JK,Jēkabpils novads
+406,LV,Kandavas novads,Kandavas novads
+407,LV,Kokneses novads,Kokneses novads
+408,LV,Krimuldas novads,Krimuldas novads
+409,LV,Krustpils novads,Krustpils novads
+410,LV,LV-KR,Krāslavas novads
+411,LV,LV-KU,Kuldīgas novads
+412,LV,Kārsavas novads,Kārsavas novads
+413,LV,Lielvārdes novads,Lielvārdes novads
+414,LV,LV-LM,Limbažu novads
+415,LV,Lubānas novads,Lubānas novads
+416,LV,LV-LU,Ludzas novads
+417,LV,Līgatnes novads,Līgatnes novads
+418,LV,Līvānu novads,Līvānu novads
+419,LV,LV-MA,Madonas novads
+420,LV,Mazsalacas novads,Mazsalacas novads
+421,LV,Mālpils novads,Mālpils novads
+422,LV,Mārupes novads,Mārupes novads
+423,LV,Naukšēnu novads,Naukšēnu novads
+424,LV,Neretas novads,Neretas novads
+425,LV,Nīcas novads,Nīcas novads
+426,LV,LV-OG,Ogres novads
+427,LV,Olaines novads,Olaines novads
+428,LV,Ozolnieku novads,Ozolnieku novads
+429,LV,LV-PR,Preiļu novads
+430,LV,Priekules novads,Priekules novads
+431,LV,Priekuļu novads,Priekuļu novads
+432,LV,Pārgaujas novads,Pārgaujas novads
+433,LV,Pāvilostas novads,Pāvilostas novads
+434,LV,Pļaviņu novads,Pļaviņu novads
+435,LV,Raunas novads,Raunas novads
+436,LV,Riebiņu novads,Riebiņu novads
+437,LV,Rojas novads,Rojas novads
+438,LV,Ropažu novads,Ropažu novads
+439,LV,Rucavas novads,Rucavas novads
+440,LV,Rugāju novads,Rugāju novads
+441,LV,Rundāles novads,Rundāles novads
+442,LV,LV-RE,Rēzeknes novads
+443,LV,Rūjienas novads,Rūjienas novads
+444,LV,Salacgrīvas novads,Salacgrīvas novads
+445,LV,Salas novads,Salas novads
+446,LV,Salaspils novads,Salaspils novads
+447,LV,LV-SA,Saldus novads
+448,LV,Saulkrastu novads,Saulkrastu novads
+449,LV,Siguldas novads,Siguldas novads
+450,LV,Skrundas novads,Skrundas novads
+451,LV,Skrīveru novads,Skrīveru novads
+452,LV,Smiltenes novads,Smiltenes novads
+453,LV,Stopiņu novads,Stopiņu novads
+454,LV,Strenču novads,Strenču novads
+455,LV,Sējas novads,Sējas novads
+456,LV,LV-TA,Talsu novads
+457,LV,LV-TU,Tukuma novads
+458,LV,Tērvetes novads,Tērvetes novads
+459,LV,Vaiņodes novads,Vaiņodes novads
+460,LV,LV-VK,Valkas novads
+461,LV,LV-VM,Valmieras novads
+462,LV,Varakļānu novads,Varakļānu novads
+463,LV,Vecpiebalgas novads,Vecpiebalgas novads
+464,LV,Vecumnieku novads,Vecumnieku novads
+465,LV,LV-VE,Ventspils novads
+466,LV,Viesītes novads,Viesītes novads
+467,LV,Viļakas novads,Viļakas novads
+468,LV,Viļānu novads,Viļānu novads
+469,LV,Vārkavas novads,Vārkavas novads
+470,LV,Zilupes novads,Zilupes novads
+471,LV,Ādažu novads,Ādažu novads
+472,LV,Ērgļu novads,Ērgļu novads
+473,LV,Ķeguma novads,Ķeguma novads
+474,LV,Ķekavas novads,Ķekavas novads
+475,LT,LT-AL,Alytaus Apskritis
+476,LT,LT-KU,Kauno Apskritis
+477,LT,LT-KL,Klaipėdos Apskritis
+478,LT,LT-MR,Marijampolės Apskritis
+479,LT,LT-PN,Panevėžio Apskritis
+480,LT,LT-SA,Šiaulių Apskritis
+481,LT,LT-TA,Tauragės Apskritis
+482,LT,LT-TE,Telšių Apskritis
+483,LT,LT-UT,Utenos Apskritis
+484,LT,LT-VL,Vilniaus Apskritis
+485,BR,AC,Acre
+486,BR,AL,Alagoas
+487,BR,AP,Amapá
+488,BR,AM,Amazonas
+489,BR,BA,Bahia
+490,BR,CE,Ceará
+491,BR,ES,Espírito Santo
+492,BR,GO,Goiás
+493,BR,MA,Maranhão
+494,BR,MT,Mato Grosso
+495,BR,MS,Mato Grosso do Sul
+496,BR,MG,Minas Gerais
+497,BR,PA,Pará
+498,BR,PB,Paraíba
+499,BR,PR,Paraná
+500,BR,PE,Pernambuco
+501,BR,PI,Piauí
+502,BR,RJ,Rio de Janeiro
+503,BR,RN,Rio Grande do Norte
+504,BR,RS,Rio Grande do Sul
+505,BR,RO,Rondônia
+506,BR,RR,Roraima
+507,BR,SC,Santa Catarina
+508,BR,SP,São Paulo
+509,BR,SE,Sergipe
+510,BR,TO,Tocantins
+511,BR,DF,Distrito Federal
+512,AL,AL-01,Berat
+513,AL,AL-09,Dibër
+514,AL,AL-02,Durrës
+515,AL,AL-03,Elbasan
+516,AL,AL-04,Fier
+517,AL,AL-05,Gjirokastër
+518,AL,AL-06,Korçë
+519,AL,AL-07,Kukës
+520,AL,AL-08,Lezhë
+521,AL,AL-10,Shkodër
+522,AL,AL-11,Tiranë
+523,AL,AL-12,Vlorë
+524,AR,AR-C,Ciudad Autónoma de Buenos Aires
+525,AR,AR-B,Buenos Aires
+526,AR,AR-K,Catamarca
+527,AR,AR-H,Chaco
+528,AR,AR-U,Chubut
+529,AR,AR-X,Córdoba
+530,AR,AR-W,Corrientes
+531,AR,AR-E,Entre Ríos
+532,AR,AR-P,Formosa
+533,AR,AR-Y,Jujuy
+534,AR,AR-L,La Pampa
+535,AR,AR-F,La Rioja
+536,AR,AR-M,Mendoza
+537,AR,AR-N,Misiones
+538,AR,AR-Q,Neuquén
+539,AR,AR-R,Río Negro
+540,AR,AR-A,Salta
+541,AR,AR-J,San Juan
+542,AR,AR-D,San Luis
+543,AR,AR-Z,Santa Cruz
+544,AR,AR-S,Santa Fe
+545,AR,AR-G,Santiago del Estero
+546,AR,AR-V,Tierra del Fuego
+547,AR,AR-T,Tucumán
+548,HR,HR-01,Zagrebačka županija
+549,HR,HR-02,Krapinsko-zagorska županija
+550,HR,HR-03,Sisačko-moslavačka županija
+551,HR,HR-04,Karlovačka županija
+552,HR,HR-05,Varaždinska županija
+553,HR,HR-06,Koprivničko-križevačka županija
+554,HR,HR-07,Bjelovarsko-bilogorska županija
+555,HR,HR-08,Primorsko-goranska županija
+556,HR,HR-09,Ličko-senjska županija
+557,HR,HR-10,Virovitičko-podravska županija
+558,HR,HR-11,Požeško-slavonska županija
+559,HR,HR-12,Brodsko-posavska županija
+560,HR,HR-13,Zadarska županija
+561,HR,HR-14,Osječko-baranjska županija
+562,HR,HR-15,Šibensko-kninska županija
+563,HR,HR-16,Vukovarsko-srijemska županija
+564,HR,HR-17,Splitsko-dalmatinska županija
+565,HR,HR-18,Istarska županija
+566,HR,HR-19,Dubrovačko-neretvanska županija
+567,HR,HR-20,Međimurska županija
+568,HR,HR-21,Grad Zagreb
+569,IN,AN,Andaman and Nicobar Islands
+570,IN,AP,Andhra Pradesh
+571,IN,AR,Arunachal Pradesh
+572,IN,AS,Assam
+573,IN,BR,Bihar
+574,IN,CH,Chandigarh
+575,IN,CT,Chhattisgarh
+576,IN,DN,Dadra and Nagar Haveli
+577,IN,DD,Daman and Diu
+578,IN,DL,Delhi
+579,IN,GA,Goa
+580,IN,GJ,Gujarat
+581,IN,HR,Haryana
+582,IN,HP,Himachal Pradesh
+583,IN,JK,Jammu and Kashmir
+584,IN,JH,Jharkhand
+585,IN,KA,Karnataka
+586,IN,KL,Kerala
+587,IN,LD,Lakshadweep
+588,IN,MP,Madhya Pradesh
+589,IN,MH,Maharashtra
+590,IN,MN,Manipur
+591,IN,ML,Meghalaya
+592,IN,MZ,Mizoram
+593,IN,NL,Nagaland
+594,IN,OR,Odisha
+595,IN,PY,Puducherry
+596,IN,PB,Punjab
+597,IN,RJ,Rajasthan
+598,IN,SK,Sikkim
+599,IN,TN,Tamil Nadu
+600,IN,TG,Telangana
+601,IN,TR,Tripura
+602,IN,UP,Uttar Pradesh
+603,IN,UT,Uttarakhand
+604,IN,WB,West Bengal
+605,AU,ACT,Australian Capital Territory
+606,AU,NSW,New South Wales
+607,AU,VIC,Victoria
+608,AU,QLD,Queensland
+609,AU,SA,South Australia
+610,AU,TAS,Tasmania
+611,AU,WA,Western Australia
+612,AU,NT,Northern Territory
+613,BE,VAN,Antwerpen
+614,BE,WBR,Brabant wallon
+615,BE,BRU,Brussels-Capital Region
+616,BE,WHT,Hainaut
+617,BE,VLI,Limburg
+618,BE,WLG,Liège
+619,BE,WLX,Luxembourg
+620,BE,WNA,Namur
+621,BE,VOV,Oost-Vlaanderen
+622,BE,VBR,Vlaams-Brabant
+623,BE,VWV,West-Vlaanderen
+624,BO,BO-C,Cochabamba
+625,BO,BO-H,Chuquisaca
+626,BO,BO-B,El Beni
+627,BO,BO-L,La Paz
+628,BO,BO-O,Oruro
+629,BO,BO-N,Pando
+630,BO,BO-P,Potosí
+631,BO,BO-S,Santa Cruz
+632,BO,BO-T,Tarija
+633,BG,BG-01,Blagoevgrad
+634,BG,BG-02,Burgas
+635,BG,BG-03,Varna
+636,BG,BG-04,Veliko Tarnovo
+637,BG,BG-05,Vidin
+638,BG,BG-06,Vratsa
+639,BG,BG-07,Gabrovo
+640,BG,BG-08,Dobrich
+641,BG,BG-09,Kardzhali
+642,BG,BG-10,Kyustendil
+643,BG,BG-11,Lovech
+644,BG,BG-12,Montana
+645,BG,BG-13,Pazardzhik
+646,BG,BG-14,Pernik
+647,BG,BG-15,Pleven
+648,BG,BG-16,Plovdiv
+649,BG,BG-17,Razgrad
+650,BG,BG-18,Ruse
+651,BG,BG-19,Silistra
+652,BG,BG-20,Sliven
+653,BG,BG-21,Smolyan
+654,BG,BG-22,Sofia City
+655,BG,BG-23,Sofia Province
+656,BG,BG-24,Stara Zagora
+657,BG,BG-25,Targovishte
+658,BG,BG-26,Haskovo
+659,BG,BG-27,Shumen
+660,BG,BG-28,Yambol
+661,CL,CL-AI,Aisén del General Carlos Ibañez del Campo
+662,CL,CL-AN,Antofagasta
+663,CL,CL-AP,Arica y Parinacota
+664,CL,CL-AR,La Araucanía
+665,CL,CL-AT,Atacama
+666,CL,CL-BI,Biobío
+667,CL,CL-CO,Coquimbo
+668,CL,CL-LI,Libertador General Bernardo O\'Higgins
+669,CL,CL-LL,Los Lagos
+670,CL,CL-LR,Los Ríos
+671,CL,CL-MA,Magallanes
+672,CL,CL-ML,Maule
+673,CL,CL-NB,Ñuble
+674,CL,CL-RM,Región Metropolitana de Santiago
+675,CL,CL-TA,Tarapacá
+676,CL,CL-VS,Valparaíso
+677,CN,CN-AH,Anhui Sheng
+678,CN,CN-BJ,Beijing Shi
+679,CN,CN-CQ,Chongqing Shi
+680,CN,CN-FJ,Fujian Sheng
+681,CN,CN-GS,Gansu Sheng
+682,CN,CN-GD,Guangdong Sheng
+683,CN,CN-GX,Guangxi Zhuangzu Zizhiqu
+684,CN,CN-GZ,Guizhou Sheng
+685,CN,CN-HI,Hainan Sheng
+686,CN,CN-HE,Hebei Sheng
+687,CN,CN-HL,Heilongjiang Sheng
+688,CN,CN-HA,Henan Sheng
+689,CN,CN-HK,Hong Kong SAR
+690,CN,CN-HB,Hubei Sheng
+691,CN,CN-HN,Hunan Sheng
+692,CN,CN-JS,Jiangsu Sheng
+693,CN,CN-JX,Jiangxi Sheng
+694,CN,CN-JL,Jilin Sheng
+695,CN,CN-LN,Liaoning Sheng
+696,CN,CN-MO,Macao SAR
+697,CN,CN-NM,Nei Mongol Zizhiqu
+698,CN,CN-NX,Ningxia Huizi Zizhiqu
+699,CN,CN-QH,Qinghai Sheng
+700,CN,CN-SN,Shaanxi Sheng
+701,CN,CN-SD,Shandong Sheng
+702,CN,CN-SH,Shanghai Shi
+703,CN,CN-SX,Shanxi Sheng
+704,CN,CN-SC,Sichuan Sheng
+705,CN,CN-TW,Taiwan Sheng
+706,CN,CN-TJ,Tianjin Shi
+707,CN,CN-XJ,Xinjiang Uygur Zizhiqu
+708,CN,CN-XZ,Xizang Zizhiqu
+709,CN,CN-YN,Yunnan Sheng
+710,CN,CN-ZJ,Zhejiang Sheng
+711,CO,CO-AMA,Amazonas
+712,CO,CO-ANT,Antioquia
+713,CO,CO-ARA,Arauca
+714,CO,CO-ATL,Atlántico
+715,CO,CO-BOL,Bolívar
+716,CO,CO-BOY,Boyacá
+717,CO,CO-CAL,Caldas
+718,CO,CO-CAQ,Caquetá
+719,CO,CO-CAS,Casanare
+720,CO,CO-CAU,Cauca
+721,CO,CO-CES,Cesar
+722,CO,CO-CHO,Chocó
+723,CO,CO-COR,Córdoba
+724,CO,CO-CUN,Cundinamarca
+725,CO,CO-GUA,Guainía
+726,CO,CO-GUV,Guaviare
+727,CO,CO-HUL,Huila
+728,CO,CO-LAG,La Guajira
+729,CO,CO-MAG,Magdalena
+730,CO,CO-MET,Meta
+731,CO,CO-NAR,Nariño
+732,CO,CO-NSA,Norte de Santander
+733,CO,CO-PUT,Putumayo
+734,CO,CO-QUI,Quindío
+735,CO,CO-RIS,Risaralda
+736,CO,CO-SAP,San Andrés y Providencia
+737,CO,CO-SAN,Santander
+738,CO,CO-SUC,Sucre
+739,CO,CO-TOL,Tolima
+740,CO,CO-VAC,Valle del Cauca
+741,CO,CO-VAU,Vaupés
+742,CO,CO-VID,Vichada
+743,DK,DK-84,Hovedstaden
+744,DK,DK-82,Midtjylland
+745,DK,DK-81,Nordjylland
+746,DK,DK-85,Sjælland
+747,DK,DK-83,Syddanmark
+748,EC,EC-A,Azuay
+749,EC,EC-B,Bolívar
+750,EC,EC-F,Cañar
+751,EC,EC-C,Carchi
+752,EC,EC-H,Chimborazo
+753,EC,EC-X,Cotopaxi
+754,EC,EC-O,El Oro
+755,EC,EC-E,Esmeraldas
+756,EC,EC-W,Galápagos
+757,EC,EC-G,Guayas
+758,EC,EC-I,Imbabura
+759,EC,EC-L,Loja
+760,EC,EC-R,Los Ríos
+761,EC,EC-M,Manabí
+762,EC,EC-S,Morona Santiago
+763,EC,EC-N,Napo
+764,EC,EC-D,Orellana
+765,EC,EC-Y,Pastaza
+766,EC,EC-P,Pichincha
+767,EC,EC-SE,Santa Elena
+768,EC,EC-SD,Santo Domingo de los Tsáchilas
+769,EC,EC-U,Sucumbíos
+770,EC,EC-T,Tungurahua
+771,EC,EC-Z,Zamora Chinchipe
+772,GR,GR-A,Anatolikí Makedonía kai Thráki
+773,GR,GR-I,Attikí
+774,GR,GR-G,Dytikí Elláda
+775,GR,GR-C,Dytikí Makedonía
+776,GR,GR-F,Ionía Nísia
+777,GR,GR-D,Ípeiros
+778,GR,GR-B,Kentrikí Makedonía
+779,GR,GR-M,Kríti
+780,GR,GR-L,Nótio Aigaío
+781,GR,GR-J,Pelopónnisos
+782,GR,GR-H,Stereá Elláda
+783,GR,GR-E,Thessalía
+784,GR,GR-K,Vóreio Aigaío
+785,GR,GR-69,Ágion Óros
+786,GY,GY-BA,Barima-Waini
+787,GY,GY-CU,Cuyuni-Mazaruni
+788,GY,GY-DE,Demerara-Mahaica
+789,GY,GY-EB,East Berbice-Corentyne
+790,GY,GY-ES,Essequibo Islands-West Demerara
+791,GY,GY-MA,Mahaica-Berbice
+792,GY,GY-PM,Pomeroon-Supenaam
+793,GY,GY-PT,Potaro-Siparuni
+794,GY,GY-UD,Upper Demerara-Berbice
+795,GY,GY-UT,Upper Takutu-Upper Essequibo
+796,IS,IS-01,Höfuðborgarsvæði
+797,IS,IS-02,Suðurnes
+798,IS,IS-03,Vesturland
+799,IS,IS-04,Vestfirðir
+800,IS,IS-05,Norðurland vestra
+801,IS,IS-06,Norðurland eystra
+802,IS,IS-07,Austurland
+803,IS,IS-08,Suðurland
+804,IT,AG,Agrigento
+805,IT,AL,Alessandria
+806,IT,AN,Ancona
+807,IT,AO,Aosta
+808,IT,AQ,L\'Aquila
+809,IT,AR,Arezzo
+810,IT,AP,Ascoli-Piceno
+811,IT,AT,Asti
+812,IT,AV,Avellino
+813,IT,BA,Bari
+814,IT,BT,Barletta-Andria-Trani
+815,IT,BL,Belluno
+816,IT,BN,Benevento
+817,IT,BG,Bergamo
+818,IT,BI,Biella
+819,IT,BO,Bologna
+820,IT,BZ,Bolzano
+821,IT,BS,Brescia
+822,IT,BR,Brindisi
+823,IT,CA,Cagliari
+824,IT,CL,Caltanissetta
+825,IT,CB,Campobasso
+826,IT,CI,Carbonia Iglesias
+827,IT,CE,Caserta
+828,IT,CT,Catania
+829,IT,CZ,Catanzaro
+830,IT,CH,Chieti
+831,IT,CO,Como
+832,IT,CS,Cosenza
+833,IT,CR,Cremona
+834,IT,KR,Crotone
+835,IT,CN,Cuneo
+836,IT,EN,Enna
+837,IT,FM,Fermo
+838,IT,FE,Ferrara
+839,IT,FI,Firenze
+840,IT,FG,Foggia
+841,IT,FC,Forli-Cesena
+842,IT,FR,Frosinone
+843,IT,GE,Genova
+844,IT,GO,Gorizia
+845,IT,GR,Grosseto
+846,IT,IM,Imperia
+847,IT,IS,Isernia
+848,IT,SP,La-Spezia
+849,IT,LT,Latina
+850,IT,LE,Lecce
+851,IT,LC,Lecco
+852,IT,LI,Livorno
+853,IT,LO,Lodi
+854,IT,LU,Lucca
+855,IT,MC,Macerata
+856,IT,MN,Mantova
+857,IT,MS,Massa-Carrara
+858,IT,MT,Matera
+859,IT,VS,Medio Campidano
+860,IT,ME,Messina
+861,IT,MI,Milano
+862,IT,MO,Modena
+863,IT,MB,Monza-Brianza
+864,IT,NA,Napoli
+865,IT,NO,Novara
+866,IT,NU,Nuoro
+867,IT,OG,Ogliastra
+868,IT,OT,Olbia Tempio
+869,IT,OR,Oristano
+870,IT,PD,Padova
+871,IT,PA,Palermo
+872,IT,PR,Parma
+873,IT,PV,Pavia
+874,IT,PG,Perugia
+875,IT,PU,Pesaro-Urbino
+876,IT,PE,Pescara
+877,IT,PC,Piacenza
+878,IT,PI,Pisa
+879,IT,PT,Pistoia
+880,IT,PN,Pordenone
+881,IT,PZ,Potenza
+882,IT,PO,Prato
+883,IT,RG,Ragusa
+884,IT,RA,Ravenna
+885,IT,RC,Reggio-Calabria
+886,IT,RE,Reggio-Emilia
+887,IT,RI,Rieti
+888,IT,RN,Rimini
+889,IT,RM,Roma
+890,IT,RO,Rovigo
+891,IT,SA,Salerno
+892,IT,SS,Sassari
+893,IT,SV,Savona
+894,IT,SI,Siena
+895,IT,SR,Siracusa
+896,IT,SO,Sondrio
+897,IT,TA,Taranto
+898,IT,TE,Teramo
+899,IT,TR,Terni
+900,IT,TO,Torino
+901,IT,TP,Trapani
+902,IT,TN,Trento
+903,IT,TV,Treviso
+904,IT,TS,Trieste
+905,IT,UD,Udine
+906,IT,VA,Varese
+907,IT,VE,Venezia
+908,IT,VB,Verbania
+909,IT,VC,Vercelli
+910,IT,VR,Verona
+911,IT,VV,Vibo-Valentia
+912,IT,VI,Vicenza
+913,IT,VT,Viterbo
+914,MX,AGU,Aguascalientes
+915,MX,BCN,Baja California
+916,MX,BCS,Baja California Sur
+917,MX,CAM,Campeche
+918,MX,CHP,Chiapas
+919,MX,CHH,Chihuahua
+920,MX,CMX,Ciudad de México
+921,MX,COA,Coahuila
+922,MX,COL,Colima
+923,MX,DUR,Durango
+924,MX,MEX,Estado de México
+925,MX,GUA,Guanajuato
+926,MX,GRO,Guerrero
+927,MX,HID,Hidalgo
+928,MX,JAL,Jalisco
+929,MX,MIC,Michoacán
+930,MX,MOR,Morelos
+931,MX,NAY,Nayarit
+932,MX,NLE,Nuevo León
+933,MX,OAX,Oaxaca
+934,MX,PUE,Puebla
+935,MX,QUE,Querétaro
+936,MX,ROO,Quintana Roo
+937,MX,SLP,San Luis Potosí
+938,MX,SIN,Sinaloa
+939,MX,SON,Sonora
+940,MX,TAB,Tabasco
+941,MX,TAM,Tamaulipas
+942,MX,TLA,Tlaxcala
+943,MX,VER,Veracruz
+944,MX,YUC,Yucatán
+945,MX,ZAC,Zacatecas
+946,PY,PY-ASU,Asunción
+947,PY,PY-16,Alto Paraguay
+948,PY,PY-10,Alto Paraná
+949,PY,PY-13,Amambay
+950,PY,PY-19,Boquerón
+951,PY,PY-5,Caaguazú
+952,PY,PY-6,Caazapá
+953,PY,PY-14,Canindeyú
+954,PY,PY-11,Central
+955,PY,PY-1,Concepción
+956,PY,PY-3,Cordillera
+957,PY,PY-4,Guairá
+958,PY,PY-7,Itapúa
+959,PY,PY-8,Misiones
+960,PY,PY-12,Ñeembucú
+961,PY,PY-9,Paraguarí
+962,PY,PY-15,Presidente Hayes
+963,PY,PY-2,San Pedro
+964,PE,PE-LMA,Municipalidad Metropolitana de Lima
+965,PE,PE-AMA,Amazonas
+966,PE,PE-ANC,Ancash
+967,PE,PE-APU,Apurímac
+968,PE,PE-ARE,Arequipa
+969,PE,PE-AYA,Ayacucho
+970,PE,PE-CAJ,Cajamarca
+971,PE,PE-CUS,Cusco
+972,PE,PE-CAL,El Callao
+973,PE,PE-HUV,Huancavelica
+974,PE,PE-HUC,Huánuco
+975,PE,PE-ICA,Ica
+976,PE,PE-JUN,Junín
+977,PE,PE-LAL,La Libertad
+978,PE,PE-LAM,Lambayeque
+979,PE,PE-LIM,Lima
+980,PE,PE-LOR,Loreto
+981,PE,PE-MDD,Madre de Dios
+982,PE,PE-MOQ,Moquegua
+983,PE,PE-PAS,Pasco
+984,PE,PE-PIU,Piura
+985,PE,PE-PUN,Puno
+986,PE,PE-SAM,San Martín
+987,PE,PE-TAC,Tacna
+988,PE,PE-TUM,Tumbes
+989,PE,PE-UCA,Ucayali
+990,PL,PL-02,dolnośląskie
+991,PL,PL-04,kujawsko-pomorskie
+992,PL,PL-06,lubelskie
+993,PL,PL-08,lubuskie
+994,PL,PL-10,łódzkie
+995,PL,PL-12,małopolskie
+996,PL,PL-14,mazowieckie
+997,PL,PL-16,opolskie
+998,PL,PL-18,podkarpackie
+999,PL,PL-20,podlaskie
+1000,PL,PL-22,pomorskie
+1001,PL,PL-24,śląskie
+1002,PL,PL-26,świętokrzyskie
+1003,PL,PL-28,warmińsko-mazurskie
+1004,PL,PL-30,wielkopolskie
+1005,PL,PL-32,zachodniopomorskie
+1006,PT,PT-01,Aveiro
+1007,PT,PT-02,Beja
+1008,PT,PT-03,Braga
+1009,PT,PT-04,Bragança
+1010,PT,PT-05,Castelo Branco
+1011,PT,PT-06,Coimbra
+1012,PT,PT-07,Évora
+1013,PT,PT-08,Faro
+1014,PT,PT-09,Guarda
+1015,PT,PT-10,Leiria
+1016,PT,PT-11,Lisboa
+1017,PT,PT-12,Portalegre
+1018,PT,PT-13,Porto
+1019,PT,PT-14,Santarém
+1020,PT,PT-15,Setúbal
+1021,PT,PT-16,Viana do Castelo
+1022,PT,PT-17,Vila Real
+1023,PT,PT-18,Viseu
+1024,PT,PT-20,Região Autónoma dos Açores
+1025,PT,PT-30,Região Autónoma da Madeira
+1026,SR,SR-BR,Brokopondo
+1027,SR,SR-CM,Commewijne
+1028,SR,SR-CR,Coronie
+1029,SR,SR-MA,Marowijne
+1030,SR,SR-NI,Nickerie
+1031,SR,SR-PR,Para
+1032,SR,SR-PM,Paramaribo
+1033,SR,SR-SA,Saramacca
+1034,SR,SR-SI,Sipaliwini
+1035,SR,SR-WA,Wanica
+1036,SE,SE-K,Blekinge län
+1037,SE,SE-W,Dalarnas län
+1038,SE,SE-I,Gotlands län
+1039,SE,SE-X,Gävleborgs län
+1040,SE,SE-N,Hallands län
+1041,SE,SE-Z,Jämtlands län
+1042,SE,SE-F,Jönköpings län
+1043,SE,SE-H,Kalmar län
+1044,SE,SE-G,Kronobergs län
+1045,SE,SE-BD,Norrbottens län
+1046,SE,SE-M,Skåne län
+1047,SE,SE-AB,Stockholms län
+1048,SE,SE-D,Södermanlands län
+1049,SE,SE-C,Uppsala län
+1050,SE,SE-S,Värmlands län
+1051,SE,SE-AC,Västerbottens län
+1052,SE,SE-Y,Västernorrlands län
+1053,SE,SE-U,Västmanlands län
+1054,SE,SE-O,Västra Götalands län
+1055,SE,SE-T,Örebro län
+1056,SE,SE-E,Östergötlands län
+1057,UY,UY-AR,Artigas
+1058,UY,UY-CA,Canelones
+1059,UY,UY-CL,Cerro Largo
+1060,UY,UY-CO,Colonia
+1061,UY,UY-DU,Durazno
+1062,UY,UY-FS,Flores
+1063,UY,UY-FD,Florida
+1064,UY,UY-LA,Lavalleja
+1065,UY,UY-MA,Maldonado
+1066,UY,UY-MO,Montevideo
+1067,UY,UY-PA,Paysandu
+1068,UY,UY-RN,Río Negro
+1069,UY,UY-RV,Rivera
+1070,UY,UY-RO,Rocha
+1071,UY,UY-SA,Salto
+1072,UY,UY-SJ,San José
+1073,UY,UY-SO,Soriano
+1074,UY,UY-TA,Tacuarembó
+1075,UY,UY-TT,Treinta y Tres
+1076,VE,VE-W,Dependencias Federales
+1077,VE,VE-A,Distrito Capital
+1078,VE,VE-Z,Amazonas
+1079,VE,VE-B,Anzoátegui
+1080,VE,VE-C,Apure
+1081,VE,VE-D,Aragua
+1082,VE,VE-E,Barinas
+1083,VE,VE-F,Bolívar
+1084,VE,VE-G,Carabobo
+1085,VE,VE-H,Cojedes
+1086,VE,VE-Y,Delta Amacuro
+1087,VE,VE-I,Falcón
+1088,VE,VE-J,Guárico
+1089,VE,VE-K,Lara
+1090,VE,VE-L,Mérida
+1091,VE,VE-M,Miranda
+1092,VE,VE-N,Monagas
+1093,VE,VE-O,Nueva Esparta
+1094,VE,VE-P,Portuguesa
+1095,VE,VE-R,Sucre
+1096,VE,VE-S,Táchira
+1097,VE,VE-T,Trujillo
+1098,VE,VE-X,Vargas
+1099,VE,VE-U,Yaracuy
+1100,VE,VE-V,Zulia
+1179,TH,BKK,Bangkok
+1180,TH,NBI,Nonthaburi
+1181,TH,PTE,Pathum Thani
+1182,TH,SPK,Samut Prakarn
+1183,TH,KSN,Kalasin
+1184,TH,KKN,Khon Kaen
+1185,TH,CPM,Chaiyaphum
+1186,TH,NPM,Nakhon Phanom
+1187,TH,NMA,Nakhon Ratchasima
+1188,TH,BRM,Buri Ram
+1189,TH,MKM,Maha Sarakham
+1190,TH,MDH,Mukdahan
+1191,TH,YST,Yasothon
+1192,TH,RET,Roi Et
+1193,TH,LEI,Loei
+1194,TH,SSK,Si Sa Ket
+1195,TH,SNK,Sakon Nakhon
+1196,TH,SRN,Surin
+1197,TH,NKI,Nong Khai
+1198,TH,NBP,Nong Bua Lamphu
+1199,TH,ACR,Amnat Charoen
+1200,TH,UDN,Udon Thani
+1201,TH,UBN,Ubon Ratchathani
+1202,TH,KRI,Kanchanaburi
+1203,TH,CNT,Chai Nat
+1204,TH,NPT,Nakhon Pathom
+1205,TH,PKN,Prachuap Khiri Khan
+1206,TH,AYA,Phra Nakhon Si Ayutthaya
+1207,TH,PBI,Phetchaburi
+1208,TH,RBR,Ratchaburi
+1209,TH,LRI,Lop Buri
+1210,TH,SKM,Samut Songkhram
+1211,TH,SKN,Samut Sakhon
+1212,TH,SRI,Saraburi
+1213,TH,SBR,Sing Buri
+1214,TH,SPB,Suphan Buri
+1215,TH,ATG,Ang Thong
+1216,TH,CTI,Chanthaburi
+1217,TH,CCO,Chachoengsao
+1218,TH,CBI,Chon Buri
+1219,TH,TRT,Trat
+1220,TH,NYK,Nakhon Nayok
+1221,TH,PRI,Prachin Buri
+1222,TH,RYG,Rayong
+1223,TH,SKW,Sa kaeo
+1224,TH,KBI,Krabi
+1225,TH,CPN,Chumphon
+1226,TH,TRG,Trang
+1227,TH,NRT,Nakhon Si Thammarat
+1228,TH,NWT,Narathiwat
+1229,TH,PTN,Pattani
+1230,TH,PNA,Phang Nga
+1231,TH,PLG,Phatthalung
+1232,TH,PKT,Phuket
+1233,TH,YLA,Yala
+1234,TH,RNG,Ranong
+1235,TH,SKA,Songkhla
+1236,TH,STN,Satun
+1237,TH,SNI,Surat Thani
+1238,TH,KPT,Kamphaeng Phet
+1239,TH,CRI,Chiang Rai
+1240,TH,CMI,Chiang Mai
+1241,TH,TAK,Tak
+1242,TH,NSN,Nakhon Sawan
+1243,TH,NAN,Nan
+1244,TH,PYO,Phayao
+1245,TH,PCT,Phichit
+1246,TH,PLK,Phitsanulok
+1247,TH,PNB,Phetchabun
+1248,TH,PRE,Phrae
+1249,TH,MSN,Mae Hong Son
+1250,TH,LPG,Lampang
+1251,TH,LPN,Lamphun
+1252,TH,STI,Sukhothai
+1253,TH,UTD,Uttaradit
+1254,TH,UTI,Uthai Thani
+1255,TH,BKN,Bueng Kan
+1256,BY,BY-BR,Bresckaja voblasć
+1259,BY,BY-HO,Homieĺskaja voblasć
+1262,BY,BY-HM,Horad Minsk
+1265,BY,BY-HR,Hrodzienskaja voblasć
+1268,BY,BY-MA,Mahilioŭskaja voblasć
+1271,BY,BY-MI,Minskaja voblasć
+1274,BY,BY-VI,Viciebskaja voblasć
+1277,CZ,CZ-10,Praha, Hlavní město
+1280,CZ,CZ-20,Středočeský kraj
+1283,CZ,CZ-31,Jihočeský kraj
+1286,CZ,CZ-32,Plzeňský kraj
+1289,CZ,CZ-41,Karlovarský kraj
+1292,CZ,CZ-42,Ústecký kraj
+1295,CZ,CZ-51,Liberecký kraj
+1298,CZ,CZ-52,Královéhradecký kraj
+1301,CZ,CZ-53,Pardubický kraj
+1304,CZ,CZ-63,Kraj Vysočina
+1307,CZ,CZ-64,Jihomoravský kraj
+1310,CZ,CZ-71,Olomoucký kraj
+1313,CZ,CZ-72,Zlínský kraj
+1316,CZ,CZ-80,Moravskoslezský kraj

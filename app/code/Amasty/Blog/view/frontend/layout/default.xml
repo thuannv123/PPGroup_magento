@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) Amasty (https://www.amasty.com)
+ * @package Blog Pro for Magento 2
+ */-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Amasty_Base::vendor/slick/amslick.min.css"/>
+    </head>
+    <body>
+        <referenceBlock name="footer_links">
+            <block class="Amasty\Blog\Block\Link" ifconfig="amblog/display_settings/display_at_footer" name="amblog_footer_link">
+                <arguments>
+                    <argument name="label" xsi:type="string">Blog</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceBlock name="header.links">
+            <block class="Amasty\Blog\Block\Link" ifconfig="amblog/display_settings/display_at_toolbar" name="amblog_toolbar_link">
+                <arguments>
+                    <argument name="label" xsi:type="string">Blog</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceBlock name="top.links">
+            <block class="Amasty\Blog\Block\Link" ifconfig="amblog/display_settings/display_at_toolbar" name="amblog_toolbar_link_ultimo">
+                <arguments>
+                    <argument name="label" xsi:type="string">Blog</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceContainer name="footer">
+            <block class="Magento\ReCaptchaUi\Block\ReCaptcha"
+                   name="amblog-recaptcha-newsletter"
+                   before="-"
+                   template="Amasty_Blog::recaptcha_subscribe.phtml"
+                   ifconfig="recaptcha_frontend/type_for/newsletter">
+                <arguments>
+                    <argument name="recaptcha_for" xsi:type="string">newsletter</argument>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="recaptcha" xsi:type="array">
+                                <item name="component" xsi:type="string">Magento_ReCaptchaFrontendUi/js/reCaptcha</item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

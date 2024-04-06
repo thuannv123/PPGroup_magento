@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="order_cancel_after">
+        <observer name="check_rule_coupon" instance="PPGroup\Checkout\Observer\SalesOrderCancelAfterCoupon" />
+    </event>
+</config>

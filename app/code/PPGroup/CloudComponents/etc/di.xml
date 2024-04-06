@@ -1,0 +1,4 @@
+<!--  File: app/etc/di.xml -->
+<config>
+    <preference for="Magento\CloudComponents\Model\Cache\InvalidateLogger" type="PPGroup\CloudComponents\Model\Cache\InvalidateLogger" />
+</config>

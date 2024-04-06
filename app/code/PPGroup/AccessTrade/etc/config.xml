@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <accesstrade>
+            <settings>
+                <enabled>0</enabled>
+                <campaign_id><![CDATA[fc8001f834f6a5f0561080d134d53d29]]></campaign_id>
+                <result_id>2</result_id>
+                <merge_config>1</merge_config>
+                <tax_calculation>1</tax_calculation>
+                <api_url><![CDATA[https://cv.accesstrade.in.th/cv.php]]></api_url>
+                <integration_method>2</integration_method>
+                <clear_parameters_order_success>1</clear_parameters_order_success>
+                <use_unix_created_time>1</use_unix_created_time>
+                <debug>0</debug>
+            </settings>
+        </accesstrade>
+    </default>
+</config>

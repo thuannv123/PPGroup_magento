@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Config/etc/system_file.xsd">
+    <system>
+        <section id="curl_proxy" translate="label" type="text" sortOrder="50" showInDefault="0" showInWebsite="0" showInStore="0">
+            <label>Curl Proxy</label>
+            <tab>Acommerce</tab>
+            <resource>Acommerce_CurlProxy::curl_proxy</resource>
+            <group id="curl_proxy_setup" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="proxy_enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <label>Enable</label>
+                </field>
+                <label>Configurable</label>
+                <field id="proxy_url" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Proxy Url</label>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="curl_proxy/curl_proxy_setup/proxy_enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

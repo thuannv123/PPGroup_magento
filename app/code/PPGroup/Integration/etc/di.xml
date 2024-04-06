@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="PPGroup\Integration\Logger\InventoryLogHandler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="PPGroup\Integration\Logger\InventoryLog">
+        <arguments>
+            <argument name="name" xsi:type="string">inventoryLogger</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="system" xsi:type="object">PPGroup\Integration\Logger\InventoryLogHandler</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="PPGroup\Integration\Logger\SaleorderExportLogHandler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="PPGroup\Integration\Logger\SaleorderExportLog">
+        <arguments>
+            <argument name="name" xsi:type="string">soExportLogger</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="system" xsi:type="object">PPGroup\Integration\Logger\SaleorderExportLogHandler</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="PPGroup\Integration\Logger\SaleorderStatusLogHandler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="PPGroup\Integration\Logger\SaleorderStatusLog">
+        <arguments>
+            <argument name="name" xsi:type="string">soStatusLogger</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="system" xsi:type="object">PPGroup\Integration\Logger\SaleorderStatusLogHandler</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\BatchSizeCalculator">
+        <arguments>
+            <argument name="batchRowsCount" xsi:type="array">
+                <item name="configurable" xsi:type="number">5000</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\CatalogInventory\Model\Indexer\Stock\Action\Full">
+        <arguments>
+            <argument name="batchRowsCount" xsi:type="array">
+                <item name="configurable" xsi:type="number">200</item>
+            </argument>
+        </arguments>
+    </type>
+    <preference for="Magento\Framework\Filesystem\Io\Sftp" type="PPGroup\Integration\Filesystem\Io\OverrideSftp"/>
+</config>

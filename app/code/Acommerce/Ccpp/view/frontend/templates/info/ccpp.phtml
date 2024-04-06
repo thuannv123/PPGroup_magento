@@ -1,0 +1,38 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * @var \Magento\Payment\Block\Info $block
+ * @see \Magento\Payment\Block\Info
+ */
+$specificInfo = $block->getSpecificInformation();
+$title = $block->escapeHtml($block->getMethod()->getTitle());
+?>
+<dl class="payment-method">
+    <dt class="title"><?php /* @noEscape */ echo $title; ?></dt>
+<?php if ($specificInfo):?>
+    <!--<dd class="content"> -->
+        <table class="data table">
+            <caption class="table-caption"><?php /* @noEscape */ echo $title; ?></caption>
+            <?php foreach ($specificInfo as $label => $value):?>
+                <tr>
+                    <th scope="row"><?php echo $block->escapeHtml($label)?></th>
+                    <td>
+                        <?php if($label !== 'Slip Url'): ?>
+                        <?php /* @noEscape */ echo nl2br(implode("\n", $block->getValueAsArray($value, true)));?>
+                        <?php else :?>
+                        <a href = "<?php /* @noEscape */ echo $value;?>" target="_blank"><?php /* @noEscape */ echo $value;?></a>
+                        <?php endif; ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+    <!--</dd>-->
+<?php endif;?>
+</dl>
+<?php echo $block->getChildHtml()?>

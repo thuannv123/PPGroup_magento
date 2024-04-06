@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) Amasty (https://www.amasty.com)
+ * @package Improved Layered Navigation by Amasty - Filter Analytics for Magento 2 (System)
+ */-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="amshopbyfilteranalytics" instance="Amasty\ShopbyFilterAnalytics\Cron\MigrateData" method="execute">
+            <config_path>crontab/default/jobs/amshopbyfilteranalytics/schedule/cron_expr</config_path>
+        </job>
+    </group>
+</config>

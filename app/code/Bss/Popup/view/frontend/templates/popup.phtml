@@ -1,0 +1,173 @@
+<?php
+/**
+ * BSS Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://bsscommerce.com/Bss-Commerce-License.txt
+ *
+ * @category   BSS
+ * @package    Bss_Popup
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2018-2022 BSS Commerce Co. ( http://bsscommerce.com )
+ * @license    http://bsscommerce.com/Bss-Commerce-License.txt
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Block
+ *
+ * @var $block \Bss\Popup\Block\Popup
+ */
+$postUrl = $block->getBaseUrl() . 'popup/update/displayed';
+$checkTimeUrl = $block->getBaseUrl() . 'popup/render/time';
+$popup = $block->getPopup();
+
+if ($popup) {
+    $flagTop = ($popup['position'] <= \Bss\Popup\Model\Source\Position::TOP_RIGHT) ? "true" : "false";
+    $flagRight = (($popup['position'] == \Bss\Popup\Model\Source\Position::TOP_RIGHT) ||
+        ($popup['position'] == \Bss\Popup\Model\Source\Position::MIDDLE_RIGHT)) ?
+        "float:right;" : "";
+    $flagLeft = (($popup['position'] == \Bss\Popup\Model\Source\Position::TOP_LEFT) ||
+        ($popup['position'] == \Bss\Popup\Model\Source\Position::MIDDLE_LEFT)) ?
+        "margin: 0 0;" : "";
+}
+?>
+
+<?php if ($popup): ?>
+    <?php if ($popup['popup_css']): ?>
+        <style type="text/css">
+            <?php echo $popup['popup_css'] ?>
+        </style>
+    <?php endif; ?>
+    <?php
+    $templatepopup = $block->getTypeTemplatePopup();
+    switch ($templatepopup) {
+        case "1":
+            $templatepopup = 'template-contact-form';
+            break;
+        case "2":
+            $templatepopup = 'template-age-verification';
+            break;
+        case "3":
+            $templatepopup = 'template-newsletter';
+            break;
+        case "4":
+            $templatepopup = 'template-hot-deals';
+            break;
+        case "5":
+            $templatepopup = 'template-social-sharing';
+            break;
+        default:
+            $templatepopup = '';
+    }
+    ?>
+
+    <div class="popup_wrapper mfp-with-anim" style="
+    <?php if ($flagLeft === "" && $flagRight === "") {
+        echo "margin:auto";
+    } else {
+        echo $flagRight . $flagLeft;
+    } ?>" id="<?php echo $templatepopup; ?>">
+        <div class="bss_popup popup_content">
+            <?php echo $block->filterContent($popup['popup_content']) ?>
+        </div>
+    </div>
+    <div class="floating_popup <?php if ($popup['frequently'] != 1) {
+        echo "hide";
+    } ?>">
+        <div class="bss_popup floating_content" >
+            <?php if (isset($popup['floating_input_type']) && $popup['floating_input_type'] == "1") : ?>
+                <button type = "submit" class="button_floating" id="<?php echo $popup['popup_id'] ?>" style="display: none; background:<?php echo $popup['floating_input_color']?>;">
+                    <span><?php echo $block->filterContent($popup['floating_input_content']) ?></span>
+                </button>
+            <?php else : ?>
+                <a id="<?php echo $popup['popup_id'] ?>" style="display: none; max-height : 50px; max-width: 50px;">
+                    <?php switch ($popup['floating_icon'] ?? $popup['floating_icon'] = 0) {
+                        case "1": ?>
+                            <img src="<?php echo $this->getViewFileUrl('Bss_Popup::images/Icon/contact-form.png'); ?>">
+                            <?php break; ?>
+                        <?php case "2": ?>
+                            <img src="<?php echo $this->getViewFileUrl('Bss_Popup::images/Icon/hot-deal.png'); ?>">
+                            <?php break; ?>
+                        <?php case "3": ?>
+                            <img src="<?php echo $this->getViewFileUrl('Bss_Popup::images/Icon/newsletter.png'); ?>">
+                            <?php break; ?>
+                        <?php case "4": ?>
+                            <img src="<?php echo $this->getViewFileUrl('Bss_Popup::images/Icon/notification-bell.png'); ?>">
+                            <?php break; ?>
+                        <?php case "5": ?>
+                            <img src="<?php echo $this->getViewFileUrl('Bss_Popup::images/Icon/promotional.png'); ?>">
+                            <?php break; ?>
+                        <?php case "6": ?>
+                            <img src="<?php echo $this->getViewFileUrl('Bss_Popup::images/Icon/promotions.png'); ?>">
+                            <?php break; ?>
+                        <?php case "7": ?>
+                            <img src="<?php echo $this->getViewFileUrl('Bss_Popup::images/Icon/social-media.png'); ?>">
+                            <?php break; ?>
+                        <?php case "8": ?>
+                            <img src="<?php echo $this->getViewFileUrl('Bss_Popup::images/Icon/warning.png'); ?>">
+                            <?php break; ?>
+                        <?php } ?>
+                </a>
+            <?php endif; ?>
+        </div>
+    </div>
+    <script type="text/x-magento-init">
+        {
+        "*":
+            {
+                "Bss_Popup/js/initpopup": {
+                    "popupId": <?php echo $popup['popup_id'] ?>,
+                    "popupIsAllowedDisplay": "<?php echo $block->popupIsAllowedDisplay($popup) ?>",
+                    "eventDisplay": <?php echo $popup['event_display'] ?>,
+                    "hideAfter": <?php echo $popup['hide_after'] ?>,
+                    "effectDisplay": <?php echo $popup['effect_display'] ?>,
+                    "afterLoad": <?php echo $popup['after_load'] ?>,
+                    "afterScroll": <?php echo $popup['after_scroll'] ?>,
+                    "popupPages": <?php echo $popup['page_view'] ?>,
+                    "pagesViewed": <?php echo $block->getPagesViewed() ?>,
+                    "animation": "<?php echo $block->getAnimation($popup) ?>",
+                    "updateUrl": "<?php echo $postUrl ?>",
+                    "checkTimeUrl": "<?php echo $checkTimeUrl ?>",
+                    "typeTemplatePopup": "<?= $block->getTypeTemplatePopup() ?>",
+                    "popupFrequently": <?php echo $popup['frequently']?>,
+                    "preview": <?= $block->isPreviewMode() ?>,
+                    "flagTop": <?php echo $flagTop ?>,
+                    "floating":<?php $popup['floating_popup'] ?? $popup['floating_popup'] = 0; echo $popup['floating_popup'] ?>,
+                    "floatingPosition":<?php $popup['floating_position'] ?? $popup['floating_position'] = 0; echo $popup['floating_position'] ?>,
+                    "floatingColor":"<?php $popup['floating_input_color'] ?? $popup['floating_input_color'] = 0; echo $popup['floating_input_color']; ?>",
+                    "floatingButton":<?php $popup['floating_close_button'] ?? $popup['floating_close_button'] = 0; echo $popup['floating_close_button']; ?>
+                }
+            }
+        }
+    </script>
+    <?php if ($block->getTypeTemplatePopup() == \Bss\Popup\Model\Source\Template::TEMPLATE_AGE_VERIFICATION): ?>
+        <script type="text/x-magento-init">
+        {
+        "*": {"Bss_Popup/js/age_verification":{}}
+        }
+
+        </script>
+    <?php endif; ?>
+<?php endif; ?>
+<script type="text/x-magento-init">
+    {
+        "#contact-form": {
+            "validation": {}
+        }
+    }
+</script>
+<script type="text/x-magento-init">
+    {
+        "#newsletter-validate-detail": {
+            "validation": {
+                "errorClass": "mage-error"
+            }
+        }
+    }
+</script>

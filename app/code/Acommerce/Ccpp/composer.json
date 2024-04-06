@@ -1,0 +1,30 @@
+{
+    "name": "acommerce/ccpp",
+    "description": "",
+    "authors": [
+        {
+            "name": "Supornchai Wattanavitsakul",
+            "email": "supornchai.w@acommerce.asia"
+        }
+    ],
+    "type": "magento2-module",
+    "require": {
+        "php": ">=5.4",
+        "composer/installers": "~1.0",
+        "acommerce/all": ">=2.0 || <=3.0",
+        "acommerce/curlproxy": "~1.0.0",
+        "acommerce/sales": "2.2.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.6"
+    },
+    "version": "2.3.3",
+    "autoload": {
+        "files": [
+          "registration.php"
+        ],
+        "psr-4": {
+            "Acommerce\\Ccpp\\": ""
+        }
+    }
+}

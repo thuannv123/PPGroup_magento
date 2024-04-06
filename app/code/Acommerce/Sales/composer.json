@@ -1,0 +1,30 @@
+{
+    "name": "acommerce/sales",
+    "description": "",
+    "authors": [
+        {
+            "name": "Supornchai Wattanavitsakul",
+            "email": "supornchai.w@acommerce.asia"
+        }
+    ],
+    "type": "magento2-module",
+    "version": "2.2.0",
+    "require": {
+        "php": ">=5.4",
+        "composer/installers": "~1.0",
+        "acommerce/all": "*",
+	"magento/module-sales": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.6"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Acommerce\\Sales\\": ""
+        }
+    },
+    "minimum-stability": "dev"
+}

@@ -1,0 +1,17 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) Amasty (https://www.amasty.com)
+ * @package Improved Layered Navigation by Amasty - Filter Analytics for Magento 2 (System)
+ */ /** @var $block \Amasty\ShopbyFilterAnalytics\Block\System\FlushButton */ ?>
+<?php /** @var $escaper \Magento\Framework\Escaper */ ?>
+<button class="scalable" type="button" id="<?= $block->getHtmlId() ?>" data-mage-init='{"amShopAnalyticsFlush":{
+    "confirm": {
+        "title": "<?= $escaper->escapeHtml(__('Are you sure?')) ?>",
+        "content": "<?= $escaper->escapeHtml(
+            __('Filters usage statistics will be permanently removed. Are you sure?')
+) ?>"
+    },
+    "url": "<?= $escaper->escapeUrl($block->getAjaxUrl()) ?>"}}'>
+    <span><?= $escaper->escapeHtml($block->getButtonLabel()) ?></span>
+</button>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) Amasty (https://www.amasty.com)
+ * @package Mega Menu Items Tree(System)
+ */-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Amasty\MegaMenuLite\Model\Provider\FieldsByStore">
+        <arguments>
+            <argument name="fieldsByStoreCustom" xsi:type="array">
+                <item name="general" xsi:type="array">
+                    <item name="sort_order" xsi:type="string">sort_order</item>
+                </item>
+                <item name="am_mega_menu_fieldset" xsi:type="array">
+                    <item name="submenu_type" xsi:type="string">submenu_type</item>
+                    <item name="column_count" xsi:type="string">column_count</item>
+                    <item name="subcategories_position" xsi:type="string">subcategories_position</item>
+                </item>
+                <item name="am_mega_menu_mobile_fieldset" xsi:type="array">
+                    <item name="show_mobile_content" xsi:type="string">show_mobile_content</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>

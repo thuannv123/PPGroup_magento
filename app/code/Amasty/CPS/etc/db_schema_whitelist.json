@@ -1,0 +1,27 @@
+{
+    "amasty_brand_product": {
+        "column": {
+            "ambrand_id": true,
+            "product_id": true,
+            "store_id": true,
+            "position": true,
+            "is_pinned": true
+        },
+        "index": {
+            "AMASTY_BRAND_PRODUCT_AMBRAND_ID": true,
+            "AMASTY_BRAND_PRODUCT_PRODUCT_ID": true,
+            "AMASTY_BRAND_PRODUCT_STORE_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "AMASTY_BRAND_PRD_PRD_ID_CAT_PRD_ENTT_ENTT_ID": true,
+            "AMASTY_BRAND_PRODUCT_AMBRAND_ID_PRODUCT_ID_STORE_ID": true
+        }
+    },
+    "amasty_amshopby_option_setting": {
+        "column": {
+            "sorting": true,
+            "use_default_store_sorting": true
+        }
+    }
+}

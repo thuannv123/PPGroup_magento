@@ -1,0 +1,7 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="acommerce">
+        <job name="ccpp_inquiry_transaction" instance="Acommerce\Ccpp\Cron\InquiryTransaction" method="execute">
+            <config_path>payment/ccpp/crontab</config_path>
+        </job>
+    </group>
+</config>

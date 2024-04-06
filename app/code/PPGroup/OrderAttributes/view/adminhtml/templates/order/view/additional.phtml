@@ -1,0 +1,72 @@
+<?php
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_OrderAttributes
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+?>
+
+<?php
+/** @var PPGroup\OrderAttributes\Override\Block\Order\View\Additional $block */
+?>
+<?php $html = $block->getAttributes([1, 6]) . $block->getAttributesInCustomSteps(); ?>
+<?php if ($html) : ?>
+    <section class="admin__page-section additional-order-information">
+        <div class="admin__page-section-title">
+            <strong class="title"><?= /** @noEscape */ __('Additional Information') ?></strong>
+        </div>
+        <div class="admin__page-section-content">
+            <?= /** @noEscape */ $html ?>
+        </div>
+    </section>
+<?php endif ?>
+
+<?php if ($html = $block->getAttributes([2, 3])) : ?>
+    <div class="admin__page-section-content additional-shipping-information">
+        <br/><?= /** @noEscape */ $html ?>
+    </div>
+
+    <script type="text/javascript">
+        var isAppendShipping = true;
+    </script>
+<?php endif ?>
+
+<?php if ($html = $block->getAttributes([4, 5])) : ?>
+    <div class="admin__page-section-content additional-payment-information">
+        <br/><?= /** @noEscape */ $html ?>
+    </div>
+
+    <script type="text/javascript">
+        var isAppendPayment = true;
+    </script>
+<?php endif ?>
+
+<style type="text/css">
+    .textarea-attribute {
+        white-space: pre-wrap;
+    }
+</style>
+<script type="text/javascript">
+    require(['jquery'], function ($) {
+        if (typeof isAppendShipping !== 'undefined') {
+            $('.order-shipping-method').append($('.additional-shipping-information'));
+        }
+        if (typeof isAppendPayment !== 'undefined') {
+            $('.order-payment-method').append($('.additional-payment-information'));
+        }
+    });
+</script>

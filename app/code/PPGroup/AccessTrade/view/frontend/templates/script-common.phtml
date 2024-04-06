@@ -1,0 +1,60 @@
+<?php
+// phpcs:disable PSR2.ControlStructures.SwitchDeclaration
+// phpcs:disable Generic.WhiteSpace.ScopeIndent
+
+/** @var $block \Magento\Framework\View\Element\Template */
+/** @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer */
+/** @var \Magento\Framework\Escaper $escaper */
+/** @var $viewModel \PPGroup\AccessTrade\ViewModel\Common */
+
+$viewModel = $block->getViewModel();
+?>
+<?php $scriptString = <<<script
+    var timestamp = new Date().getTime();
+(function (d) {var s = d.createElement('script');
+s.src = 'https://script.accesstrade.in.th/lp.js?cb=' + timestamp;
+s.async = true;
+var e = d.getElementsByTagName('script')[0];
+e.parentNode.insertBefore(s, e);
+})(document);
+script;
+?>
+<?= /* @noEscape */
+$secureRenderer->renderTag('script', [], $scriptString, false) ?>
+
+
+<?php if ($viewModel): ?>
+<script>
+    window.accessTradeConfig = <?= /* @noEscape */ $viewModel->getSerializedConfig(); ?>;
+</script>
+
+<script>
+    require([
+        'jquery',
+        'underscore',
+        'PPGroup_AccessTrade/js/action/record-rk'
+    ], function($, _, recordRkAction){
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+            return false;
+        };
+
+        var utmCampaign = getUrlParameter('utm_campaign');
+
+        if(!!utmCampaign) {
+            recordRkAction(utmCampaign);
+        }
+    });
+</script>
+<?php endif; ?>

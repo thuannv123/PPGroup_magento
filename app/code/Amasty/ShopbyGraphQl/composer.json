@@ -1,0 +1,23 @@
+{
+    "name": "amasty/shopby-graphql",
+    "description": "Improved Layered Navigation GraphQl by Amasty",
+    "require": {
+        "php": ">=7.3.0",
+        "amasty/base": ">=1.14.7",
+        "magento/module-layered-navigation": ">=100.0",
+        "amasty/shopby": ">=2.22.0"
+    },
+    "type": "magento2-module",
+    "version": "1.0.5",
+    "license": [
+        "proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Amasty\\ShopbyGraphQl\\": ""
+        }
+    }
+}

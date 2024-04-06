@@ -1,0 +1,40 @@
+"Credit card type","Credit card type"
+"CVV result","CVV result"
+"Postcode AVS check","Postcode AVS check"
+"Address AVS check","Address AVS check"
+"Country comparison check","Country comparison check"
+"Risk Score","Risk Score"
+"Not supported","Not supported"
+"Not checked","Not checked"
+Matched,Matched
+"Not matched","Not matched"
+"Partially matched","Partially matched"
+"No such order id.","No such order id."
+"Gateway response is not valid.","Gateway response is not valid."
+"Wrong response type","Wrong response type"
+"Authentication Failed.","Authentication Failed."
+"Currency doesn't match.","Currency doesn't match."
+"Amount doesn't match.","Amount doesn't match."
+"Gateway processing error.","Gateway processing error."
+"Transaction was not placed.","Transaction was not placed."
+"Wrong request type.","Wrong request type."
+None,None
+Authorize,Authorize
+"Authorize and Capture","Authorize and Capture"
+Refused,Refused
+Authorised,Authorised
+Error,Error
+Captured,Captured
+"Not supported response.","Not supported response."
+"CONTINUE TO PAYMENT","CONTINUE TO PAYMENT"
+2C2P,2C2P
+Enabled,Enabled
+Title,Title
+Debug,Debug
+"Test Mode","Test Mode"
+"Payment Action for Test","Payment Action for Test"
+"Payment Action","Payment Action"
+"Accepted Currency","Accepted Currency"
+"Payment From Applicable Countries","Payment From Applicable Countries"
+"Payment From Specific Countries","Payment From Specific Countries"
+"Sort Order","Sort Order"

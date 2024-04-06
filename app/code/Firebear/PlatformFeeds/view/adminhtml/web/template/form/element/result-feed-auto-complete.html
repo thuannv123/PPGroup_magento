@@ -1,0 +1,23 @@
+<!--
+/**
+ * @copyright: Copyright © 2020 Firebear Studio. All rights reserved.
+ * @author   : Firebear Studio <fbeardev@gmail.com>
+ */
+-->
+<div>
+    <% if (data.list.length) { %>
+    <div class="admin__action-multiselect-results-amount"><%- data.list.length %> <%- data.options %></div>
+    <% } %>
+    <ul class="admin__action-multiselect-menu-inner">
+        <% _.each(data.list, function(category) { %>
+        <li class="admin__action-multiselect-menu-inner-item" data-action="select"
+            data-name="<%- category.name %>" data-id="<%- category.id %>"
+        >
+            <%- category.name %>
+        </li>
+        <% }); %>
+    </ul>
+    <% if (!data.list.length) { %>
+    <div class="no-results"><%- data.noResults %></div>
+    <% } %>
+</div>

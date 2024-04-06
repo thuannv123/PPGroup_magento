@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) Amasty (https://www.amasty.com)
+ * @package Custom Product Sorting for Shop by Brand (Add-On) for Magento 2
+ */-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <type name="Amasty\ShopbyBase\Controller\Adminhtml\Option\Save">
+        <plugin name="Amasty_CPS::SaveBrand"
+                type="Amasty\CPS\Plugin\ShopbyBase\Controller\Adminhtml\Option\SavePlugin"/>
+    </type>
+</config>

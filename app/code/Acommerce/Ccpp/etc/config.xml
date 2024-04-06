@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <ccpp>
+                <debug>1</debug>
+                <active>1</active>
+                <model>CcppFacade</model>
+                <order_status>pending_payment</order_status>
+                <payment_action>authorize</payment_action>
+                <title>Payment method (2C2P)</title>
+                <currency>USD</currency>
+                <version>6.9</version>
+                <merchant_id>764764000000086</merchant_id>
+                <secret_key>AAjHwc7CBz96</secret_key>
+                <gateway_url>https://t.2c2p.com/RedirectV3/Payment</gateway_url>
+                <gateway_url_test>https://demo2.2c2p.com/2C2PFrontEnd/RedirectV3/payment</gateway_url_test>
+                <sandbox_flag>1</sandbox_flag>
+                <test_action>AUTHORISED</test_action>
+                <payment_method>card</payment_method>
+                <can_initialize>1</can_initialize>
+                <can_authorize>1</can_authorize>
+                <can_capture>1</can_capture>
+                <can_refund>1</can_refund>
+                <can_use_checkout>1</can_use_checkout>
+                <is_gateway>1</is_gateway>
+                <sort_order>99</sort_order>
+                <debugReplaceKeys>callbackPW,installation,instId</debugReplaceKeys>
+                <signature_fields>version:merchant_id:payment_description:order_id:invoice_no:currency:amount:customer_email:pay_category_id:promotion:user_defined_1:user_defined_2:user_defined_3:user_defined_4:user_defined_5:result_url_1:result_url_2:enable_store_card:stored_card_unique_id:request_3ds:recurring:order_prefix:recurring_amount:allow_accumulate:max_accumulate_amount:recurring_interval:recurring_count:charge_next_date+ charge_on_date:payment_option:ipp_interest_type:payment_expiry:default_lang:statement_descriptor:use_storedcard_only:tokenize_without_authorization:product:ipp_period_filter</signature_fields>
+                <response_fields>version:request_timestamp:merchant_id:order_id:invoice_no:currency:amount:transaction_ref:approval_code:eci:transaction_datetime:payment_channel:payment_status:channel_response_code:channel_response_desc:masked_pan:stored_card_unique_id:backend_invoice:paid_channel:paid_agent:recurring_unique_id:user_defined_1:user_defined_2:user_defined_3:user_defined_4:user_defined_5:browser_info:ippPeriod:ippInterestType:ippInterestRate:ippMerchantAbsorbRate:payment_scheme:process_by</response_fields>
+                <paymentInfoKeys>cc_type,cvv_result,postcode_avs,address_avs,country_comparison,waf_merch_message</paymentInfoKeys>
+                <privateInfoKeys>cvv_result,postcode_avs,address_avs,country_comparison,waf_merch_message</privateInfoKeys>
+                <payment_channel_code>CC</payment_channel_code>
+                <ipp_interest_type>A</ipp_interest_type>
+                <enable_inquiry>1</enable_inquiry>
+                <inquiry_version>2.1</inquiry_version>
+                <inquiry_url>https://s.2c2p.com/PaymentActionV2/PaymentAction.aspx</inquiry_url>
+                <inquiry_url_test>https://demo2.2c2p.com/2C2PFrontend/PaymentActionV2/PaymentAction.aspx</inquiry_url_test>
+                <crontab>*/15 * * * *</crontab>
+                <include_promo>0</include_promo>
+                <coupon_codes></coupon_codes>
+                <auto_cancel>0</auto_cancel>
+                <payment_status>002,003</payment_status>
+            </ccpp>
+            <qrcode>
+                <active>1</active>
+                <model>Acommerce\Ccpp\Model\Payment\Qrcode</model>
+                <order_status>pending_payment</order_status>
+                <payment_action>true</payment_action>
+                <title>QR Code</title>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <can_authorize>0</can_authorize>
+                <can_capture>0</can_capture>
+                <payment_channel_code>E</payment_channel_code>
+                <qr_type>PP</qr_type>
+            </qrcode>
+        </payment>
+    </default>
+</config>

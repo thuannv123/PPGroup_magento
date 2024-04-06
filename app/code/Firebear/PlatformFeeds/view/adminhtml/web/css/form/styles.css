@@ -1,0 +1,50 @@
+#feed_template_selector {
+    width: 100%;
+}
+
+#feed_template_var_helper_container {
+    width: 60%;
+}
+
+#feed_template_var_helper, #feed_template_var_code, #feed_template_modifiers_helper {
+    width: 100%;
+}
+
+#feed_template_modifiers_helper_container {
+    float: right;
+    width: 39%;
+}
+
+#feed_template_modifiers_helper_container label, #feed_template_var_helper_container label {
+    height: 50px;
+    display: block;
+}
+
+.feed_clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.firebear-tooltip {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 8px 8px 8px 0;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    content: attr(data-tooltip);
+    margin-top: -5px;
+    padding: 3px 7px;
+    position: absolute;
+    z-index: 9999999;
+    display: none;
+}
+
+/* Selectize css & overrides */
+[data-index="source_category_map"] .selectize-dropdown {
+    /* Disable padding to avoid rendering artefacts on focus */
+    padding: 0;
+}
+[data-index="source_category_map"] .selectize-dropdown:active {
+    /* Selectize options will be rendered with artefacts once option has been selected */
+    background-image: none;
+}

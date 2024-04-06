@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright: Copyright © 2020 Firebear Studio. All rights reserved.
+ * @author   : Firebear Studio <fbeardev@gmail.com>
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>
+            Feed Category Mapping
+        </title>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <uiComponent name="mapping_form"/>
+        </referenceContainer>
+    </body>
+</page>

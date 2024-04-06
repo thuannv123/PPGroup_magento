@@ -1,0 +1,29 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * @var \Acommerce\Ccpp\Block\Info $block
+ * @see \Acommerce\Ccpp\Block\Info
+ */
+$specificInfo = $block->getSpecificInformation();
+$paymentTitle = $block->escapeHtml($block->getMethod()->getTitle());
+?>
+<?= $block->escapeHtml($paymentTitle) ?>
+
+<?php if ($specificInfo) : ?>
+    <table class="data-table admin__table-secondary">
+    <?php foreach ($specificInfo as $label => $value) : ?>
+        <tr>
+            <th><?= $block->escapeHtml($label) ?>:</th>
+            <td>
+                <?= /* @noEscape */ nl2br($block->escapeHtml(implode("\n", $block->getValueAsArray($value, true)))) ?>
+            </td>
+    <?php endforeach; ?>
+        </tr>
+    </table>
+<?php endif;?>
+
+<?= $block->getChildHtml() ?>

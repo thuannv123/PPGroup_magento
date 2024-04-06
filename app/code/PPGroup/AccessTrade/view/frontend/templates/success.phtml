@@ -1,0 +1,39 @@
+<?php
+// phpcs:disable PSR2.ControlStructures.SwitchDeclaration
+// phpcs:disable Generic.WhiteSpace.ScopeIndent
+use Magento\Framework\View\Element\Template;
+use PPGroup\AccessTrade\ViewModel\Success;
+
+/** @var $block \Magento\Framework\View\Element\Template */
+/** @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer */
+/** @var \Magento\Framework\Escaper $escaper */
+/** @var Template $block */
+/** @var Success $successViewModel */
+$successViewModel = $block->getSuccessViewModel();
+$rk = $successViewModel->getRk();
+?>
+
+<?php if($successViewModel->hasOrder() && $successViewModel->isTrackingTag() && !empty($rk)): ?>
+    <?php $scriptString = <<<script
+        var __atw = __atw || [];
+        __atw.push({"mcn": "{$successViewModel->getCampaignId()}",
+                "param": {
+                    "rk": "{$rk}",
+                    "result_id": "{$successViewModel->getResultId()}",
+                    "identifier": "{$successViewModel->getTransactionId()}",
+                    "value": "{$successViewModel->getSalesAmount()}",
+                    "transaction_discount": "{$successViewModel->getDiscountAmount()}",
+                    "currency": "{$successViewModel->getCurrencyCode()}"
+                }
+          });
+    var timestamp = new Date().getTime();
+    (function (d) {var s = d.createElement('script');
+    s.src = 'https://script.accesstrade.in.th/cv.js?cb=' + timestamp;
+    s.async = true;var e = d.getElementsByTagName('script')[0];
+    e.parentNode.insertBefore(s, e);
+    })(document);
+    script;
+    ?>
+    <?= /* @noEscape */
+    $secureRenderer->renderTag('script', [], $scriptString, false) ?>
+<?php endif; ?>

@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * BSS Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://bsscommerce.com/Bss-Commerce-License.txt
+ *
+ * @category   BSS
+ * @package    Bss_Popup
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2020-2022 BSS Commerce Co. ( http://bsscommerce.com )
+ * @license    http://bsscommerce.com/Bss-Commerce-License.txt
+ */
+-->
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+  <table name="bss_popup_popup" resource="default" engine="innodb" comment="bss_popup_popup">
+    <column xsi:type="int" name="popup_id" padding="10" unsigned="true" nullable="false" identity="true" comment="ID"/>
+    <column xsi:type="text" name="popup_name" nullable="false" comment="Title"/>
+    <column xsi:type="smallint" name="status" padding="6" unsigned="false" nullable="false" identity="false" comment="Status"/>
+    <column xsi:type="text" name="storeview" nullable="false" comment="Store View"/>
+    <column xsi:type="text" name="customer_group" nullable="false" comment="Customer Group"/>
+    <column xsi:type="datetime" name="display_from" on_update="false" nullable="true" comment="Display From"/>
+    <column xsi:type="datetime" name="display_to" on_update="false" nullable="true" comment="Display To"/>
+    <column xsi:type="int" name="priority" padding="11" unsigned="false" nullable="false" identity="false" comment="Priority"/>
+    <column xsi:type="smallint" name="event_display" padding="6" unsigned="false" nullable="false" identity="false" comment="Event Display"/>
+    <column xsi:type="int" name="after_load" padding="11" unsigned="false" nullable="false" identity="false" comment="After Load"/>
+    <column xsi:type="int" name="after_scroll" padding="11" unsigned="false" nullable="false" identity="false" comment="After Load"/>
+    <column xsi:type="int" name="page_view" padding="11" unsigned="false" nullable="false" identity="false" comment="Page View"/>
+    <column xsi:type="int" name="effect_display" padding="11" unsigned="false" nullable="false" identity="false" comment="Effect Display"/>
+    <column xsi:type="text" name="page_display" nullable="false" comment="Page Display"/>
+    <column xsi:type="text" name="exclude_category" nullable="false" comment="Exclude Categories"/>
+    <column xsi:type="text" name="exclude_product" nullable="false" comment="Exclude Product"/>
+    <column xsi:type="smallint" name="position" padding="6" unsigned="false" nullable="false" identity="false" comment="Position"/>
+    <column xsi:type="int" name="hide_after" padding="11" unsigned="false" nullable="false" identity="false" comment="Hide After"/>
+    <column xsi:type="smallint" name="close_outside" padding="6" unsigned="false" nullable="false" identity="false" comment="Close Click Outside"/>
+    <column xsi:type="smallint" name="frequently" padding="6" unsigned="false" nullable="false" identity="false" comment="Display Frequently"/>
+    <column xsi:type="int" name="cookie_expires" padding="11" unsigned="false" nullable="false" identity="false" comment="Cookie Expires"/>
+    <column xsi:type="text" name="popup_content" nullable="false" comment="Exclude Product"/>
+    <column xsi:type="text" name="popup_css" nullable="false" comment="Popup Css"/>
+    <column xsi:type="int" name="type_template" padding="11" unsigned="false" nullable="true" identity="false" comment="Type template"/>
+    <column xsi:type="smallint" name="floating_popup" padding="10" unsigned="true" nullable="false" comment="Floating Popup"/>
+    <column xsi:type="smallint" name="floating_input_type" nullable="true" comment="Floating Input Type"/>
+    <column xsi:type="text" name="floating_input_content" nullable="true" comment="Floating Input Content"/>
+    <column xsi:type="text" name="floating_input_color" nullable="true" comment="Floating Input Color"/>
+    <column xsi:type="text" name="floating_position" nullable="true" comment="Floating Position"/>
+    <column xsi:type="text" name="floating_close_button" nullable="true" comment="Floating Close Button"/>
+    <column xsi:type="text" name="floating_icon" nullable="true" comment="Floating Icon"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+      <column name="popup_id"/>
+    </constraint>
+    <index referenceId="BSS_POPUP_POPUP_POPUP_NAME" indexType="fulltext">
+      <column name="popup_name"/>
+    </index>
+  </table>
+  <table name="bss_popup_layout" resource="default" engine="innodb" comment="bss_popup_layout">
+    <column xsi:type="int" name="layout_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity ID"/>
+    <column xsi:type="int" name="popup_id" padding="11" unsigned="false" nullable="true" identity="false" comment="popup_id"/>
+    <column xsi:type="text" name="page_group" nullable="true" comment="page_group"/>
+    <column xsi:type="text" name="layout_handle" nullable="true" comment="layout_handle"/>
+    <column xsi:type="text" name="page_for" nullable="true" comment="page_for"/>
+    <column xsi:type="text" name="entities" nullable="true" comment="entities"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+      <column name="layout_id"/>
+    </constraint>
+    <index referenceId="BSS_POPUP_LAYOUT_LAYOUT_ID" indexType="btree">
+      <column name="layout_id"/>
+    </index>
+  </table>
+  <table name="bss_popup_layout_update" resource="default" engine="innodb" comment="bss_popup_layout_update">
+    <column xsi:type="int" name="layout_update_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity ID"/>
+    <column xsi:type="int" name="layout_id" padding="11" unsigned="false" nullable="true" identity="false" comment="layout_id"/>
+    <column xsi:type="int" name="popup_id" padding="11" unsigned="false" nullable="true" identity="false" comment="popup_id"/>
+    <column xsi:type="text" name="handle" nullable="true" comment="handle"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+      <column name="layout_update_id"/>
+    </constraint>
+    <index referenceId="BSS_POPUP_LAYOUT_UPDATE_LAYOUT_UPDATE_ID" indexType="btree">
+      <column name="layout_update_id"/>
+    </index>
+  </table>
+</schema>

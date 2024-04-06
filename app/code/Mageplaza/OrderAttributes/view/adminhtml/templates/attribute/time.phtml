@@ -1,0 +1,50 @@
+<?php
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_OrderAttributes
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+?>
+<script>
+    require([
+        'jquery',
+        'mage/calendar'
+    ], function($){
+        var id      = '<?= $block->escapeHtml('#' . $block->getMpElementId()) ?>',
+            minDate = '<?= /** noEscape */ $block->getMpMinDate() ?>',
+            maxDate = '<?= /** noEscape */ $block->getMpMaxDate() ?>';
+
+        $(id).calendar({
+            minDate: minDate,
+            minDateTime: new Date(minDate),
+            maxDate: maxDate,
+            maxDateTime: new Date(maxDate),
+            showOn: 'button',
+            timeFormat: 'HH:mm:ss',
+            showsTime: true,
+            timeOnly: true
+        });
+
+        if (showsTime) {
+            $(id).css('width', '18rem');
+        }
+
+        if (minDate || maxDate) {
+            $(id).prop('readonly', true);
+        }
+    });
+</script>

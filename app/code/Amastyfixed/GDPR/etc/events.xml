@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2020 Amasty (https://www.amasty.com)
+ * @package Amasty_Gdpr
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="newsletter_subscriber_save_before">
+        <observer name="Amastyfixed_GDPR_save_consentlog_newletter" instance="Amastyfixed\GDPR\Observer\SaveConsentLogSubscribe"/>
+    </event>
+    <event name="after_amgdpr_customer_anonymisation">
+      <observer name="Amastyfixed_GDPR_anonymisation" instance="Amastyfixed\GDPR\Observer\AnonymizerLog"/>
+    </event>
+    <!--event name="sales_order_place_before">
+        <observer name="Amastyfixed_GDPR_save_consentlog_beforeorder" instance="Amastyfixed\GDPR\Observer\SaveConsentLogBeforeOrder"/>
+    </event-->
+</config>

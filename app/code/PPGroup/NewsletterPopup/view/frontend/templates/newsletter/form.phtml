@@ -1,0 +1,17 @@
+<?php /** @var $block \Magento\Newsletter\Block\Subscribe */?>
+<form class="form subscribe"
+      novalidate
+      action="<?php /* @escapeNotVerified */ echo $block->getFormActionUrl() ?>"
+      method="post"
+      data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+      id="newsletter-validate-detail-popup">
+    <div class="form-group">
+        <input name="email" type="email" id="newsletter-popup"
+               placeholder="<?php /* @escapeNotVerified */ echo __('Enter email') ?>"
+               data-validate="{required:true, 'validate-email':true}"/>
+        <?= $block->getConsentCheckbox() ?>
+        <button class="subscribe button" title="<?php /* @escapeNotVerified */ echo __('Subscribe') ?>" type="submit">
+            <span><i class="icon-theme-enter"></i></span>
+        </button>
+    </div>
+</form>

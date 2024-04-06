@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="accesstrade_container">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="accesstrade_success"
+                   template="PPGroup_AccessTrade::success.phtml"
+                   ifconfig="accesstrade/settings/enabled">
+                <arguments>
+                    <argument name="success_view_model" xsi:type="object">
+                        PPGroup\AccessTrade\ViewModel\Success
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

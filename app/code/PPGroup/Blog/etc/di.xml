@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <!-- category -->
+    <preference for="Mageplaza\Blog\Model\Category" type="PPGroup\Blog\Model\CategoryExtend"/>
+    <preference for="Mageplaza\Blog\Block\Category\Menu" type="PPGroup\Blog\Block\Category\Menu" />
+    <preference for="Mageplaza\Blog\Block\Adminhtml\Category\Edit\Tabs" type="PPGroup\Blog\Block\Adminhtml\Category\Edit\Tabs"/>
+    <preference for="Mageplaza\Blog\Controller\Adminhtml\Category\Save" type="PPGroup\Blog\Controller\Adminhtml\Category\Save"/>
+    <!-- post -->
+    <preference for="Mageplaza\Blog\Controller\Adminhtml\Post\Save" type="PPGroup\Blog\Controller\Adminhtml\Post\Save"/>
+    <preference for="Mageplaza\Blog\Block\Frontend" type="PPGroup\Blog\Block\Frontend"/>
+</config>

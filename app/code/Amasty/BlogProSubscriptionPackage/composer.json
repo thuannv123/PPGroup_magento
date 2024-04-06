@@ -1,0 +1,26 @@
+{
+    "name": "amasty/module-blog-pro-subscription-package",
+    "description": "Blog Pro Subscription Package by Amasty",
+    "require": {
+        "php": ">=7.3",
+        "amasty/base": ">=1.14.7",
+        "amasty/blog": ">=2.11.2"
+    },
+    "suggest": {
+        "amasty/module-blog-hyva": "Install this package to ensure the Blog Pro extension works with Hyv\u00e4 Theme.",
+        "amasty/module-ai-blog-pro-content-generator": "Install this package for ChatGPT AI Content Generator compatibility.",
+        "amasty/blog-sitemap": "Install this package to add the compatibility with Magento 2 XML sitemap functionality for Blog Posts."
+    },
+    "homepage": "https://amasty.com/",
+    "type": "magento2-module",
+    "version": "2.12.2",
+    "license": "proprietary",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Amasty\\BlogProSubscriptionPackage\\": ""
+        }
+    }
+}

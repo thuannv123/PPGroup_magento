@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Author: Son Nguyen
+ * Copyright © Wiki Solution All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <catalog>
+            <antispam_catalog_search>
+                <enable>1</enable>
+                <list_words_disallow>http://,https://,www,.com,.de,.ru,.cn,.net,@,[,],【,】</list_words_disallow>
+                <disallow_chinese_words>1</disallow_chinese_words>
+                <disallow_foreign_words>1</disallow_foreign_words>
+            </antispam_catalog_search>
+        </catalog>
+    </default>
+</config>

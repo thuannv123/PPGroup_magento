@@ -1,0 +1,19 @@
+{
+	"name": "firebear/importexport-feeds",
+	"description": "Platform Feeds Module",
+	"require": {
+        "php": ">=7.1.0",
+		"firebear/importexport": ">=3.1.7"
+	},
+	"type": "magento2-module",
+	"version": "2.2.0",
+	"license": "OSL-3.0",
+	"autoload": {
+		"files": [
+			"registration.php"
+		],
+		"psr-4": {
+			"Firebear\\PlatformFeeds\\": ""
+		}
+	}
+}

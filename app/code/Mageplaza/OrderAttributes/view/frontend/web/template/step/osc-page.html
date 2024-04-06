@@ -1,0 +1,58 @@
+<!--
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_OrderAttributes
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+-->
+<!-- ko ifnot: isNeedShow -->
+<li style="display: none" class="mp-osc-custom-step-content" data-bind="attr: { id: stepCode }">
+    <div class="step-title" data-role="title">
+        <!--        ko if : iconType == '2' -->
+        <i data-bind="attr: { class: iconClass }"></i>
+        <!--        /ko-->
+        <!--        ko if : iconType == '1' -->
+        <img class="mp-osc-custom-step" data-bind="attr: { src: iconImg }"/>
+        <!--        /ko-->
+        <span data-bind="i18n: stepTitle"></span>
+    </div>
+    <div class="mp-step-content step-content" data-role="content">
+        <!-- ko foreach: { data: elems, as: 'element' } -->
+        <!-- ko template: element.getTemplate() --><!-- /ko -->
+        <!-- /ko -->
+    </div>
+</li>
+<!-- /ko -->
+
+<!-- ko if: isNeedShow -->
+<li class="mp-osc-custom-step-content" data-bind="attr: { id: stepCode }">
+    <div class="step-title" data-role="title">
+        <!--        ko if : iconType == '2' -->
+        <i data-bind="attr: { class: iconClass }"></i>
+        <!--        /ko-->
+        <!--        ko if : iconType == '1' -->
+        <img class="mp-osc-custom-step" data-bind="attr: { src: iconImg }"/>
+        <!--        /ko-->
+        <span data-bind="i18n: stepTitle"></span>
+    </div>
+    <div class="mp-step-content step-content" data-role="content">
+        <!-- ko foreach: { data: elems, as: 'element' } -->
+        <!-- ko template: element.getTemplate() --><!-- /ko -->
+        <!-- /ko -->
+    </div>
+</li>
+<!-- /ko -->

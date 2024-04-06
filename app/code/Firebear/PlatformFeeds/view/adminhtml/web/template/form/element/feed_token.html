@@ -1,0 +1,17 @@
+<div class="admin__field" data-bind="css: $data.additionalClasses, attr: {'data-index': index}, visible: visible">
+    <div class="admin__field-control">
+        <input class="admin__control-text" data-bind="
+            hasFocus: focused,
+            value: value,
+            attr: {
+                name: inputName,
+                placeholder: placeholder,
+                'aria-describedby': getDescriptionId(),
+                'aria-required': required,
+                'aria-invalid': error() ? true : 'false',
+                id: uid,
+                disabled: disabled,
+                maxlength: 1255
+            }"/>
+    </div>
+</div>

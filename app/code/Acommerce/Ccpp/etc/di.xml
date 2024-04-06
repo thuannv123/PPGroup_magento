@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Acommerce\Ccpp\Api\GuestPaymentInformationManagementProxyInterface"
+                type="Acommerce\Ccpp\Model\GuestPaymentInformationManagementProxy" />
+    <type name="Magento\Framework\Url\SecurityInfo">
+        <arguments>
+            <argument name="secureUrlList" xsi:type="array">
+                <item name="ccpp" xsi:type="string">/ccpp/</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Acommerce\Ccpp\Gateway\Request\HtmlRedirect\OrderDataBuilder">
+        <arguments>
+            <argument name="config" xsi:type="object">CcppConfig</argument>
+        </arguments>
+    </type>
+    <type name="Acommerce\Ccpp\Gateway\Command\Form\BuildCommand">
+        <arguments>
+            <argument name="logger" xsi:type="object">CcppLogger</argument>
+        </arguments>
+    </type>
+    <type name="Acommerce\Ccpp\Gateway\Command\ResponseCommand">
+        <arguments>
+            <argument name="commandPool" xsi:type="object">CcppCommandPool</argument>
+            <argument name="validator" xsi:type="object">CcppValidator</argument>
+            <argument name="logger" xsi:type="object">CcppLogger</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="CcppFacade" type="Magento\Payment\Model\Method\Adapter">
+        <arguments>
+            <argument name="code" xsi:type="string">ccpp</argument>
+            <argument name="formBlockType" xsi:type="string">Magento\Payment\Block\Transparent\Info</argument>
+            <argument name="infoBlockType" xsi:type="string">Acommerce\Ccpp\Block\Info</argument>
+            <argument name="valueHandlerPool" xsi:type="object">CcppValueHandlerPool</argument>
+            <argument  name="validatorPool" xsi:type="object">CcppValidatorPool</argument>
+            <argument name="commandPool" xsi:type="object">CcppCommandPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="CcppCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="initialize" xsi:type="string">Acommerce\Ccpp\Gateway\Command\InitializeCommand</item>
+                <item name="accept_command" xsi:type="string">Acommerce\Ccpp\Gateway\Command\Response\AcceptCommand</item>
+                <item name="cancel_command" xsi:type="string">Acommerce\Ccpp\Gateway\Command\Response\CancelCommand</item>
+                <item name="capture" xsi:type="string">Acommerce\Ccpp\Gateway\Command\CaptureCommand</item>
+                <item name="refund" xsi:type="string">CcppRefundCommand</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="CcppConfig" type="Magento\Payment\Gateway\Config\Config">
+        <arguments>
+            <argument name="methodCode" xsi:type="string">ccpp</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="CcppDefaultValueHandler" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
+        <arguments>
+            <argument name="configInterface" xsi:type="object">CcppConfig</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="CcppValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="default" xsi:type="string">CcppDefaultValueHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="CcppCountryValidator" type="Magento\Payment\Gateway\Validator\CountryValidator">
+        <arguments>
+            <argument name="config" xsi:type="object">CcppConfig</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="CcppValidatorPool" type="Magento\Payment\Gateway\Validator\ValidatorPool">
+        <arguments>
+            <argument name="validators" xsi:type="array">
+                <item name="country" xsi:type="string">CcppCountryValidator</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Acommerce\Ccpp\Controller\HtmlRedirect\Response">
+        <arguments>
+            <argument name="command" xsi:type="object">Acommerce\Ccpp\Gateway\Command\ResponseCommand</argument>
+        </arguments>
+    </type>
+    <virtualType name="CcppValidator" type="Magento\Payment\Gateway\Validator\ValidatorComposite">
+        <arguments>
+            <argument name="validators" xsi:type="array">
+                <item name="response" xsi:type="string">Acommerce\Ccpp\Gateway\Validator\ResponseValidator</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Acommerce\Ccpp\Gateway\Validator\ResponseValidator">
+        <arguments>
+            <argument name="config" xsi:type="object">CcppConfig</argument>
+        </arguments>
+    </type>
+    <type name="Acommerce\Ccpp\Gateway\Validator\AcceptValidator">
+        <arguments>
+            <argument name="config" xsi:type="object">CcppConfig</argument>
+        </arguments>
+    </type>
+    <virtualType name="CcppLogger" type="Magento\Payment\Model\Method\Logger">
+        <arguments>
+            <argument name="config" xsi:type="object">CcppConfig</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Acommerce\Ccpp\Gateway\Command\CaptureCommand">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">Acommerce\Ccpp\Gateway\Request\RemoteAdmin\CaptureDataBuilder</argument>
+            <argument name="transferFactory" xsi:type="object">Acommerce\Ccpp\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">CcppHttpClient</argument>
+            <argument name="validator" xsi:type="object">Acommerce\Ccpp\Gateway\Validator\RemoteAdminValidator</argument>
+        </arguments>
+    </type>
+    <virtualType name="CcppRefundCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">Acommerce\Ccpp\Gateway\Request\RemoteAdmin\RefundDataBuilder</argument>
+            <argument name="transferFactory" xsi:type="object">Acommerce\Ccpp\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">CcppHttpClient</argument>
+            <argument name="validator" xsi:type="object">Acommerce\Ccpp\Gateway\Validator\RemoteAdminValidator</argument>
+        </arguments>
+    </virtualType>
+    <type name="Acommerce\Ccpp\Gateway\Request\RemoteAdmin\RefundDataBuilder">
+        <arguments>
+            <argument name="config" xsi:type="object">CcppConfig</argument>
+        </arguments>
+    </type>
+    <type name="Acommerce\Ccpp\Gateway\Request\RemoteAdmin\CaptureDataBuilder">
+        <arguments>
+            <argument name="config" xsi:type="object">CcppConfig</argument>
+        </arguments>
+    </type>
+    <type name="Acommerce\Ccpp\Gateway\Http\TransferFactory">
+        <arguments>
+            <argument name="config" xsi:type="object">CcppConfig</argument>
+        </arguments>
+    </type>
+    <virtualType name="CcppHttpClient" type="Magento\Payment\Gateway\Http\Client\Zend">
+        <arguments>
+            <argument name="logger" xsi:type="object">CcppLogger</argument>
+            <argument name="converter" xsi:type="object">Acommerce\Ccpp\Gateway\Http\Converter\StringToMap</argument>
+        </arguments>
+    </virtualType>
+    <type name="Acommerce\Ccpp\Gateway\Command\Response\AcceptCommand">
+        <arguments>
+            <argument name="validator" xsi:type="object">Acommerce\Ccpp\Gateway\Validator\AcceptValidator</argument>
+            <argument name="handler" xsi:type="object">CcppAcceptHandler</argument>
+        </arguments>
+    </type>
+    <virtualType name="CcppAcceptHandler" type="Magento\Payment\Gateway\Response\HandlerChain">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="avs" xsi:type="string">Acommerce\Ccpp\Gateway\Response\AvsHandler</item>
+                <item name="cvv" xsi:type="string">Acommerce\Ccpp\Gateway\Response\CvvHandler</item>
+                <item name="waf" xsi:type="string">Acommerce\Ccpp\Gateway\Response\PaymentDetailsHandler</item>
+                <item name="details" xsi:type="string">Acommerce\Ccpp\Gateway\Response\WafMessageHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Acommerce\Ccpp\Gateway\Response\AvsHandler">
+        <arguments>
+            <argument name="config" xsi:type="object">CcppConfig</argument>
+        </arguments>
+    </type>
+    <type name="Acommerce\Ccpp\Gateway\Response\CvvHandler">
+        <arguments>
+            <argument name="config" xsi:type="object">CcppConfig</argument>
+        </arguments>
+    </type>
+    <type name="Acommerce\Ccpp\Block\Info">
+        <arguments>
+            <argument name="config" xsi:type="object">CcppConfig</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\App\Request\CsrfValidator">
+        <plugin name="Acommerce_Ccpp::CsrfValidatorPlugin" type="Acommerce\Ccpp\Plugin\CsrfValidatorPlugin" />
+    </type>
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="ccpp_callbyorderid" xsi:type="object">Acommerce\Ccpp\Console\Command\CallByOrderId</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Magento\ConfigurableProduct\Pricing\Render\FinalPriceBox" type="PPGroup\ConfigurableProduct\Pricing\Render\FinalPriceBox" />
+    <preference for="Magento\Catalog\Pricing\Render\FinalPriceBox" type="PPGroup\Catalog\Pricing\Render\FinalPriceBox" />
+
+    <preference for="Magento\ConfigurableProduct\Model\ResourceModel\Product\Indexer\Price\Configurable"
+                type="PPGroup\ConfigurableProduct\Model\ResourceModel\Product\Indexer\Price\Configurable" />
+
+    <preference for="Magento\ConfigurableProduct\Model\ResourceModel\Product\StockStatusBaseSelectProcessor"
+                type="PPGroup\ConfigurableProduct\Model\ResourceModel\Product\StockStatusBaseSelectProcessor" />
+
+    <type name="Magento\ConfigurableProduct\Helper\Data">
+        <plugin name="PPGroup_ConfigurableProduct::ConfigurableProductHelperDataPlugin" type="PPGroup\ConfigurableProduct\Plugin\ConfigurableProductHelperDataPlugin" />
+    </type>
+
+    <type name="Magento\ConfigurableProduct\Block\Product\View\Type\Configurable">
+        <plugin name="PPGroup_ConfigurableProduct::ConfigurableProductViewBlockPlugin" type="PPGroup\ConfigurableProduct\Plugin\ConfigurableProductViewBlockPlugin" />
+    </type>
+   
+    <preference for="Magento\ConfigurableProduct\Model\OptionRepository" type="PPGroup\ConfigurableProduct\Model\OptionRepositoryOverride" />
+    <preference for="Magento\ConfigurableProduct\Model\ResourceModel\Product\Type\Configurable" type="PPGroup\ConfigurableProduct\Model\ResourceModel\Product\Type\ConfigurableOverride" />
+    <preference for="Magento\CatalogStaging\Model\ProductStaging" type="PPGroup\ConfigurableProduct\Model\ProductStagingOverride" />
+    <preference for="Magento\CatalogStaging\Model\ResourceModel\AttributeCopier" type="PPGroup\ConfigurableProduct\Model\ResourceModel\AttributeCopierOverride" />
+</config>

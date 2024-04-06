@@ -1,0 +1,16 @@
+{
+    "name": "ppgroup/module-shipping",
+    "description": "One shipping method of PPGroup ",
+    "type": "magento2-module",
+    "license": "OSL-3.0",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "PPGroup\\Shipping\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

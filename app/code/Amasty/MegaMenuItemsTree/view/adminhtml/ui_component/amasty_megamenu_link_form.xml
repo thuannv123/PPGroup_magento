@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) Amasty (https://www.amasty.com)
+ * @package Mega Menu Items Tree(System)
+ */-->
+
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="general">
+        <field name="parent_id" formElement="select" component="Magento_Ui/js/form/element/ui-select" sortOrder="100">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="scopeLabel" xsi:type="string" translate="true">[Global]</item>
+                    <item name="disableLabel" xsi:type="boolean">true</item>
+                    <item name="multiple" xsi:type="boolean">false</item>
+                    <item name="levelsVisibility" xsi:type="number">1</item>
+                    <item name="value" xsi:type="string">0</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Menu Position</label>
+                <componentType>field</componentType>
+                <dataScope>parent_id</dataScope>
+                <elementTmpl>ui/grid/filters/elements/ui-select</elementTmpl>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Amasty\MegaMenuItemsTree\Ui\Component\Form\Link\ItemsTree"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+        <field name="sort_order" sortOrder="110" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="default" xsi:type="number">0</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Sort Order</label>
+                <dataType>text</dataType>
+                <validation>
+                    <rule name="validate-number" xsi:type="boolean">true</rule>
+                    <rule name="greater-than-equals-to" xsi:type="number">0</rule>
+                </validation>
+            </settings>
+        </field>
+    </fieldset>
+
+    <fieldset name="am_mega_menu_fieldset">
+        <field name="submenu_type" component="Amasty_MegaMenu/js/form/fields/submenu-type" sortOrder="80" formElement="select">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="default" xsi:type="number">0</item>
+                    <item name="switcherConfig" xsi:type="array">
+                        <item name="rules" xsi:type="array">
+                            <item name="0" xsi:type="array">
+                                <item name="value" xsi:type="string">0</item>
+                                <item name="actions" xsi:type="array">
+                                    <item name="0" xsi:type="array">
+                                        <item name="target" xsi:type="string">amasty_megamenu_link_form.amasty_megamenu_link_form.general.content</item>
+                                        <item name="callback" xsi:type="string">showNotice</item>
+                                    </item>
+                                </item>
+                            </item>
+                            <item name="1" xsi:type="array">
+                                <item name="value" xsi:type="string">1</item>
+                                <item name="actions" xsi:type="array">
+                                    <item name="0" xsi:type="array">
+                                        <item name="target" xsi:type="string">amasty_megamenu_link_form.amasty_megamenu_link_form.general.content</item>
+                                        <item name="callback" xsi:type="string">hideNotice</item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Submenu Template</label>
+                <dataType>text</dataType>
+                <visible>false</visible>
+                <elementTmpl>Amasty_MegaMenuLite/form/element/select</elementTmpl>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Amasty\MegaMenu\Model\OptionSource\SubmenuType"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+
+        <field name="column_count" component="Amasty_MegaMenu/js/form/fields/column-count" sortOrder="90" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="default" xsi:type="number">4</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Number of Columns</label>
+                <notice translate="true">If the value is 0, the number of columns equals to the number of child categories. The maximum is 10.</notice>
+                <dataType>number</dataType>
+                <visible>false</visible>
+                <validation>
+                    <rule name="validate-number" xsi:type="boolean">true</rule>
+                    <rule name="greater-than-equals-to" xsi:type="number">0</rule>
+                    <rule name="less-than-equals-to" xsi:type="number">10</rule>
+                </validation>
+            </settings>
+        </field>
+
+        <field name="subcategories_position" component="Amasty_MegaMenuItemsTree/js/form/fields/subcategories-position" formElement="select" sortOrder="90">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="default" xsi:type="number">0</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Subcategories Template</label>
+                <elementTmpl>Amasty_MegaMenuLite/form/element/select</elementTmpl>
+                <dataType>string</dataType>
+                <visible>false</visible>
+                <validation>
+                    <rule name="validate-number" xsi:type="boolean">true</rule>
+                    <rule name="greater-than-equals-to" xsi:type="number">0</rule>
+                    <rule name="less-than-equals-to" xsi:type="number">10</rule>
+                </validation>
+            </settings>
+        </field>
+    </fieldset>
+
+    <fieldset name="am_mega_menu_mobile_fieldset">
+        <settings>
+            <visible>true</visible>
+        </settings>
+        <field name="show_mobile_content" sortOrder="15" formElement="select">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="default" xsi:type="number">0</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Display Content</label>
+                <elementTmpl>Amasty_MegaMenuLite/form/element/select</elementTmpl>
+                <dataType>string</dataType>
+                <visible>false</visible>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Amasty\MegaMenuItemsTree\Model\OptionSource\ShowContent"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+    </fieldset>
+</form>

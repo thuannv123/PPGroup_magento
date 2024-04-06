@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright: Copyright © 2020 Firebear Studio. All rights reserved.
+ * @author   : Firebear Studio <fbeardev@gmail.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Firebear_PlatformFeeds::mapping_index"
+             title="Feed Category Mapping"
+             module="Firebear_PlatformFeeds"
+             sortOrder="30"
+             parent="Firebear_ImportExport::import_export"
+             action="firebear_feeds/mapping"
+             resource="Firebear_PlatformFeeds::listing"/>
+    </menu>
+</config>

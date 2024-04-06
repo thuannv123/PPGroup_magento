@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) Amasty (https://www.amasty.com)
+ * @package Mega Menu Items Tree(System)
+ */-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Amasty\MegaMenuLite\Model\Backend\DataProvider\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="sort_order" xsi:type="array">
+                    <item name="object"
+                          xsi:type="object">Amasty\MegaMenuItemsTree\Ui\DataProvider\Form\Link\Modifier\SortOrder</item>
+                    <item name="sortOrder" xsi:type="number">50</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Amasty\MegaMenuLite\Ui\DataProvider\Form\Link\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="hide_items" xsi:type="array">
+                    <item name="class" xsi:type="string">Amasty\MegaMenuItemsTree\Ui\DataProvider\Form\Link\Modifier\HideItems</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                </item>
+                <item name="check_category_level" xsi:type="array">
+                    <item name="class" xsi:type="string">Amasty\MegaMenuItemsTree\Ui\DataProvider\Form\Link\Modifier\Level</item>
+                    <item name="sortOrder" xsi:type="number">40</item>
+                </item>
+                <item name="page_builder_data" xsi:type="array">
+                    <item name="class" xsi:type="string">Amasty\MegaMenuItemsTree\Ui\DataProvider\Form\Link\Modifier\PageBuilder</item>
+                    <item name="sortOrder" xsi:type="number">50</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Amasty\MegaMenuItemsTree\Ui\DataProvider\Form\Link\Modifier\Level">
+        <arguments>
+            <argument name="fieldsByStore"
+                      xsi:type="object">Amasty\MegaMenuLite\Model\Provider\UiFieldsByStore</argument>
+        </arguments>
+    </type>
+</config>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Shopby
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Api\GuestPaymentInformationManagementInterface">
+        <plugin name="gdp_guestlogconsent" type="Amastyfixed\GDPR\Plugin\Checkout\GuestPaymentInformationPlugin"/>
+    </type>
+
+    <type name="Amasty\Gdpr\Model\ConsentLogger">
+        <plugin name="amastyfixed_consent_log" type="Amastyfixed\GDPR\Plugin\Model\ConsentLogger"/>
+    </type>
+    <type name="Amasty\Gdpr\Observer\AcceptConsents">
+        <plugin name="amastyfixed_accept_consent" type="Amastyfixed\GDPR\Plugin\Observer\AcceptConsents"/>
+    </type>
+    <type name="Amasty\Gdpr\Observer\Customer\ConfirmedCustomerActions">
+        <plugin name="amastyfixed_confirm_customer_action" type="Amastyfixed\GDPR\Plugin\Observer\Customer\ConfirmedCustomerActions"/>
+    </type>
+
+    <preference for="Magento\Newsletter\Controller\Adminhtml\Subscriber\MassUnsubscribe" type="Amastyfixed\GDPR\Controller\Adminhtml\Subscriber\MassUnsubscribe" />
+    
+	<type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="migrate_user_consent_log" xsi:type="object">Amastyfixed\GDPR\Console\Command\MigrateUserConsentLog</item>
+				<item name="migrate_newletter_consent_log" xsi:type="object">Amastyfixed\GDPR\Console\Command\MigrateNewletterConsentLog</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

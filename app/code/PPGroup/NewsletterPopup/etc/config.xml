@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <ppgroup_newsletterpopup>
+            <settings>
+                <enabled>1</enabled>
+                <popup_delay>3</popup_delay>
+                <popup_title><![CDATA[JOIN<span>THE FAMLIY</span>]]></popup_title>
+                <popup_text><![CDATA[<h3>Subscribe to the newsletter</h3>]]></popup_text>
+            </settings>
+        </ppgroup_newsletterpopup>
+    </default>
+</config>

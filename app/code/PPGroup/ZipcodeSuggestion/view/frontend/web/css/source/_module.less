@@ -1,0 +1,111 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .field {
+        display: block;
+
+        &.zip {
+            .control {
+                .lib-vendor-prefix-display(flex);
+                .lib-vendor-prefix-flex-direction(column);
+
+                .input-text {
+                    order: 1;
+                }
+
+                div.mage-error {
+                    order: 3;
+                }
+
+                .suggestion_wrapper {
+                    order: 2;
+                    .lib-vendor-prefix-display(flex);
+                    .lib-vendor-prefix-flex-direction(column);
+
+                    .suggestion_list {
+                        order: 1;
+                    }
+
+                    .fixbug_auto_fill_address {
+                        order: 2;
+                    }
+                }
+            }
+        }
+    }
+
+    .suggestion_wrapper {
+        .suggestion_list {
+            padding: 0;
+            border: 1px solid #c2c2c2;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.19);
+            font-family: @font-family__base;
+            font-size: @font-size__base;
+            line-height: @line-height__base;
+            color: @color-black;
+            max-height: 150px;
+            overflow-y: scroll;
+            margin-bottom: 10px;
+
+            .suggestion_list_item {
+                list-style: none;
+                padding: 5px 9px;
+                margin-bottom: 0;
+
+                &:hover {
+                    cursor: pointer;
+                    background: #ddd;
+                }
+            }
+        }
+
+        .suggestion_not_available {
+            .lib-form-validation-note();
+            order: 3;
+        }
+
+        .fixbug_auto_fill_address {
+            color: #6f4400;
+            margin-top: 5px;
+        }
+    }
+
+    div.mage-error[generated],
+    .suggestion_not_available {
+        margin-top: 5px;
+    }
+
+    //} Comment style warning zip code
+
+    .block-dashboard-orders {
+        .block-title.order {
+            margin-bottom: 25px;
+        }
+    }
+}
+
+
+// Mobile
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .suggestion_wrapper {
+        .suggestion_list {
+            max-height: 165px;
+        }
+    }
+
+    .modal-popup {
+        .suggestion_wrapper {
+            .suggestion_list {
+                max-height: 155px;
+            }
+        }
+    }
+
+}

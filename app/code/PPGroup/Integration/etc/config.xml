@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <integration>
+            <general>
+                <sftp_pass backend_model="Magento\Config\Model\Config\Backend\Encrypted"/>
+            </general>
+            <sale_order_export>
+                <sale_order_export_cron>0 */12 * * *</sale_order_export_cron>
+                <sale_order_export_file_path>/incoming/PPGroup/SaleOrderExport/</sale_order_export_file_path>
+            </sale_order_export>
+            <inventory_sync>
+                <inventory_sync_cron>0 2 * * *</inventory_sync_cron>
+                <inventory_sync_file_path>/incoming/PPGroup/Inventory/</inventory_sync_file_path>
+            </inventory_sync>
+        </integration>
+    </default>
+</config>

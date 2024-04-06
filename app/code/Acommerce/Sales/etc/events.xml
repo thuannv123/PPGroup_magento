@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_order_invoice_pay">
+        <observer name="update_invoiced_state" instance="Acommerce\Sales\Observer\UpdateInvoicedState"/>
+    </event>
+    <event name="sales_order_shipment_save_before">
+        <observer name="update_shipped_state" instance="Acommerce\Sales\Observer\UpdateShippedState"/>
+    </event>
+</config>

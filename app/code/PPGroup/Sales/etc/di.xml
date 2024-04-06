@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\CustomerData\AbstractItem">
+        <plugin name="PPGroup_Checkout::DefaultItemPlugin" type="PPGroup\Checkout\Plugin\DefaultItemPlugin"/>
+    </type>
+    <type name="Magento\Checkout\Model\DefaultConfigProvider">
+        <plugin name="PPGroup_Checkout::DefaultConfigProviderPlugin" type="PPGroup\Checkout\Plugin\DefaultConfigProviderPlugin" />
+    </type>
+    <type name="Magento\CustomerCustomAttributes\Block\Checkout\LayoutProcessor">
+        <plugin name="PPGroup_Checkout::CustomerCustomAttributesLayoutProcessorPlugin" type="PPGroup\Checkout\Plugin\CustomerCustomAttributesLayoutProcessorPlugin" />
+    </type>
+    <preference for="Magento\Sales\Model\Order\Email\Sender\ShipmentSender" type="PPGroup\Sales\Model\Order\Email\Sender\ShipmentSender"/>
+
+    <preference for="Magento\CatalogRule\Observer\ProcessFrontFinalPriceObserver" type="PPGroup\CatalogRule\Observer\ProcessFrontFinalPriceObserver" />
+
+    <preference for="Magento\Sales\Block\Adminhtml\Order\View\Tab\Transactions" type="PPGroup\Sales\Block\Adminhtml\Order\View\Tab\Transactions" />
+
+    <!-- <type name="Magento\Sales\Model\Order\Item">
+        <plugin name="PPGroup_Sales::cancelQuantity" type="PPGroup\Sales\Plugin\Model\Order\Item" />
+    </type>
+    <type name="Magento\Sales\Model\Order">
+        <plugin name="PPGroup_Sales::AfterCancelQuantity" type="PPGroup\Sales\Plugin\Model\Order\AfterItem" />
+    </type> -->
+    <type name="Magento\Sales\Api\OrderManagementInterface">
+        <plugin name="ppgroup_ordercancel_ordermanagement" type="PPGroup\Sales\Plugin\OrderManagementPlugin" />
+    </type>
+</config>

@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="integration" translate="label" sortOrder="10">
+            <label>Integration</label>
+        </tab>
+        <section id="integration" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Integration</label>
+            <tab>integration</tab>
+            <resource>PPGroup_Integration::integration_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>SFTP Configuration</label>
+                <field id="sftp_host" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Host</label>
+                </field>
+                <field id="sftp_username" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>User Name</label>
+                </field>
+                <field id="sftp_pass" translate="label" type="obscure" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Password</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+            </group>
+            <group id="inventory_sync" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Inventory Sync Configuration</label>
+                <field id="inventory_sync_cron" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Cron Setting</label>
+                </field>
+                <field id="inventory_sync_file_path" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Inventory File Path</label>
+                </field>
+                <field id="stock_reserve_condition" translate="label" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Define Reserved Stock Condition</label>
+                    <frontend_model>PPGroup\Integration\Block\Adminhtml\System\Config\Form\Field\ExportStatus</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <comment>Please note [Reserved Stock Condition] is also including Sales Order Export Status [Is Exported]=No</comment>
+                </field>
+            </group>
+            <group id="sale_order_export" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Sales Order Configuration</label>
+                <field id="sale_order_export_cron" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Cron Setting</label>
+                </field>
+                <field id="sale_order_export_file_path" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>SO Export File Path</label>
+                </field>
+                <field id="sale_order_export_condition" translate="label" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Define Sale Order Export Condition</label>
+                    <frontend_model>PPGroup\Integration\Block\Adminhtml\System\Config\Form\Field\ExportStatus</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <comment>This config to export all Sale orders that match with payment method and order status in configuration </comment>
+                </field>
+            </group>
+            <group id="sale_order_status" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Sales Order Status Sync Configuration</label>
+                <field id="sale_order_status_sync_cron" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Cron Setting</label>
+                </field>
+                <field id="sales_order_status_sync_file_path" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Sale Order Status File Path</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

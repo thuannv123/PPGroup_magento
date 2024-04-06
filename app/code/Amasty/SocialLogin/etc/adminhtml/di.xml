@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+* @author Amasty Team
+* @copyright Copyright (c) 2022 Amasty (https://www.amasty.com)
+* @package Social Login Base for Magento 2
+*/-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <plugin name="Amasty_SocialLogin::injectCollection" type="Amasty\SocialLogin\Plugin\UiSearchResult"/>
+    </type>
+
+    <type name="Magento\Customer\Ui\Component\DataProvider">
+        <plugin name="Amasty_SocialLogin::add_login_type_filter"
+                type="Amasty\SocialLogin\Plugin\Customer\Ui\Component\DataProviderPlugin"/>
+    </type>
+
+    <!-- Add Fields to Order Grid -->
+    <type name="Magento\Sales\Model\ResourceModel\Order\Grid\Collection">
+        <plugin name="Amasty_SocialLogin::GridSearchResult"
+                type="\Amasty\SocialLogin\Plugin\Sales\ResourceModel\ManageGridFields"/>
+    </type>
+    <!-- Add Fields to Shipment Grid -->
+    <type name="Magento\Sales\Model\ResourceModel\Order\Shipment\Grid\Collection">
+        <plugin name="Amasty_SocialLogin::GridSearchResult"
+                type="\Amasty\SocialLogin\Plugin\Sales\ResourceModel\ManageGridFields"/>
+    </type>
+</config>

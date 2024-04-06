@@ -1,0 +1,5 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <!-- <event name="controller_action_catalog_product_save_entity_after">
+        <observer name="reindex_product_price_after_save" instance="PPGroup\Catalog\Observer\ProductSaveAfterObserver"/>
+    </event> -->
+</config>

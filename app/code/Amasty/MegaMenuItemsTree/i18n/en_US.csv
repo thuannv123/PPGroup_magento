@@ -1,0 +1,12 @@
+"Before Subcategories","Before Subcategories"
+"After Subcategories","After Subcategories"
+"Main Menu","Main Menu"
+"You can use the variable: {{child_items_content}} for showing child items.","You can use the variable: {{child_items_content}} for showing child items."
+[Global],[Global]
+"Menu Position","Menu Position"
+"Sort Order","Sort Order"
+"Submenu Template","Submenu Template"
+"Number of Columns","Number of Columns"
+"If the value is 0, the number of columns equals to the number of child categories. The maximum is 10.","If the value is 0, the number of columns equals to the number of child categories. The maximum is 10."
+"Subcategories Template","Subcategories Template"
+"Display Content","Display Content"

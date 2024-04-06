@@ -1,0 +1,21 @@
+{
+    "name": "amasty/ajax-scroll",
+    "description": "AJAX Scroll by Amasty",
+    "require": {
+        "php": ">=7.3",
+        "amasty/base": ">=1.14.7"
+    },
+    "type": "magento2-module",
+    "version": "1.5.1",
+    "license": [
+        "proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Amasty\\Scroll\\": ""
+        }
+    }
+}

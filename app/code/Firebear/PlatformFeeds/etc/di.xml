@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright: Copyright © 2017 Firebear Studio. All rights reserved.
+ * @author   : Firebear Studio <fbeardev@gmail.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Firebear\ImportExport\Controller\Adminhtml\Export\Job\Run">
+        <plugin name="Firebear_PlatformFeeds_Plugin_Controller_Adminhtml_Export_Job_Run"
+                type="Firebear\PlatformFeeds\Plugin\Controller\Adminhtml\Export\Job\Run"/>
+    </type>
+
+    <type name="Firebear\ImportExport\Controller\Adminhtml\Export\Job\Save">
+        <plugin name="Firebear_PlatformFeeds_Plugin_Controller_Adminhtml_Export_Job_Save"
+                type="Firebear\PlatformFeeds\Plugin\Controller\Adminhtml\Export\Job\Save"/>
+    </type>
+
+    <type name="Firebear\ImportExport\Model\ExportJob\Processor">
+        <plugin name="Firebear_PlatformFeeds_Plugin_Model_ExportJob_Processor"
+                type="Firebear\PlatformFeeds\Plugin\Model\ExportJob\Processor"/>
+    </type>
+
+    <type name="Firebear\ImportExport\Model\Export\Product">
+        <plugin name="Firebear_PlatformFeeds_Plugin_Model_Export_Product"
+                type="Firebear\PlatformFeeds\Plugin\Model\Export\Product"/>
+    </type>
+
+    <virtualType name="MappingGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Firebear\PlatformFeeds\Model\ResourceModel\Mapping\Collection</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="mapping_listing_data_source"
+                      xsi:type="string">Firebear\PlatformFeeds\Model\ResourceModel\Mapping\Grid\Collection</item>
+            </argument>
+            <argument name="collections" xsi:type="array">
+                <item name="mapping_form_data_source"
+                      xsi:type="string">Firebear\PlatformFeeds\Model\ResourceModel\Mapping\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <preference for="Firebear\PlatformFeeds\Api\MappingRepositoryInterface"
+                type="Firebear\PlatformFeeds\Model\MappingRepository"/>
+</config>

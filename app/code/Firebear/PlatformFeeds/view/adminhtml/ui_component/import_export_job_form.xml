@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @copyright: Copyright © 2019 Firebear Studio. All rights reserved.
+ * @author   : Firebear Studio <fbeardev@gmail.com>
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="behavior">
+        <field name="behavior_field_feed_template">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Feed Template</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="component" xsi:type="string">Firebear_PlatformFeeds/js/form/export-feed-template</item>
+                    <item name="elementTmpl" xsi:type="string">Firebear_PlatformFeeds/form/element/feed_template</item>
+                    <item name="source" xsi:type="string">export</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                    <item name="dataScope" xsi:type="string">behavior_field_feed_template</item>
+                    <item name="getAttributesAjaxUrl" xsi:type="url" path="firebear_feeds/ajax/attributes"/>
+                    <item name="imports" xsi:type="array">
+                        <item name="toggleVisibility" xsi:type="string">${$.parentName}.behavior_field_file_format:value</item>
+                    </item>
+                    <item name="valuesForOptions" xsi:type="array">
+                        <item name="feeds_product" xsi:type="string">feeds_product</item>
+                    </item>
+                    <item name="notice" xsi:type="string">
+                        To generate Feed you need to prepare template.
+                        You can do this with existing templates which we've prepared for you or can create your own.
+                    </item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="behavior_field_file_format">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Firebear\ImportExport\Ui\Component\Listing\Column\FileFormat\Options</item>
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Firebear_PlatformFeeds/js/form/file-format</item>
+                    <item name="elementTmpl" xsi:type="string">Firebear_PlatformFeeds/form/element/file_format</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">File Format</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">export</item>
+                    <item name="sortOrder" xsi:type="number">5</item>
+                    <item name="dataScope" xsi:type="string">behavior_field_file_format</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+
+    <fieldset name="source_category_map_feed_container" class="Firebear\ImportExport\Ui\Component\Form\ExportFieldset">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="component" xsi:type="string">Firebear_ImportExport/js/components/visible-on-options/fieldset</item>
+                <item name="label" xsi:type="string" translate="true">Feed Category Mapping</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="sortOrder" xsi:type="number">40</item>
+                <item name="visible" xsi:type="boolean">false</item>
+                <item name="imports" xsi:type="array">
+                    <item name="toggleVisibility" xsi:type="string">${$.ns}.${$.ns}.behavior.behavior_field_file_format:value</item>
+                </item>
+                <item name="valuesForOptions" xsi:type="array">
+                    <item name="feeds_product" xsi:type="string">feeds_product</item>
+                </item>
+            </item>
+        </argument>
+        <field name="source_category_feed_mapping_list" class="Firebear\ImportExport\Ui\Component\Form\System\Field">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Firebear\PlatformFeeds\Ui\Component\Listing\Column\Feeds\Mapping\FeedCategoryMapping</item>
+                <item name="source_options" xsi:type="object">Firebear\PlatformFeeds\Ui\Component\Listing\Column\Feeds\Mapping\FeedCategoryMapping</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="dataScope" xsi:type="string">source_category_feed_mapping_list</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="imports" xsi:type="array">
+                        <item name="changeSource" xsi:type="string" translate="true">${$.parentName}.source_category_feed_mapping_list:value</item>
+                    </item>
+                    <item name="validation" xsi:type="array">
+<!--                        <item name="required-entry" xsi:type="boolean">true</item>-->
+                    </item>
+                    <item name="prefixName" xsi:type="string">source_category_feed_mapping_list.value</item>
+                    <item name="label" xsi:type="string" translate="true">Select Mapping</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+
+    <modal name="run_export">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="component" xsi:type="string">Firebear_PlatformFeeds/js/modal/modal-excomponent</item>
+                <item name="options" xsi:type="array">
+                    <item name="buttons" xsi:type="array">
+                        <item name="1" xsi:type="array">
+                            <item name="text" xsi:type="string">Preview</item>
+                            <item name="class" xsi:type="string">action-primary run preview-btn</item>
+                            <item name="actions" xsi:type="array">
+                                <item name="0" xsi:type="array">
+                                    <item name="targetName" xsi:type="string">${ $.name }</item>
+                                    <item name="actionName" xsi:type="string">actionPreview</item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </item>
+            </item>
+        </argument>
+    </modal>
+</form>
