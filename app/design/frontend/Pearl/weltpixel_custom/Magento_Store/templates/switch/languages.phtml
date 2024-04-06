@@ -1,0 +1,35 @@
+<?php
+/**
+ * Language switcher template
+ * @var Magento\Store\Block\Switcher $block
+ * @var Magento\Store\Model\Store $_lang
+ */
+?>
+<?php if (count($block->getStores()) > 1): ?>
+    <?php $id = $block->getIdModifier() ? '-' . $block->getIdModifier() : '' ?>
+    <div class="switcher language switcher-options">
+            <span class="view-<?= $block->escapeHtml($block->getCurrentStoreCode()) ?> switcher-option current">
+                <a href="javascript:void(0);">
+                    <?= $block->escapeHtml($block->getStoreName()) ?>
+                </a>
+            </span>
+        <?php foreach ($block->getStores() as $_lang) : ?>
+            <?php if ($_lang->getId() != $block->getCurrentStoreId()) : ?>
+                <span class="view-<?php echo $block->escapeHtml($_lang->getCode()); ?> switcher-option">
+                    <a href="<?= $block->escapeUrl($block->getViewModel()->getTargetStoreRedirectUrl($_lang)) ?>">
+                            <?= $block->escapeHtml($_lang->getName()) ?>
+                    </a>
+                </span>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </div>
+<?php else: ?>
+    <div class="switcher language switcher-language">
+        <?php foreach ($block->getStores() as $_lang): ?>
+            <span class="view-<?php echo $block->escapeHtml($_lang->getCode()); ?> switcher-option">
+            <?php if ($_lang->getId() == $block->getCurrentStoreId()) echo $block->escapeHtml($_lang->getName()) ?>    
+        </span>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
+

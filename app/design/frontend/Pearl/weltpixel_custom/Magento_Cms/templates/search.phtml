@@ -1,0 +1,31 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var $helper \Magento\Search\Helper\Data */
+$helper = $this->helper('Magento\Search\Helper\Data');
+?>
+<div class="block block-search-noroute" id="noroute-search-block">
+    <div class="heading-container">
+        <h1 class="noroute-heading">404</h1>
+        <h4 class="noroute-subheading"><?= /* @escapeNotVerified */ __('THE PAGE CANNOT BE FOUND.') ?></h4>
+        <span><?= /* @escapeNotVerified */ __('This may be because of a mistyped URL, faulty referral or out-of-date search engine listing.') ?><br>
+            <?= /* @escapeNotVerified */ __('You might want to check that URL again, or maybe do a search?') ?>
+        </span>
+    </div>
+
+    <div class="search-container">
+        <form class="search-form" role="search" id="search_noroute_form" action="<?= /* @escapeNotVerified */ $helper->getResultUrl() ?>" method="get">
+            <span class="search-icon"></span>
+            <input type="text" name="q" value="" placeholder="<?= /* @escapeNotVerified */ __('Search here') ?>" class="input-text" role="combobox" aria-haspopup="false" aria-autocomplete="both" autocomplete="off">
+            <button type="submit" class="search-button"></button>
+        </form>
+    </div>
+
+    <div class="suggestion-container">
+        <span><?= /* @escapeNotVerified */ __('Were you looking for something special?') ?><br>
+            <?= /* @escapeNotVerified */ __('Here are some Suggestions that you might like...') ?></span>
+    </div>
+</div>

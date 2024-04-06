@@ -1,0 +1,246 @@
+.theme-pearl {
+    .page-wrapper {
+        .page-footer {
+            .footer.content {
+                background: #000000;
+
+                p,
+                a {
+                    color: #ffffff;
+                    &:lang(th){
+                        font-size: 21px;
+                    }
+                }
+
+                .footer-bottom {
+                    .footer-section2-content {
+                        .col-md-5 {
+                            width: 45%;
+
+                            .col-md-10 {
+                                width: 100%;
+                            }
+
+                            .box-footer-custom {
+                                .text-subscribe {
+                                    .text-subscribe-start{
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                        &:lang(th){
+                                            font-size: 24px !important;
+                                            font-family: 'DB Heavent X Medium';
+                                        }
+                                    }
+                                    .text-subscribe-end{
+                                        font-size: 14px;
+                                        margin-top: 10px;
+                                        font-weight: 400;
+                                        &:lang(th){
+                                            font-size: 22px !important;
+                                        }
+                                    }
+                                    .newsletter-subscribe {
+                                        width: 65%;
+
+                                        .form-group {
+                                            .button {
+                                                background: transparent;
+                                                top: 1px;
+
+                                                i {
+                                                    &::before {
+                                                        content: url(../images/arrow-right.svg);
+                                                        display: block;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .box-social {
+                                margin: 10px 0;
+                                text-align: left;
+
+                                .social-bottom {
+                                    a {
+                                        margin: 0 15px 0 0;
+                                        width: 25px;
+                                    }
+                                }
+                            }
+
+                            .logo-dbd {
+                                margin-top: 60px;
+                            }
+
+                        }
+
+                        .col-md-7 {
+                            width: 55%;
+                        }
+                    }
+
+                    &::after {
+                        display: none;
+                    }
+
+                    ul {
+                        width: 100%;
+
+                        li {
+                            line-height: 25px;
+                        }
+                    }
+
+                    .brands-content {
+                        padding: 0;
+
+                        .brands-col {
+                            display: flex;
+                            justify-content: space-between;
+
+                            li {
+                                line-height: 25px;
+                            }
+                        }
+                    }
+                }
+
+                h4 {
+                    max-width: 100%;
+                    font-weight: 600;
+                    font-size: 14px;
+                    color: #ffffff;
+                }
+
+                .copyright {
+                    font-size: 21px;
+                    display: flex;
+                    background: transparent;
+                    align-items: center;
+                    padding: 0 20px 15px;
+                }
+            }
+        }
+    }
+
+    .box-line-chat {
+        .btn-line {
+            width: 56px;
+            height: 56px;
+            background: transparent;
+            box-shadow: none;
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .theme-pearl {
+        .page-wrapper {
+            .page-footer {
+                .footer.content {
+
+                    a,
+                    p {
+                        font-size: 12px;
+                        &:lang(th){
+                            font-size: 21px;
+                        }
+                    }
+                    .copyright.row{
+                        .box-copyright{
+                            font-size: 8px;
+                            a{
+                                font-size: 8px;
+                            }
+                        }
+                    }
+                    .footer-bottom {
+                        padding-top: 16px;
+                        .footer-section2-content{
+                            .col-md-5{
+                                width: 100%;
+                                padding: 0 20px;
+                                .col-md-10{
+                                    padding: 0;
+                                }
+                                .box-footer-custom{
+                                    .text-subscribe{
+                                        padding-bottom: 0;
+                                        p{
+                                            margin: 20px 0;
+                                        }
+                                        .newsletter-subscribe{
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                                .box-social{
+                                    border: 0;
+                                    margin: 0  0 20px 0 ;
+                                    padding: 0;
+                                    .social-bottom{
+                                        margin: 0;
+                                    }
+                                }
+                            }
+                        }
+                        .no-padding {
+                            padding: 0 20px;
+                            .row {
+                                display: flex;
+                                flex-direction: column;
+                                width: 100%;
+                                border-top: 1px solid rgba(255, 255, 255, 0.20);
+                                padding-top: 20px;
+    
+                                .mobile-toggle {
+                                    width: 100%;
+                                    padding: 0;
+                                    h4 {
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                        line-height: 24px;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        margin: 11px 0;
+    
+                                        &::after {
+                                            content: url(../images/arrow-down-ft.svg);
+                                        }
+                                    }
+    
+                                    ul {
+                                        max-height: 0;
+                                        overflow: hidden;
+                                        transition: max-height 0.2s ease;
+                                    }
+    
+                                    &.active {
+                                        h4 {
+                                            &::after {
+                                                content: url(../images/arrow-up-ft.svg);
+                                            }
+                                        }
+    
+                                        ul {
+                                            max-height: 1000px;
+                                        }
+                                    }
+                                }
+    
+                                .brands-content {
+                                    padding: 0 ;
+                                }
+                            }
+    
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,11 @@
+<script>
+    require([
+        'jquery',
+        'Magento_Customer/js/customer-data',
+        'domReady!'
+    ], function ($, customerData) {
+        var sections = ['customer'];
+        customerData.invalidate(sections);
+        customerData.reload(sections, true);
+    });
+</script>

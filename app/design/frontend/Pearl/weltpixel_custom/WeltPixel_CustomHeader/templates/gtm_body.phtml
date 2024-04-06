@@ -1,0 +1,26 @@
+<script>            
+                    var pageName = "other";
+                    var pathname = window.location.pathname.split('?')[0];
+                    if(document.body.classList.contains("product-page-v1"))
+                                        pageName = "product";                    
+                    else if(pathname == "/" || pathname == "/en" || pathname == "/en/" || pathname =="/th" || pathname =="/th/")
+                                        pageName = "home";
+                    else if(pathname.includes("online-store"))
+                                        pageName = "category";
+                    else if(pathname.includes("catalogsearch"))
+                                        pageName = "searchresults";
+                    else if(pathname.includes("checkout/cart"))
+                                        pageName = "cart";
+                    else if(pathname.includes('checkout/onepage/success'))
+                                        pageName = "purchase";
+                    else if(pathname.includes("checkout"))
+                                        pageName = "checkout";
+
+                    window.dataLayer = window.dataLayer || [];
+                    dataLayer.push({
+                                        'event': 'pageInfo-ftd',
+                                        'page':{
+                                                            'type':pageName
+                                        }
+                    });
+</script>

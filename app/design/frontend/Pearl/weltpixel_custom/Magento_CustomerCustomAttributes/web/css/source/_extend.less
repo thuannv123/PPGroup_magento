@@ -1,0 +1,300 @@
+& when (@media-common = true) {
+    input:not([name*="rating"])[type="checkbox"]+label, 
+    input:not([name*="rating"]).checkbox+label{
+        &:lang(th){
+            &::before{
+                top: 7px;
+            }
+        }
+    }
+
+    input:not([name*="rating"])[type="checkbox"]:checked+label, 
+    input:not([name*="rating"]).checkbox:checked+label{
+        &:lang(th){
+            &::after{
+                top:11px
+            }
+        }
+    }
+
+    input:not([name*="rating"]).radio+label{
+        &:lang(th){
+            &::before{
+                top: 7px;
+            }
+        }
+    }
+
+    input:not([name*="rating"]).radio:checked+label{
+        &:lang(th){
+            &::after{
+                top: 10px;
+            }
+        }
+    }
+    /*ADD NEW ADDRESS PAGE*/
+    .form-address-edit {
+        .fieldset {
+            .legend {
+                margin-bottom: 2%;
+                span {
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    &:lang(th){
+                        font-family: 'DB Heavent X Medium';
+                        font-size: 24px;
+                    }
+                }
+            }
+
+            .field {
+                margin-top: 2%;
+                .label {
+                    span {
+                        font-size: 16px;
+                        &:lang(th){
+                            font-size: 24px;
+                            font-family: 'DB Heavent X Medium';
+                        }
+                    }
+                }
+
+                .control {
+                    input, select {
+                        border: 1px solid #ADABA6;
+                    }
+                }
+            }
+
+            .field.choice.set.billing {
+                margin-top: 5%;
+            }
+
+            .field.choice {
+                .label {
+                    span {
+                        color: #404040;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+
+            .field.country {
+                margin-bottom: 4%;
+            }
+        }
+
+        .actions-toolbar {
+            border-top: 1px solid #c6c6c6;
+            .primary {
+                .action.submit.primary {
+                    text-transform: uppercase;
+                    padding: 2%;
+                }
+            }
+            .secondary {
+                .action.back {
+                    display: inline-block;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: 12px;
+                    margin: 0;
+                    &:lang(th){
+                        font-family: 'DB Heavent X Medium';
+                        font-size: 21px;
+                        &:before {
+                            font-size: 24px;
+                        }
+                    }
+                    &:before {
+                        content: '\e686';
+                        font-family: '7-stroke';
+                        font-size: 20px;
+                    }
+                    span {
+                        vertical-align: 20%;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    /*ACCOUNT INFORMATION PAGE*/
+    .form.form-edit-account {
+        .fieldset {
+            padding-bottom: 3%;
+            .legend {
+                margin-bottom: 2%;
+                span {
+                    font-weight: bold;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    &:lang(th){
+                        font-family: 'DB Heavent X Medium';
+                        font-size: 26px;
+                    }
+                }
+            }
+
+            .field {
+                margin-top: 2%;
+                .label {
+                    span {
+                        font-size: 16px;
+                        &:lang(th){
+                            font-size: 24px;
+                            font-family: 'DB Heavent X Medium';
+                        }
+                    }
+                }
+
+                .control {
+                    input {
+                        border: 1px solid #ADABA6;
+                    }
+                }
+            }
+
+            .field.choice {
+                margin-top: 5%;
+                .label {
+                    span {
+                        text-transform: uppercase;
+                        color: #404040;
+                        font-size: 14px;
+                        &:lang(th){
+                            font-size: 22px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .actions-toolbar {
+            border-top: 1px solid #c6c6c6;
+            padding-top: 3%;
+            .primary {
+                .action.save.primary {
+                    text-transform: uppercase;
+                }
+            }
+            .secondary {
+                .action.back {
+                    display: inline-block;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: 12px;
+                    margin: 0;
+                    &:lang(th){
+                        font-family: 'DB Heavent X Medium';
+                        font-size: 21px;
+                        &:before {
+                            font-size: 24px;
+                        }
+                    }
+                    &:before {
+                        content: '\e686';
+                        font-family: '7-stroke';
+                        font-size: 20px;
+                    }
+                    span {
+                        vertical-align: 20%;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    /*ADD NEW ADDRESS PAGE*/
+    .form-address-edit {
+        .fieldset {
+            margin-bottom: 4%;
+            .field.choice {
+                .label {
+                    span {
+                        font-size: 14px;
+                        &:lang(th){
+                            font-size: 22px;
+                            font-family: unset;
+                        }
+                    }
+                }
+            }
+        }
+
+        .actions-toolbar {
+            padding-top: 3%;
+            .primary {
+                float: right;
+                .action.submit.primary {
+                    width: 300px;
+                    font-size: 16px;
+                    &:lang(th){
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
+    }
+
+    /*ACCOUNT INFORMATION PAGE*/
+    .form.form-edit-account {
+        .actions-toolbar {
+            .primary {
+                float: right;
+                .action.save.primary {
+                    width: 300px;
+                }
+            }
+        }
+    }
+}
+
+
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    /*ADD NEW ADDRESS PAGE*/
+    .form-address-edit {
+        .fieldset {
+            .field.choice {
+                .label {
+                    span {
+                        font-size: 13px;
+                        &:lang(th){
+                            font-size: 21px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .actions-toolbar {
+            padding-top: 2%;
+            .primary {
+                margin-top: 3%;
+                .action.submit.primary {
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+}

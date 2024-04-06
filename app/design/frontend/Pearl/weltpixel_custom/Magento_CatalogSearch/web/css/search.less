@@ -1,0 +1,462 @@
+.theme-pearl {
+    .page-wrapper {
+        .category-view{
+            .category-description{
+                img{
+                    margin: auto;
+                }
+            }
+        }
+        .category-image {
+            position: relative;
+            .breadcrumbs {
+                position: absolute;
+                top: 0;
+                border: 0;
+            }
+        }
+
+        .sidebar-main {
+            #layered-filter-block {
+                .filter-content {
+                    .filter-options {
+                        .filter-options-item {
+                            .filter-options-title {
+
+                                a,
+                                span {
+                                    font-size: 15px;
+                                }
+                            }
+
+                            .filter-options-content {
+                                .items {
+                                    padding: 0;
+                                    margin: 0;  
+                                    .item {
+
+                                        a,
+                                        span {
+                                            font-size: 15px;
+                                            &:lang(th){
+                                                font-size: 22px;
+                                            }
+                                        }
+                                        a{
+                                            border-bottom: 1px solid #f2f2f2;
+                                            padding: 10px 0;
+                                        }
+                                    }
+                                    &.level-1{
+                                        margin-left: 15px;
+                                    }
+                                }
+                            }
+
+                            .swatch-attribute {
+                                &.color {
+                                    .swatch-option {
+                                        width: 30px;
+                                        height: 30px;
+                                        border-radius: 50%;
+
+                                        &::before {
+                                            display: none;
+                                        }
+
+                                        &::after {
+                                            display: none;
+                                        }
+
+                                        &:hover {
+                                            border: 3px solid #ffffff !important;
+                                            outline: 1px solid #e8e5e2 !important;
+                                        }
+                                    }
+                                }
+
+                                &.size {
+                                    .swatch-option {
+                                        width: 60px;
+                                        height: 30px;
+                                        line-height: 25px;
+                                        border: 1px solid #e8e5e2;
+                                        margin: 0 9px 5px 0;
+                                        &:lang(th){
+                                            font-family: 'DB Heavent X Medium';
+                                        }
+                                        &:hover {
+                                            border: 1px solid #000000 !important;
+                                            background: #e8e5e2;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .page-footer {
+            z-index: 10;
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .theme-pearl {
+        &.filter-overflow {
+            overflow: hidden;
+
+            .toolbar.toolbar-products {
+                position: relative;
+                z-index: 23;
+            }
+        }
+
+        .swatch-option {
+            margin: 0 10px 5px 0;
+        }
+    }
+
+    .page-products {
+        .page-wrapper {
+            .category-image {
+                .breadcrumbs {
+                    top: 15px;
+                }
+            }
+
+            #layer-product-list {
+                margin-top: 30px;
+            }
+
+            #maincontent.page-main {
+                .columns {
+                    #amasty-shopby-product-list {
+                        .toolbar-products {
+                            .toolbar-amount {
+                                display: none !important;
+                            }
+                        }
+
+                        .custom-select {
+                            background: #ffffff;
+
+                            &.active {
+                                position: fixed;
+                                top: 94px;
+                                right: 0;
+                                width: 100%;
+                                height: 100%;
+                            }
+                            &.toolbar-scroll.active{
+                                position: fixed;
+                                top: 54px;
+                                right: 0;
+                                width: 100%;
+                                height: 100%;
+                                
+                            }
+                            .select-items {
+                                div {
+                                    width: 100%;
+                                    text-align: right;
+                                    padding: 0 15px;
+                                }
+                            }
+                        }
+                    }
+
+                    .sidebar-main {
+                        .block.filter {
+
+                            .filter-title {
+                                strong {
+                                    border: 0;
+                                    font-size: 12px;
+                                    display: flex;
+                                    align-items: center;
+                                    box-shadow: none;
+                                    padding: 6px 0;
+                                    text-transform: uppercase;
+                                    &:lang(th){
+                                        font-size: 21px;
+                                        padding: 16px 0;
+                                    }
+                                    &::after {
+                                        content: url(../../images/arrow-down-list.svg);
+                                        margin-left: 5px;
+                                        transform: rotate(180deg);
+                                    }
+                                }
+                            }
+
+                            &.active {
+                                .filter-title {
+                                    strong {
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                        &:lang(th){
+                                            font-family: 'DB Heavent X Medium';
+                                            font-size: 24px;
+                                        }
+                                        &::after {
+                                            transform: unset;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        #layered-filter-block {
+                            .filter-content {
+                                .filter-subtitle {
+                                    font-size: 14px;
+                                    &:lang(th){
+                                        font-size: 24px;
+                                        font-family : 'DB Heavent X Medium';
+                                    }
+                                    font-weight: 600;
+                                }
+
+                                .filter-options {
+                                    padding: 0 10px;
+
+                                    .filter-options-item {
+                                        border-color: #f2f2f2;
+
+                                        .filter-options-title {
+                                            font-size: 14px;
+                                            &:lang(th){
+                                                font-size: 22px;
+                                            }
+                                            a {
+                                                font-size: 14px;
+                                                &:lang(th){
+                                                    font-size: 22px;
+                                                }
+                                            }
+                                        }
+
+                                        .filter-options-content {
+                                            padding: 10px 5px 15px 5px;
+                                            .am-collapse-icon{
+                                                &:after{
+                                                    width: 12px;
+                                                }
+                                            }
+                                            .items {
+                                                .item {
+                                                    a,
+                                                    span {
+                                                        font-size: 13px;
+                                                        font-weight: normal;
+                                                        &:lang(th){
+                                                            font-size: 22px;
+                                                            font-weight: 'DB Heavent X Regular';
+                                                        }
+                                                    }
+                                                }
+                                                &.level-2 {
+                                                    .item {
+                                                        .label {
+                                                            padding: 0 15px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+
+                }
+            }
+
+            .custom-filter {
+                display: none;
+            }
+        }
+
+    }
+}
+
+@media(min-width: 769px) {
+    .theme-pearl {
+        &.catalogsearch-result-index {
+            .page-title-wrapper {
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .page-title{
+                    order: 1;
+                }
+                .toolbar-products{
+                    order: 3;
+                    width: 23%;
+                    &:nth-child(3){
+                        display: none;
+                    }
+                    .toolbar-amount{
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .page-wrapper {
+            .columns {
+                .custom-filter {
+                    display: none;
+                }
+            }
+            .custom-select {
+                position: relative;
+
+                .select-items {
+                    position: absolute;
+                    right: 0;
+                    z-index: 2;
+                }
+            }
+
+            .sidebar-main,
+            .sidebar-main.-amshopby-sticky {
+                order: 0;
+                width: 23%;
+
+                #layered-filter-block {
+                    margin-bottom: 0;
+
+                    .custom-filter {
+                        font-size: 12px;
+                        &:lang(th){
+                            font-size: 24px;
+                        }
+                        font-weight: 400;
+                        background: transparent;
+                        color: #000000;
+                        border: 0;
+                        padding: 0;
+                        display: flex;
+                        align-items: center;
+                        text-transform: uppercase;
+                        &::after {
+                            content: url(../../images/arrow-down-list.svg);
+                            margin-left: 5px;
+                            transform: rotate(180deg);
+                        }
+                        
+
+                        &.active {
+                            font-size: 14px;
+                            font-weight: 600;
+                            &::after {
+                                transform: unset;
+                            }
+                        }
+                    }
+
+                    .filter-content {
+                        display: none;
+                        position: absolute;
+                        width: 100%;
+                        background: #ffffff;
+
+                        &.active {
+                            display: block;
+                            margin-top: 20px;
+                            height: fit-content;
+                            overflow: auto;
+                            max-height: 80vh;
+                        }
+
+                        .filter-subtitle {
+                            display: none;
+                        }
+
+                        .filter-options {
+                            max-height: unset;
+
+                            .filter-options-item {
+                                border-bottom: 0;
+                                &:first-child {
+                                    border-top: 0;
+                                }
+
+                                .filter-options-title {
+                                    font-size: 14px;
+                                    font-weight: 600;
+                                    padding: 20px 0 10px;
+                                    border-bottom: 1px solid #000000;
+                                    &:lang(th){
+                                        font-family : 'DB Heavent X Medium';
+                                        font-size: 24px;
+                                    }
+                                    &::after{
+                                        line-height: 23px;
+                                    }
+                                }
+
+                                .filter-options-content {
+                                    .items {
+                                        font-size: 13px;
+                                        &:lang(th){
+                                            font-size: 22px;
+                                        }
+                                        .item {
+                                            .label {
+                                                font-size: 13px;
+                                                &:lang(th){
+                                                    font-size: 22px;
+                                                }
+                                            }
+                                        }
+                                        &.level-2 {
+                                            .item {
+                                                .label {
+                                                    padding: 0 15px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .category-view {
+                margin: 50px 0;
+
+                img {
+                    margin: auto;
+                }
+
+                .category-description {
+                    position: relative;
+                    margin: auto;
+                    overflow: unset;
+                    z-index: 9;
+
+                }
+            }
+        }
+
+        #maincontent {
+            .columns {
+                .column.main {
+                    width: 100%;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}

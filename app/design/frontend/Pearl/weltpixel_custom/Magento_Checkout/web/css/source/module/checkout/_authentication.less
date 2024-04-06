@@ -1,0 +1,389 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Variables
+//  _____________________________________________
+
+@block-auth__dropdown__padding: @indent__m;
+@block-auth__dropdown__background-color: @color-white;
+@block-auth__or-label__size: 36px;
+@block-auth__width: 0;
+@block-auth__border: 1px solid @color-gray-light3;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common =true) {
+    .authentication-dropdown {
+        box-sizing: border-box;
+
+        .modal-inner-wrap {
+            padding: @block-auth__dropdown__padding;
+        }
+    }
+
+    .authentication-wrapper {
+        float: right;
+        margin-top: -1.5*@indent__xl;
+        max-width: 50%;
+        position: relative;
+        z-index: 1;
+
+        ._has-auth-shown & {
+            z-index: @modal__z-index;
+        }
+    }
+
+    .action-auth-toggle {
+        &:extend(.abs-action-button-as-link all);
+    }
+
+    .modal-inner-wrap {
+        .modal-content {
+            .block-authentication {
+                #block-authentication-title {
+                    display: block;
+                    text-align: center;
+                    font-size: 20px;
+                    font-weight: 600;
+                    margin-bottom: 30px;
+                    text-transform: uppercase;
+                    &:lang(th){
+                        font-size: 30px;
+                        font-family: 'DB Heavent X Medium';
+                    }
+                }
+
+                .block[class]+.block {
+                    border-left: 1px solid;
+                    margin-bottom: 30px;
+                }
+
+                .block-title {
+                    font-size: 14px;
+                    margin-bottom: 0;
+                    text-transform: uppercase;
+                    &:lang(th){
+                        font-size: 24px;
+                    }
+
+                    strong {
+                        font-weight: 600;
+                        &:lang(th){
+                            font-family: 'DB Heavent X Medium';
+                        }
+                    }
+                }
+
+                .fieldset.login.guest-layout {
+                    clear: both;
+                    text-align: center;
+                    border-top: 1px solid;
+                    .title_guest {
+                        strong {
+                            font-size: 14px;
+                            &:lang(th){
+                                font-size: 24px;
+                                font-family: 'DB Heavent X Medium';
+                            }
+                        }
+                    }
+
+                    .content_guest {
+                        font-size: 15px;
+                        &:lang(th){
+                            font-size: 22px;
+                        }
+                    }
+                    .field.email{
+                        display: none;
+                    }
+                    .actions-toolbar {
+                        text-align: center;
+
+                        .primary {
+                            float: unset;
+                            margin-top: 10px;
+                            background: #ffffff;
+                            border-color: #e8e5e2;
+
+                            a {
+                                span {
+                                    color: #000000;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .block-content {
+                    margin-top: 10px;
+
+                    input {
+                        border-color: #e8e5e2;
+                    }
+
+                    .field {
+                        margin: 10px 0;
+                    }
+
+                    ul {
+                        padding-left: 40px;
+
+                        li {
+                            list-style: disc;
+                        }
+                    }
+
+                    .secondar {
+                        margin-top: 10px;
+
+                        a {
+                            span {
+                                opacity: 0.5;
+                            }
+                        }
+                    }
+
+                    .actions-toolbar.btn-create {
+                        margin-top: 30px;
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    .block-authentication {
+
+        .field {
+            .label {
+                font-weight: @font-weight__regular;
+                &:lang(th){
+                    font-size: 21px;
+                }
+            }
+        }
+        .complete-guest{
+            &:lang(th){
+                font-size: 21px;
+            }
+        }
+        .actions-toolbar {
+            margin-bottom: @indent__xs;
+
+            >.secondary {
+                padding-top: @indent__m;
+                text-align: left;
+            }
+
+            &.btn-create {
+                padding: 0;
+            }
+        }
+
+        .action.action-register,
+        .action.action-login {
+            &:extend(.abs-button-l all);
+        }
+
+        .block[class] {
+            margin: 0;
+
+            ul {
+                list-style: none;
+                padding-left: @indent__s;
+            }
+
+            .field {
+
+                .control,
+                .label {
+                    float: none;
+                    width: auto;
+                }
+            }
+
+            &+.block {
+                border-top: 1px solid @color-gray-light5;
+                margin-top: @indent__xl;
+                padding-top: @indent__xl;
+                position: relative;
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    .authentication-dropdown {
+        .lib-css(background-color, @block-auth__dropdown__background-color);
+        .lib-css(border, @block-auth__border);
+        -webkit-transform: scale(1, 0);
+        -webkit-transform-origin: 0 0;
+        -webkit-transition: -webkit-transform linear .1s, visibility 0s linear .1s;
+        position: absolute;
+        text-align: left;
+        top: 100%;
+        transform: scale(1, 0);
+        transform-origin: 0 0;
+        transition: transform linear .1s, visibility 0s linear .1s;
+        visibility: hidden;
+        width: 100%;
+
+        &._show {
+            .lib-css(z-index, @dropdown-list__z-index);
+            -webkit-transform: scale(1, 1);
+            -webkit-transition: -webkit-transform linear .1s, visibility 0s linear 0s;
+            transform: scale(1, 1);
+            transition: transform linear .1s, visibility 0s linear 0s;
+            visibility: visible;
+        }
+    }
+
+    .authentication-wrapper {
+        .lib-column-width(@checkout-sidebar__columns);
+        text-align: right;
+    }
+
+    .block-authentication {
+        .block-title {
+            .lib-font-size(@h2__font-size);
+            border-bottom: 0;
+            margin-bottom: @indent__m;
+        }
+
+        .actions-toolbar {
+            >.primary {
+
+                .action {
+                    margin-right: 0;
+                    padding: 9px 22.25px;
+
+                    span {
+                        font-size: 12px;
+                        &:lang(th){
+                            font-size: 21px;
+                        }
+                    }
+                }
+            }
+
+            >.secondary {
+                float: left;
+                margin-right: 2rem;
+                padding-top: 1rem;
+            }
+        }
+    }
+
+    .popup-authentication {
+        .modal-inner-wrap {
+            min-width: @screen__m;
+            width: 60%;
+        }
+
+        .block-authentication {
+            h3 {
+                text-align: center
+            }
+        }
+
+        .block[class],
+        .form-login,
+        .fieldset,
+        .block-content {
+            .lib-vendor-prefix-display(flex);
+            .lib-vendor-prefix-flex-direction(column);
+            .lib-vendor-prefix-flex-grow(1);
+        }
+
+        .block[class] {
+            box-sizing: border-box;
+            float: left;
+            padding: @indent__s @indent__l 0 0;
+            width: 50%;
+
+            &+.block {
+                border-left: 1px solid @color-gray-light5;
+                border-top: 0;
+                margin: 0;
+                padding: @indent__s 0 0 @indent__xl;
+
+                &:before {
+                    left: 0;
+                    top: 50%;
+                }
+            }
+        }
+
+        .actions-toolbar {
+            margin-bottom: 0;
+            margin-top: auto;
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .theme-pearl {
+        
+        .modal-popup.modal-slide {
+            left: 0;
+            top: 54px;
+            .action-close{
+                display: block;
+                &::before{
+                    content: url(../images/close-menu-mobile.png);
+                }
+            }
+            .modal-inner-wrap[class]{
+                background: #ffffff;
+            }
+            .modal-inner-wrap {
+                width: 90%;
+                margin: auto !important;
+                .modal-content{
+                    .block-authentication{
+                        #block-authentication-title{
+                            font-size: 18px;
+                            &:lang(th){
+                                font-size: 28px;
+                            }
+                        }
+                        .block[class] + .block{
+                            border-left: 0;
+                            border-top: 1px solid;
+                        }
+                        .actions-toolbar{
+                            .primary{
+                                .action{
+                                    padding: 9px 14px;
+                                    a,span{
+                                        font-size: 12px;
+                                        &:lang(th){
+                                            font-size: 21px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .block-content{
+                            .secondar{
+                                text-align: center;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

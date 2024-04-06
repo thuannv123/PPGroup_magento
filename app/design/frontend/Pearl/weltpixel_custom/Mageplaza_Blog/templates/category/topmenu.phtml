@@ -1,0 +1,85 @@
+<?php
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_Blog
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+
+use Mageplaza\Blog\Block\Category\Menu;
+
+/** @var Menu $block */
+$categories = $block->getCollections();
+?>
+<li class="level0 category-item level-top parent ui-menu-item megamenu fullwidth" role="presentation">
+    <a href="<?= $block->escapeUrl($block->getBlogHomeUrl()) ?>"
+       class="level-top ui-menu-item-wrapper" aria-haspopup="true" id="ui-id-6" tabindex="-1" role="menuitem">
+    </a>
+    <div class="level-top ui-menu-item-wrapper">
+        <?php if ($categories->getSize()) : ?>
+            <span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span>
+        <?php endif; ?>
+        <span class="mm-subcategory-title underline-megamenu">
+            <a href="<?= $block->escapeUrl($block->getBlogHomeUrl()) ?>">
+                <?= $block->escapeHtml($block->getBlogHomePageTitle()) ?>
+            </a>
+        </span>
+    </div>
+    <?php if ($categories->getSize()) : ?>
+        <ul class="level0 fullwidth submenu hide-all-category ui-menu ui-widget ui-widget-content ui-corner-all menu-blog" role="menu" aria-expanded="false" style="display: none; top: 47px; left: 0px" aria-hidden="true">
+            <li class="category-item ui-menu-item fullwidth-wrapper" role="presentation">
+                <div class="fullwidth-wrapper ui-menu-item-wrapper" style="width: 1905px;left:0">
+                    <div class="fullwidth-wrapper-inner" style="display: flex;justify-content: center;height: 92px;align-items: center;flex-wrap:wrap;">
+                        <?php foreach ($categories as $category) : ?>
+                            <?= /* @noEscape */ $block->getMenuHtml($category)?>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <style>
+            @media (min-width:769px) {
+                .menu-blog{
+                    left: 0 !important;
+                    border-top: 1px solid #ffffff !important;
+                }
+                .fullwidth-wrapper{
+                    left: 0 !important;
+                }
+                .fullwidth-wrapper .fullwidth-wrapper-inner{
+                    width: 100% !important;
+                }
+                .fullwidth-wrapper .fullwidth-wrapper-inner .ui-corner-all:hover{
+                    background-color: #E6E4DD !important;
+                }
+            }
+            @media (max-width:768px) {
+                .menu-blog .fullwidth-wrapper{
+                    width: 100% !important;
+                }
+                .menu-blog .fullwidth-wrapper .fullwidth-wrapper-inner{
+                    display: block !important;
+                    height: unset !important;
+                    width: 100% !important;
+                }
+                .menu-blog .fullwidth-wrapper .fullwidth-wrapper-inner a{
+                    width: 100% !important;
+                    padding: 10px 20px !important;   
+                }
+            }
+        </style>
+    <?php endif;?>
+</li>

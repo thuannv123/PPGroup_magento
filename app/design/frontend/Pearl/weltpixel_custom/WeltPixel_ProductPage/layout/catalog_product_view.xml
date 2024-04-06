@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<attribute name="class" value="product-page-v1"/>
+
+        <referenceBlock name="page.main.title" remove="false"/>
+        <referenceBlock name="product.info.overview" remove="true"/>
+        <referenceBlock name="product.info.details.wrapper" remove="true"/>
+        <referenceBlock name="product.info.description" remove="true"/>
+
+        <referenceBlock name="product.info.main">
+            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.brand"
+                   template="WeltPixel_ProductPage::product/view/brand.phtml" before="-" />
+            <container name="product.info.sticky" label="Product Info Sticky" htmlTag="div" htmlClass="product-info-right sys-info-sticky" after="product.info.brand">
+                <container name="product.replace.sticky" label="Infor Product Replace" htmlTag="div" htmlClass="info-replace-sticky sys-info-replace" before="-">
+                    <block class="Magento\Framework\View\Element\Text">
+                        <arguments>
+                            <argument name="text" xsi:type="string"><![CDATA[&nbsp;]]></argument>
+                        </arguments>
+                    </block>
+                </container>
+                <container name="product.sticky.bottom" htmlTag="div" htmlClass="product-sticky-bottom">
+                    <container name="product.info.sticky.content" htmlTag="div" htmlClass="box-product-sticky">
+                        <container name="product.image.sticky" label="Image Product Replace" htmlTag="div" htmlClass="image-replace-sticky sys-image-sticky" before="-">
+                            <block class="Magento\Framework\View\Element\Text">
+                                <arguments>
+                                    <argument name="text" xsi:type="string"><![CDATA[&nbsp;]]></argument>
+                                </arguments>
+                            </block>
+                        </container>
+                    </container>
+                </container>
+            </container>
+        </referenceBlock>
+        <block class="PPGroup\Catalog\Block\Product\View\TabInfo" name="product.info.tab.custom"
+               template="WeltPixel_ProductPage::product/view/tab_info.phtml" after="-"/>
+
+        <move element="product.info.sku" destination="product.info.price" before="-"/>
+        <move element="page.main.title" destination="product.info.sticky.content" after="product.image.sticky"/>
+        <move element="product.info.brand" destination="product.info.main" before="-"/>
+        <move element="product.info.price" destination="product.info.sticky.content" after="page.main.title"/>
+        <move element="product.info" destination="product.info.sticky.content"/>
+        <move element="product.info.tab.custom" destination="product.info.main" after="-"/>
+	</body>
+</page>

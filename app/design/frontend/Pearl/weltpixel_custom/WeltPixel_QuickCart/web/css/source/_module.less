@@ -1,0 +1,672 @@
+& when (@media-common =true) {
+    .minicart-weltpixel {
+        .mage-dropdown-dialog {
+            display: block !important;
+        }
+
+        &.minicart-wrapper {
+            .block-minicart {
+                z-index: 1001;
+            }
+        }
+    }
+
+    .box-sized {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+
+    .header {
+        .quickcart-wrapper .block-quickcart {
+            border-top: 0 none;
+            border-bottom: 0 none;
+            height: fit-content;
+            min-width: inherit;
+            overflow: hidden;
+            padding: 0;
+            position: fixed !important;
+            right: -700px !important;
+            top: -4px;
+            border: 1px solid #000000;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            .box-sized;
+
+            * {
+                .box-sized;
+            }
+
+            .quickcart-content-wrapper {
+                width: 100%;
+            }
+
+            .block-content-quickcart {
+                width: 100%;
+                display: grid;
+
+                .quickcart-top {
+                    background: #fff;
+                    color: #000;
+                    min-height: 30px;
+                    font-size: 20px;
+                    text-align: left;
+                    top: 0;
+                    width: 100%;
+                    z-index: 1;
+                    padding: 10px 25px;
+                    order: 0;
+
+                    span {
+                        font-size: 20px;
+                        &:lang(th){
+                            font-size: 30px;
+                        }
+                    }
+
+                    button.close {
+                        min-height: 30px;
+                        min-width: 54px;
+                        right: 0;
+                        margin: 0;
+                        padding: 0;
+
+                        &::before {
+                            content: url(../images/close-menu-mobile.png);
+                            vertical-align: bottom;
+                        }
+                    }
+                }
+
+                .quickcart-items-wrapper {
+                    border: 0 none;
+                    // height: ~'calc(100% - 215px) !important';
+                    height: 100% !important;
+                    max-height: 326px;
+                    margin: 0;
+                    z-index: 0;
+                    // position: absolute;
+                    overflow-y: auto;
+                    width: 100%;
+                    padding: 0 25px;
+                    order: 1;
+
+                    &::-webkit-scrollbar-track {
+                        background-color: #F5F5F5;
+                    }
+
+                    &::-webkit-scrollbar,
+                    &::-moz-scrollbar {
+                        width: 6px;
+                        background-color: #F5F5F5;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: #c2c2c2;
+                    }
+
+                    .quickcart-items {
+
+                        .quickcart-product-item {
+                            padding-bottom: 0;
+
+                            .product {
+                                margin-top: 20px;
+                                margin-bottom: 10px;
+                            }
+
+                            .product-item-brand {
+                                span {
+                                    font-size: 14px;
+                                    font-weight: 600;
+                                    &:lang(th){
+                                        font-size: 24px;
+                                        font-family: 'DB Heavent X Medium';
+                                    }
+                                }
+                            }
+
+                            .product-item-details {
+                                position: relative;
+
+                                .product-item-name {
+                                    max-width: 85%;
+                                    margin-top: 5px;
+                                    margin-bottom: 5px;
+
+                                    a {
+                                        font-size: 15px;
+                                        &:lang(th){
+                                            font-size: 22px;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .product-image-wrapper {
+                                margin-bottom: 10px;
+                            }
+
+                            .product.actions {
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                margin: 0;
+
+                                .action.delete {
+                                    span {
+                                        background: transparent;
+                                        margin: 0;
+                                        position: relative;
+                                        padding: 0;
+                                        overflow: unset;
+
+                                        width: unset;
+
+                                        &::before {
+                                            content: url(../images/delete.png);
+                                        }
+                                    }
+                                }
+                            }
+
+                            .details-qty {
+                                float: left;
+                                margin-top: 2px;
+
+                                .spinner {
+                                    display: none;
+                                    width: 10px;
+                                    height: 10px;
+                                    background-color: transparent;
+                                    margin: 4px 12px 4px 13px;
+                                    float: left;
+                                    border: 1px solid #000;
+                                    border-radius: 50%;
+                                    border-bottom: 0 none;
+                                    border-top: 0 none;
+                                    top: -2px;
+                                    position: relative;
+                                    -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+                                    animation: sk-rotateplane 1.2s infinite ease-in-out;
+                                }
+
+                                @-webkit-keyframes sk-rotateplane {
+                                    0% {
+                                        -webkit-transform: rotate(0deg)
+                                    }
+
+                                    50% {
+                                        -webkit-transform: rotate(-180deg)
+                                    }
+
+                                    100% {
+                                        -webkit-transform: rotate(360deg)
+                                    }
+                                }
+
+                                @keyframes sk-rotateplane {
+                                    0% {
+                                        transform: rotate(0deg);
+                                        -webkit-transform: rotateX(0deg);
+                                    }
+
+                                    50% {
+                                        transform: rotate(-180deg);
+                                        -webkit-transform: rotate(-180deg)
+                                    }
+
+                                    100% {
+                                        transform: rotate(360deg);
+                                        -webkit-transform: rotate(360deg);
+                                    }
+                                }
+                            }
+
+                            .price-container {
+                                float: right;
+                                margin-top: 5px;
+                                margin-right: 40px;
+
+                                span {
+                                    margin: 0;
+
+                                    span.price-including-tax {
+                                        width: 100%;
+                                        display: table;
+                                        text-align: right;
+                                        line-height: .5;
+                                    }
+
+                                    span.price-excluding-tax {
+                                        width: 100%;
+                                        display: flex;
+                                        align-items: center;
+                                        flex-direction: row-reverse;
+                                        span.minicart-price {
+                                            span.price {
+                                                font-size: 14px;
+                                                line-height: 30px;
+                                                &:lang(th){
+                                                    font-size: 22px;
+                                                    font-family: 'DB Heavent X Medium';
+                                                }
+                                            }
+                                            &.final-price{
+                                                span.price {
+                                                    color: #BD0B0B;
+                                                }
+                                                
+                                            }
+                                        }
+                                        .minicart-old-price{
+                                            margin: 0 10px;
+                                            span.price {
+                                                font-size: 13px;
+                                                font-weight: 400;
+                                                text-decoration: line-through;
+                                                
+                                                &:lang(th){
+                                                    font-size: 22px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                span.price {
+                                    font-size: 14px;
+                                    margin: 0 0 10px 0;
+                                }
+                            }
+
+                            .options {
+                                margin: 0;
+                                min-height: 18px;
+
+                                .option-wrapper {
+                                    display: inline;
+                                    float: left;
+                                    margin: 0;
+                                    color: gray;
+
+                                    dt.label,
+                                    dd.values {
+                                        font-size: 12px;
+                                        text-transform: none;
+                                        margin: 0 5px 0 0;
+                                    }
+
+                                    dd.values {
+                                        margin: 0;
+
+                                        span {
+                                            text-transform: none;
+                                            font-size: 15px;
+                                            font-weight: bold;
+                                            color: #000000;
+                                            &:lang(th){
+                                                font-size: 25px;
+                                                font-family: 'DB Heavent X Medium';
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .product-item-pricing {
+                                .label {
+                                    line-height: 16px;
+                                    float: left;
+                                    padding: 0px;
+                                    margin-right: 10px;
+                                    width: auto;
+                                    font-size: 11px;
+                                }
+
+                                .details-qty {
+                                    .quantity-controls {
+                                        display: flex;
+                                        justify-content: space-evenly;
+                                        width: 90px;
+                                        height: 35px;
+                                        border: 1px solid #e8e5e2;
+
+                                        button {
+                                            padding: 0;
+                                            background: #fff;
+                                            border: 0;
+
+                                            &.quantity-decrease {
+                                                span::after {
+                                                    content: '-';
+                                                    font-size: 18px;
+                                                    font-weight: 600;
+                                                }
+                                            }
+
+                                            &.quantity-increase {
+                                                span::after {
+                                                    content: '+';
+                                                    font-size: 18px;
+                                                    font-weight: 600;
+                                                }
+                                            }
+
+                                            &:hover {
+                                                background: transparent;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            span.qty-update {
+                                color: #000;
+                                font-size: 10px;
+                                margin-top: 2px;
+                                float: left;
+
+                                &.item-minus {
+                                    font-family: 'luma-icons';
+
+                                    &:after {
+                                        content: '\e617';
+                                    }
+                                }
+
+                                &.item-plus {
+                                    font-family: 'luma-icons';
+
+                                    &:after {
+                                        content: '\e608';
+                                    }
+                                }
+                            }
+
+                            .cart-item-qty {
+                                color: #000;
+                                border: 0 none;
+                                float: left;
+                                height: auto;
+                                line-height: 14px;
+                                opacity: 1;
+                                padding: 0;
+                                text-align: center;
+                                font-size: 11px;
+                                margin: 1px 0 0;
+                                width: auto;
+                                max-width: 25px;
+                                &:lang(th){
+                                    font-size: 21px;
+                                }
+                            }
+
+                            button.update-cart-item {
+                                display: none;
+                            }
+                        }
+
+                        .quickcart-product-item:last-child {
+                            border-bottom: 1px solid #ccc;
+                        }
+                    }
+                }
+
+                .subtitle.empty {
+                    margin-top: 30px;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+
+                .quickcart-bottom-container {
+                    // bottom: 0;
+                    // position: absolute;
+                    width: 100%;
+                    padding: 20px 25px;
+                    order: 2;
+
+                    .items-total {
+                        display: none;
+                    }
+
+                    .subtotal {
+                        margin: 0 0 10px;
+                        padding: 10px 0;
+                        width: 100%;
+                        background: none;
+                        border-top: 1px solid #000;
+                        border-bottom: 1px solid #000;
+
+                        span.label {
+                            float: left;
+
+                            span {
+                                font-size: 14px;
+                                font-weight: bold;
+                                &:lang(th){
+                                    font-size: 24px;
+                                    font-family: 'DB Heavent X Medium';
+                                }
+                            }
+
+                            &::after {
+                                content: '';
+                            }
+                        }
+
+                        .price-container {
+                            span.price {
+                                font-size: 14px;
+                                font-weight: bold;
+                                &:lang(th){
+                                    font-size: 24px;
+                                    font-family: 'DB Heavent X Medium';
+                                }
+                            }
+                        }
+                    }
+
+                    .actions.action-viewcart {
+                        background: transparent;
+                        margin: 0;
+                        padding: 0;
+                        text-align: center;
+                        width: 49%;
+                        float: left;
+                        border: 1px solid #e8e5e2;
+
+                        .secondary {
+                            .action.viewcart:hover {
+                                text-decoration: underline;
+                                color: #000000;
+                            }
+
+                            span {
+                                span {
+                                    font-size: 11px;
+                                    font-weight: bold;
+                                    height: 44px;
+                                    line-height: 44px;
+                                    display: block;
+                                    &:lang(th){
+                                        font-size: 21px;
+                                        font-family: 'DB Heavent X Medium';
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .custom-cms-block-wrapper {
+                        margin: 20px 0;
+                    }
+
+                    .actions.action-checkout {
+                        margin: 0;
+                        width: 49%;
+                        float: right;
+                        height: 44px;
+
+                        button.checkout {
+                            display: block;
+                            margin: 0 auto 10px;
+                            padding: 15px 0;
+                            width: 100%;
+                            height: 44px;
+
+                            span {
+                                font-size: 14px;
+                                &:lang(th){
+                                    font-size: 22px;
+                                }
+                            }
+                        }
+                    }
+
+                    .minicart-widgets {
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    .custom-msg-wrapper {
+                        padding: 15px 20px;
+
+                        .custom-msg {
+                            font-weight: 400;
+                            text-transform: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .quickcart-wrapper.active .block-quickcart {
+            right: 12.7% !important;
+            @media screen and (max-width: 768px) {
+                right: 0 !important
+            }
+            margin: 0;
+        }
+    }
+
+    .wp-qcart-custom-msg {
+        margin-left: 10px;
+        text-transform: none;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    .header {
+        .quickcart-wrapper .block-quickcart {
+            .block-content-quickcart {
+                .quickcart-top{
+                    span{
+                        font-size: 14px;
+                    }
+                }
+                .quickcart-items-wrapper {
+                    .quickcart-items {
+                        .quickcart-product-item {
+                            .product-item-details {
+                                .product-item-brand{
+                                    span{
+                                        font-size: 12px;
+                                        &:lang(th){
+                                            font-size: 22px;
+                                        }
+                                    }
+                                }
+                                .product-item-name {
+                                    max-width: 75%;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                    a{
+                                        font-size: 12px;
+                                    }
+                                }
+                            }
+
+                            .details-qty {
+                                margin-top: 2px;
+                            }
+
+                            .price-container {
+                                float: right;
+                                margin-top: 5px;
+
+                                span {
+                                    margin: 0;
+
+                                    span.price-including-tax {
+                                        width: 100%;
+                                        display: table;
+                                        text-align: right;
+                                        line-height: .5;
+                                    }
+
+                                    span.price-excluding-tax {
+                                        width: 100%;
+
+                                        span.minicart-price {
+                                            span.price {
+                                                font-size: 11px
+                                            }
+                                        }
+                                        .minicart-old-price{
+                                            span.price {
+                                                font-size: 10px
+                                            } 
+                                        }
+                                    }
+                                }
+
+                                span.price {
+                                    font-size: 14px;
+                                    margin: 0 0 10px 0;
+                                }
+                            }
+
+                            .product-item-pricing {
+                                .details-qty{
+                                    .quantity-controls{
+                                        width: 70px;
+                                    }
+                                }
+                                .label {
+                                    margin-right: 5px;
+                                    font-weight: bold;
+                                }
+                                .price-container{
+                                    margin-right: 0;
+                                }
+                            }
+                            span.qty-update {
+                                font-size: 11px;
+                            }
+                        }
+                    }
+                }
+
+                .quickcart-bottom-container {
+                    .subtotal {
+                        span.label {
+                            span {
+                                font-size: 12px;
+                            }
+                        }
+
+                        .price-container {
+                            span.price {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

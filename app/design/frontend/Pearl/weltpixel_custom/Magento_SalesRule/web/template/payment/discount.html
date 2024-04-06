@@ -1,0 +1,57 @@
+
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<div class="payment-option opc-payment-additional discount-code">
+    <div class="payment-option-title field choice" data-role="title">
+        <span class="action" id="block-discount-heading" role="heading" aria-level="2">
+            <!-- ko i18n: 'Apply Discount Code'--><!-- /ko -->
+        </span>
+    </div>
+    <div class="payment-option-content" data-role="content">
+        <!-- ko foreach: getRegion('messages') -->
+        <!-- ko template: getTemplate() --><!-- /ko -->
+        <!--/ko-->
+        <form class="form form-discount" id="discount-form">
+            <div class="payment-option-inner">
+                <div class="field">
+                    <label class="label" for="discount-code">
+                        <span data-bind="i18n: 'Coupon Code'"></span>
+                    </label>
+                    <div class="control">
+                        <input class="input-text"
+                               type="text"
+                               id="discount-code"
+                               name="discount_code"
+                               data-validate="{'required-entry':true}"
+                               data-bind="value: couponCode, attr:{disabled:isApplied() , placeholder: $t('Enter discount code')} " />
+                    </div>
+                </div>
+            </div>
+                    <!-- ko ifnot: isApplied() -->
+            <div class="actions-toolbar act-apply">
+                <div class="primary">
+                    <button class="action action-apply" type="submit" data-bind="'value': $t('Apply Discount'), click: apply">
+                        <span><!-- ko i18n: 'Apply'--><!-- /ko --></span>
+                    </button>
+                </div>
+            </div>
+                    <!-- /ko -->
+                    <!-- ko if: isApplied() -->
+            <div class="actions-toolbar act-cancel">
+                <div class="primary">
+                    <button class="action action-cancel" type="submit" data-bind="'value': $t('Cancel Coupon'), click: cancel">
+                        <span><!-- ko i18n: 'Cancel Coupon'--><!-- /ko --></span>
+                    </button>
+                </div>
+            </div>
+                    <!-- /ko -->
+            <!-- ko foreach: getRegion('captcha') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!-- /ko -->
+        </form>
+    </div>
+</div>

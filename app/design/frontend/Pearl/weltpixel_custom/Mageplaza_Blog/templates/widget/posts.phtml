@@ -1,0 +1,105 @@
+<?php
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_Blog
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+
+use Mageplaza\Blog\Block\Widget\Posts;
+
+/** @var Posts $block */
+$posts = $block->getCollection();
+$storeId = $block->getStoreId();
+
+?>
+<div class="blog-widget-title"><a></a></div>
+<div class="post-list-container mpcss" id="mpblog-list-container">
+    <div class="widget-title">
+        <a href="<?= $block->escapeUrl($block->getBlogUrl('')) ?>"><?= $block->escapeHtml($block->getTitle()) ?></a>
+    </div>
+
+    <div class="row">
+        <?php foreach ($posts as $post) : ?>
+            <?php
+            $result = $block->getPostCustom($post->getId(),$storeId);
+            $name = ($result[0]['name'] != '') ? $result[0]['name'] : $post->getName() ; 
+            $short_description = ($result[0]['name'] != '')? $result[0]['short_description'] : $post->getShortDescription();
+            ?>
+            <div class="post-list-item col-mp post-item-grid col-6 mp-6 mp-xs-12">
+                <div class="post-item-wraper">
+                    <?php if ($post->getImage()) : ?>
+                        <div class="post-image">
+                            <a href="<?= $block->escapeUrl($post->getUrl()) ?>">
+                                <img class="img-responsive" style="height: 220px"
+                                     src="<?= $block->escapeUrl($block->resizeImage($post->getImage(), '400x')) ?>"
+                                     alt="<?= $block->escapeHtml($name); ?>"/>
+                            </a>
+                        </div>
+                    <?php endif; ?>
+                    <div class="post-info-wraper">
+                        <h2 class="mp-post-title" style="font-size: 22px">
+                            <a class="post-link-title" title="<?= $block->escapeHtmlAttr($name) ?>"
+                               href="<?= $block->escapeUrl($post->getUrl()) ?>">
+                                <?= $block->escapeHtml($name) ?>
+                            </a>
+                        </h2>
+                        <div class="mp-post-info">
+                            <?= /** @noEscape */ $block->getPostInfo($post) ?>
+                        </div>
+                        <div class="post-short-description">
+                            <p><?= /** @noEscape */ $short_description ?></p>
+                        </div>
+                        <div class="mp-clearfix"></div>
+                        <div class="mp-post-meta-info mp-alignright">
+                            <div class="actions">
+                                <a class="mp-read-more" href="<?= $block->escapeUrl($post->getUrl()) ?>"
+                                   title="<?= $block->escapeHtmlAttr(__('Read More')) ?>">
+                                    <?= $block->escapeHtml(__('Read more')) ?>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+        <style>
+            @media (min-width:481px) and (max-width:767px) {
+                .mp-xs-12{
+                    margin-left: 0 !important;
+                    max-width: 100% !important;
+                    width: 100% !important;
+                }
+            }
+            @media (max-width:480px){
+                .col-mp{
+                    max-width: 100% !important;
+                }
+            }
+            .post-list-item{
+                padding: 0 10px !important;
+            }
+            .col-6{
+                max-width: 50%;
+            }
+            .row{
+                display: flex;
+                flex-wrap: wrap;
+                width: 100% !important;
+            }
+        </style>
+    </div>
+</div>

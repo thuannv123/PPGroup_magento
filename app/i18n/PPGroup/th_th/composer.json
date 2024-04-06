@@ -1,0 +1,15 @@
+{
+  "name": "ppgroup/magento-2-thai-language-pack",
+  "description": "Thai language package for Magento 2",
+  "type": "magento2-language",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "license": [
+    "MIT"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ]
+  }
+}

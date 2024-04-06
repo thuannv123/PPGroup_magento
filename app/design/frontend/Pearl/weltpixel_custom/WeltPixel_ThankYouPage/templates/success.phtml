@@ -1,0 +1,118 @@
+<?php
+// @codingStandardsIgnoreFile
+/** @var $_helper WeltPixel\ThankYouPage\Helper\Data */
+$_helper = $this->helper('WeltPixel\ThankYouPage\Helper\Data');
+$pageSubtitle = $_helper->getPageSubTitle();
+
+$_order = $block->getOrder();
+$_products = [];
+
+$block->log("---------Start Log---------");
+
+foreach($_order->getAllItems() as $_item){
+
+    if($_item->getData('has_children')) { 
+        continue; 
+    }
+    else if($_item->getProduct()->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE){
+        $_rootProduct = $_item->getProduct();
+    }
+    else {
+        $_parentItem = $_item->getParentItem();
+        if($_parentItem){
+            $_rootProduct = $_parentItem->getProduct();
+        } else {
+            $_rootProduct = $_item->getProduct();
+        }
+    }
+
+    $_product = $_item->getProduct();
+    $_name = $_rootProduct->getName();
+    
+    $_categoryNameArray = [];
+    foreach($_rootProduct->getCategoryCollection()->addAttributeToSelect('name') as $category){
+        $_categoryNameArray[] = $category->getName(); 
+    }
+    $_category = join('/', $_categoryNameArray);
+    
+
+    $product = (object) [
+        'id' => $_item->getSku(),
+        'name' => $_name,
+        'price' => $_product->getFinalPrice(),
+        'category' => $_category,
+        'brand' => $_product->getAttributeText('brand'),
+        'variant' => $_product->getAttributeText('color'),
+        'dimension1' => $_product->getAttributeText('size'),
+        'quantity' => $_item->getQtyOrdered(),
+    ];
+
+    if($product->dimension1 == null){
+        $product->dimension1 = "";
+    }
+
+    if($product->variant == null){
+        $product->variant = "";
+    }
+
+    $_products[] = $product;
+
+}
+
+$block->log('Product Data To GA Report: ' . json_encode($_products));
+
+$block->log("---------End Log---------");
+
+?>
+<?php /** @var $block \Magento\Checkout\Block\Onepage\Success */ ?>
+<div class="checkout-page-title-wrapper thank-you-page">
+    <div class="icon_thank_you_01"></div>
+    <h1 class="page-title"><?= $_helper->getPageTitle() ?></h1>
+</div>
+<div class="checkout-success">
+    <?php if ($block->getOrderId()):?>
+        <?php if ($block->getCanViewOrder()) :?>
+            <p><?= __($pageSubtitle, sprintf('<a href="%s" class="order-number"><strong>%s</strong></a>', $block->escapeHtml($block->getViewOrderUrl()), $block->escapeHtml($block->getOrderId()))) ?></p>
+        <?php  else :?>
+            <p><?= __($pageSubtitle, sprintf('<strong>%s</strong>', $block->escapeHtml($block->getOrderId()))) ?></p>
+        <?php endif;?>
+            <p><?= $_helper->getOrderDescription() ?></p>
+    <?php endif;?>
+
+    <?= $block->getAdditionalInfoHtml() ?>
+
+    <?php if ($_helper->showContinueShopping()) : ?>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <a class="action primary continue" href="<?= /* @escapeNotVerified */ $block->getContinueUrl() ?>"><span><?= /* @escapeNotVerified */ __('Continue Shopping&nbsp;&gt;') ?></span></a>
+        </div>
+    </div>
+    <?php endif; ?>
+</div>
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+            
+    let productsInOrder = <?php echo json_encode($_products); ?>;
+    var i,j,productsInOrderChunk,chunk = 12;
+    for (i=0,j=productsInOrder.length; i<j; i+=chunk) {
+        productsInOrderChunk = productsInOrder.slice(i,i+chunk);
+        dataLayer.push({
+            'event': 'purchase-ftd',
+            'currencyCode': 'THB',
+            'ecommerce': {
+                'purchase': {
+                    'actionField': {
+                        'id': '<?php echo $block->getOrderId(); ?>',
+                        'revenue': '<?php echo $_order->getGrandTotal(); ?>',
+                        'tax': '<?php echo $_order->getTaxAmount(); ?>',
+                        'shipping': '<?php echo $_order->getShippingAmount(); ?>',
+                        'coupon': '<?php echo $_order->getCouponCode(); ?>',
+                    },
+                    'products': productsInOrderChunk
+                }
+            }
+        });
+    }
+
+</script>

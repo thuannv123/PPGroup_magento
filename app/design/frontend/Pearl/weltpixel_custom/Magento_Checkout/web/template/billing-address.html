@@ -1,0 +1,52 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<div class="checkout-billing-address">
+    <div class="billing-address-same-as-shipping-block field choice" data-bind="visible: canUseShippingAddress()">
+        <input type="checkbox" name="billing-address-same-as-shipping"
+               data-bind="checked: isAddressSameAsShipping, click: useShippingAddress, attr: {id: 'billing-address-same-as-shipping-' + getCode($parent)}"/>
+        <label data-bind="attr: {for: 'billing-address-same-as-shipping-' + getCode($parent)}"><span
+                data-bind="i18n: 'My billing and shipping address are the same'"></span></label>
+    </div>
+    <render args="detailsTemplate"></render>
+    <fieldset class="fieldset" data-bind="visible: !isAddressDetailsVisible()">
+        <each args="getRegion('billing-address-list')" render=""></each>
+        <div data-bind="fadeVisible: isAddressFormVisible">
+            <render args="formTemplate"></render>
+            <!-- ko if: isRequestTax -->
+            <div class="billing-address-same-as-tax-block field choice" style="margin:-20px 0 20px 0">
+                <input type="checkbox" name="billing-address-same-as-tax-one"
+                       data-bind="checked: isAddressSameAsTax, click: useShippingAddress, attr: {id: 'billing-address-same-as-tax-' + getCode($parent)}"/>
+                <label data-bind="attr: {for: 'billing-address-same-as-tax-' + getCode($parent)}"><span
+                        data-bind="i18n: 'Do you require a full tax invoice?'"></span></label>
+            </div>
+            <fieldset class="fieldset" data-bind="visible: isAddressSameAsTax()">
+                <!-- ko foreach: getRegion('mpOrderAttributes') -->
+                    <!-- ko template: getTemplate() --><!-- /ko -->
+                <!--/ko-->
+            </fieldset>
+            <!-- /ko-->
+        </div>
+        <render args="actionsTemplate"></render>
+    </fieldset>
+    <!-- ko if: isAddressSameAsShipping-->
+    <!-- ko if: isRequestTax -->
+    <div class="billing-address-same-as-tax-block field choice" style="margin:20px 0 20px 0">
+        <input type="checkbox" name="billing-address-same-as-tax-two"
+               data-bind="checked: isAddressSameAsTax, attr: {id: 'billing-address-same-as-tax-' + getCode($parent)}"/>
+        <label data-bind="attr: {for: 'billing-address-same-as-tax-' + getCode($parent)}"><span
+                data-bind="i18n: 'Do you require a full tax invoice?'"></span></label>
+    </div>
+    <fieldset class="fieldset" data-bind="visible: isAddressSameAsTax()">
+        <!-- ko foreach: getRegion('mpOrderAttributes') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        <!--/ko-->
+    </fieldset>
+    <!-- /ko  -->
+    <!-- /ko  -->
+    <!-- ko ifnot: isAddressSameAsShipping -->
+    <!-- /ko -->
+</div>

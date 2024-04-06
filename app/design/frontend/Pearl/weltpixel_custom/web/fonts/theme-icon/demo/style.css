@@ -1,0 +1,108 @@
+@font-face {
+  font-family: 'theme-icon';
+  src:  url('fonts/theme-icon.eot?t84v87');
+  src:  url('fonts/theme-icon.eot?t84v87#iefix') format('embedded-opentype'),
+    url('fonts/theme-icon.ttf?t84v87') format('truetype'),
+    url('fonts/theme-icon.woff?t84v87') format('woff'),
+    url('fonts/theme-icon.svg?t84v87#theme-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-theme-"], [class*=" icon-theme-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'theme-icon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-theme-menu:before {
+  content: "\e900";
+}
+.icon-theme-enter:before {
+  content: "\e901";
+}
+.icon-theme-collapse:before {
+  content: "\e902";
+}
+.icon-theme-compare:before {
+  content: "\e903";
+}
+.icon-theme-prev:before {
+  content: "\e904";
+}
+.icon-theme-next:before {
+  content: "\e905";
+}
+.icon-theme-check-circle:before {
+  content: "\e906";
+}
+.icon-theme-edit:before {
+  content: "\e907";
+}
+.icon-theme-check:before {
+  content: "\e908";
+}
+.icon-theme-tooltip:before {
+  content: "\e909";
+}
+.icon-theme-plus:before {
+  content: "\e90a";
+}
+.icon-theme-minus:before {
+  content: "\e90b";
+}
+.icon-theme-delete:before {
+  content: "\e90c";
+}
+.icon-theme-close:before {
+  content: "\e90d";
+}
+.icon-theme-youtube:before {
+  content: "\e90e";
+}
+.icon-theme-instagram:before {
+  content: "\e90f";
+}
+.icon-theme-fb:before {
+  content: "\e910";
+}
+.icon-theme-line:before {
+  content: "\e911";
+}
+.icon-theme-email:before {
+  content: "\e912";
+}
+.icon-theme-call:before {
+  content: "\e913";
+}
+.icon-theme-extend:before {
+  content: "\e914";
+}
+.icon-theme-cart:before {
+  content: "\e915";
+}
+.icon-theme-wishlist:before {
+  content: "\e916";
+}
+.icon-theme-account:before {
+  content: "\e917";
+}
+.icon-theme-search:before {
+  content: "\e918";
+}
+.icon-theme-slide-left:before {
+  content: "\e919";
+}
+.icon-theme-slide-right:before {
+  content: "\e91a";
+}

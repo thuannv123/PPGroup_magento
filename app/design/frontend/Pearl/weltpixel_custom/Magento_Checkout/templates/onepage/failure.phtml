@@ -1,0 +1,20 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var $block \Magento\Checkout\Block\Onepage\Failure */
+?>
+<div class="checkout-page-title-wrapper failure-page">
+    <div class="icon_failure"></div>
+    <h1 class="page-title"><?= $block->escapeHtml(__('PAYMENT FAILED')) ?></h1>
+    <p class="failure-message"><?= $block->escapeHtml(__('Error processing transaction')) ?></p>
+</div>
+<div class="checkout-failure">
+    <div class="actions-toolbar">
+        <div class="primary">
+            <a class="action primary continue" href="<?= $block->getBaseUrl() ?>"><span><?= /* @escapeNotVerified */ __('&lt;&nbsp;BACK') ?></span></a>
+        </div>
+    </div>
+</div>

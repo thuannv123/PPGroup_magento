@@ -1,0 +1,500 @@
+<?php
+use Magento\Framework\App\Action\Action;
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Product list template
+ *
+ * @var  \Magento\Catalog\Block\Product\ListProduct $block
+ * @var  \Magento\Catalog\Helper\Output $_helper
+ * @var  \WeltPixel\CategoryPage\Helper\Data $_weltpixelHelper
+ * @var  \WeltPixel\GoogleTagManager\Helper\Data $gtmHelper
+ */
+?>
+<?php
+/** WeltPixel_GoogleTagManager  */
+$gtmHelper = $this->helper('WeltPixel\GoogleTagManager\Helper\Data');
+$_productCollection = $block->getLoadedProductCollection();
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+$_weltpixelHelper = $this->helper('WeltPixel\CategoryPage\Helper\Data');
+$displayReviews = $_weltpixelHelper->displayReviews();
+$displayWishlist = $_weltpixelHelper->displayAddToWishlist();
+$displayCompare = $_weltpixelHelper->displayAddToCompare();
+$displayAddToCart = $_weltpixelHelper->displayAddToCart();
+$alignAddToCart = $_weltpixelHelper->alignAddToCart();
+$displaySwatches = $_weltpixelHelper->displaySwatches();
+
+$productCollection = [];
+$count = 0;
+$productsInAllPagesKeyed = [];
+$productsInOnePage = [];
+?>
+
+<?php if (!$_productCollection->count()): ?>
+    <div class="message info empty">
+        <div>
+            <?php /* @escapeNotVerified */
+            echo __('We can\'t find products matching the selection.') ?>
+        </div>
+    </div>
+<?php else: ?>
+    <?php echo $block->getToolbarHtml() ?>
+    <?php echo $block->getAdditionalHtml() ?>
+    <?php
+
+    if ($block->getMode() == 'grid') {
+        $viewMode = 'grid';
+        $image = 'category_page_grid';
+        $showDescription = false;
+        $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
+    } else {
+        $viewMode = 'list';
+        $image = 'category_page_list';
+        $showDescription = true;
+        $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::FULL_VIEW;
+    }
+    /**
+     * Position for actions regarding image size changing in vde if needed
+     */
+    $pos = (string) $block->getPositioned();
+
+    ?>
+    <div class="products wrapper <?php /* @escapeNotVerified */
+    echo $viewMode; ?> products-<?php /* @escapeNotVerified */
+       echo $viewMode; ?>">
+        <?php $iterator = 1; ?>
+        <ol class="products list items product-items">
+            <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
+            <?php foreach ($_productCollection as $_product): ?>
+
+
+                <?php /* @escapeNotVerified */
+
+                $productCollection[] = $_product->getSku();
+                $brandAttribute = $_product->getResource()->getAttribute('brand');
+                $_brand = $brandAttribute->getFrontend()->getValue($_product);
+
+                $_categoryNameArray = [];
+                foreach ($_product->getCategoryCollection()->addAttributeToSelect('name') as $category) {
+                    $_categoryNameArray[] = $category->getName();
+                }
+                $_category = join('/', $_categoryNameArray);
+
+                $_size = "";
+                $_color = "";
+
+                if ($_product->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE) {
+                    $options = $_product->getTypeInstance()->getConfigurableOptions($_product);
+                    if (array_key_exists(93, $options)) {
+                        $_colors = $options[93];
+                        $_colorsArray = [];
+                        foreach ($_colors as $_color) {
+                            $_colorsArray[] = $_color["option_title"];
+                        }
+                        $_color = join('/', $_colorsArray);
+                    }
+                    if (array_key_exists(222, $options)) {
+                        $_sizeOptions = $options[222];
+                        $_sizeArray = [];
+                        foreach ($_sizeOptions as $_sizeOption) {
+                            $_sizeArray[] = $_sizeOption["option_title"];
+                        }
+                        $_size = join('/', $_sizeArray);
+                    }
+
+                } else {
+                    $attribute = $_product->getResource()->getAttribute('color');
+                    $_color = $attribute->getFrontend()->getValue($_product);
+
+                    $attribute2 = $_product->getResource()->getAttribute('size');
+                    $_size = $attribute2->getFrontend()->getValue($_product);
+                }
+                $count++;
+                echo ($iterator++ == 1) ? '<li class="item product product-item">' : '</li><li class="item product product-item">';
+                $productsInOnePage[] = [
+                    'position' => $count,
+                    'id' => $block->escapeHtml($_product->getSku()),
+                    'name' => $block->escapeHtml($_product->getName()),
+                    'brand' => $block->escapeHtml($_brand),
+                    'price' => $_product->getFinalPrice(),
+                    'category' => $block->escapeHtml($_category),
+                    'varaint' => $block->escapeHtml($_color),
+                    'dimension1' => $block->escapeHtml($_size),
+                    'list' => "other",
+                ];
+                $productsInAllPagesKeyed[$_product->getId()] = $productsInOnePage;
+                ?>
+
+                <div class="product-item-info product-item-gtm" data-container="product-grid">
+                    <?php
+                    $productImage = $block->getImage($_product, $image);
+                    if ($pos != null) {
+                        $position = ' style="left:' . $productImage->getWidth() . 'px;'
+                            . 'top:' . $productImage->getHeight() . 'px;"';
+                    }
+                    ?>
+                    <?php // Product Image                ?>
+                    <?php if ($viewMode == 'grid'): ?>
+                        <div class="product_image">
+                        <?php endif; ?>
+                        <a data-wpproductlabel="1" data-product-id="<?php echo $_product->getId() ?>" <?php if ($gtmHelper->isProductClickTrackingEnabled()):
+                               echo $gtmHelper->addProductClick($_product, $iterator - 1);
+                           endif; ?> href="<?php /* @escapeNotVerified */
+                             echo $_product->getProductUrl() ?>"
+                            class="product photo product-item-photo product-item-thumbnail-gtm" tabindex="-1">
+                            <?php echo $productImage->toHtml() ?>
+                        </a>
+                        <?php if ($viewMode == 'grid' && (($displayWishlist != 0 && $displayWishlist != 5) || ($displayCompare != 0 && $displayCompare != 5))): ?>
+                            <div class="product actions product-item-actions">
+                                <div class="actions-secondary"></div>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ($viewMode == 'grid'): ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <div class="product details product-item-details">
+                        <span class="category-name">
+                            <?= __($_product->getResource()->getAttribute('brand')->getFrontend()->getValue($_product)) ?>
+                        </span>
+                        <?php
+                        $_productNameStripped = $block->stripTags($_product->getName(), null, true);
+                        ?>
+                        <h2 class="product name product-item-name">
+                            <a class="product-item-link product-item-name-gtm" href="<?php /* @escapeNotVerified */
+                            echo $_product->getProductUrl() ?>">
+                                <?php /* @escapeNotVerified */
+                                echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
+                            </a>
+                        </h2>
+                        <span class="sold-out" data-is-salable="<?= $_product->isSalable() ? '1' : '0' ?>"
+                            <?= $_product->isSalable() ? 'style="display: none"' : '' ?>>
+                            <?= __('Sold Out') ?>
+                        </span>
+                        <?php if ($displayReviews): ?>
+                            <?php /* @escapeNotVerified */
+                            echo $block->getReviewsSummaryHtml($_product, $templateType); ?>
+                        <?php endif; ?>
+                        <div class="content-price <?= (!$_product->isSalable()) ? 'outstock' : '' ?>">
+                            <?= $block->getProductPrice($_product);  ?>
+                        </div>
+
+                        <?php $hoverShow = ($displayAddToCart == 4 || $displayAddToCart == 5 || $displayAddToCart == 0 || $displayWishlist == 5 || $displayWishlist == 0 || $displayCompare == 5 || $displayCompare == 0) ? 'hoverShow' : ''; ?>
+                        <?php if($_product->isSalable()) : ?>
+                            <div class="product-item-inner <?php echo /* @escapeNotVerified */
+                                $hoverShow; ?>">
+                                <?php /* @escapeNotVerified */
+                                echo $block->getProductDetailsHtml($_product); ?>
+                                <div class="product-item-inner-hide"></div>
+                                <div class="product actions product-item-actions <?php echo isset($alignAddToCart) == 'center' ? ' ' . $alignAddToCart : ''; ?>"
+                                    <?php echo strpos($pos, $viewMode . '-actions') ? $position : ''; ?>>
+                                    <div class="actions-primary" <?php /* @escapeNotVerified */
+                                    echo strpos($pos, $viewMode . '-primary') ? $position : ''; ?>>
+                                        <?php if ($displayAddToCart != 0 && $_product->isSaleable()): ?>
+                                            <div class="addtocart_position_<?php /* @escapeNotVerified */
+                                            echo $displayAddToCart;
+                                            echo isset($alignAddToCart) ? ' ' . $alignAddToCart : ''; ?>">
+                                                <?php $postParams = $block->getAddToCartPostParams($_product); ?>
+                                                <form class="add-to-cart-gtm" data-role="tocart-form" action="<?php /* @escapeNotVerified */
+                                                echo $postParams['action']; ?>" method="post">
+                                                    <input type="hidden" name="product" value="<?php /* @escapeNotVerified */
+                                                    echo $postParams['data']['product']; ?>">
+                                                    <input type="hidden" name="<?php /* @escapeNotVerified */
+                                                    echo Action::PARAM_NAME_URL_ENCODED; ?>" value="<?php /* @escapeNotVerified */
+                                                    echo $postParams['data'][Action::PARAM_NAME_URL_ENCODED]; ?>">
+                                                    <?php echo $block->getBlockHtml('formkey') ?>
+                                                    <button type="submit" title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>"
+                                                        class="action tocart primary">
+
+                                                        <span>
+                                                            <?php /* @escapeNotVerified */
+                                                            echo __('Add to Cart') ?>
+                                                        </span>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        <?php elseif ($displayAddToCart != 0): ?>
+                                            <div class="addtocart_position_<?php /* @escapeNotVerified */
+                                            echo $displayAddToCart;
+                                            echo $alignAddToCart; ?>">
+                                                <?php if ($_product->getIsSalable()): ?>
+                                                    <div class="stock available"><span>
+                                                            <?php /* @escapeNotVerified */
+                                                            echo __('In stock') ?>
+                                                        </span></div>
+                                                <?php endif; ?>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div data-role="add-to-links" class="actions-secondary" <?php echo strpos($pos, $viewMode . '-secondary') ? $position : ''; ?>>
+                                        <?php if ($displayWishlist != 0 && $this->helper('Magento\Wishlist\Helper\Data')->isAllow()): ?>
+                                            <a href="#" class="action towishlist whishlist_position_<?php /* @escapeNotVerified */
+                                            echo $displayWishlist; ?>"
+                                                title="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
+                                                aria-label="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>" data-post='<?php /* @escapeNotVerified */
+                                                echo $block->getAddToWishlistParams($_product); ?>'
+                                                data-action="add-to-wishlist" role="button">
+                                                <span>
+                                                    <?php /* @escapeNotVerified */
+                                                    echo __('Add to Wish List') ?>
+                                                </span>
+                                            </a>
+                                        <?php endif; ?>
+                                        <?php $compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare'); ?>
+                                        <?php if ($displayCompare != 0): ?>
+                                            <a href="#" class="action tocompare compare_position_<?php /* @escapeNotVerified */
+                                            echo $displayCompare; ?>"
+                                                title="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
+                                                aria-label="<?php echo $block->escapeHtml(__('Add to Compare')); ?>" data-post='<?php /* @escapeNotVerified */
+                                                echo $compareHelper->getPostDataParams($_product); ?>' role="button">
+                                                <span>
+                                                    <?php /* @escapeNotVerified */
+                                                    echo __('Add to Compare') ?>
+                                                </span>
+                                            </a>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                                <?php if ($showDescription): ?>
+                                    <div class="product description product-item-description">
+                                        <?php /* @escapeNotVerified */
+                                        echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+                                        <a href="<?php /* @escapeNotVerified */
+                                        echo $_product->getProductUrl() ?>" title="<?php /* @escapeNotVerified */
+                                        echo $_productNameStripped ?>" class="action more">
+                                            <?php /* @escapeNotVerified */
+                                            echo __('Learn More') ?>
+                                        </a>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <a href="<?= $_product->getProductUrl() ?>" class="product-image-stock-cover" data-is-salable="<?= $_product->isSalable() ? '1' : '0' ?>"
+                        <?= $_product->isSalable() ? 'style="display: none"' : '' ?>>
+                    </a>
+                    <a href="<?= $_product->getProductUrl() ?>" class="product-image-stock-cover-text" data-is-salable="<?= $_product->isSalable() ? '1' : '0' ?>"
+                        <?= $_product->isSalable() ? 'style="display: none"' : '' ?>>
+                        <?= __('Sold Out') ?>
+                    </a>
+                </div>
+                <?php echo ($iterator == count($_productCollection) + 1) ? '</li>' : '' ?>
+            <?php endforeach; ?>
+        </ol>
+        <script>
+            {
+                window.dataLayer = window.dataLayer || [];
+                var productsToPush = <?= json_encode($productsInOnePage) ?>;
+                dataLayer.push({
+                    'event': 'impression-ftd',
+                    'currencyCode': 'THB',
+                    'ecommerce': {
+                        'impressions': productsToPush
+                    }
+                });
+
+                var productElements = document.getElementsByClassName('product-item-gtm');
+                let productsInAllPages = [];
+                productsInAllPages = productsInAllPages.concat(<?= json_encode($productsInOnePage) ?>);
+
+                for (var i = 0; i < productElements.length; i++) {
+                    let productElement = productElements[i];
+                    (function (i, productElement, productsInAllPages) {
+
+                        var onClickFunction = function () {
+                            window.dataLayer = window.dataLayer || [];
+                            dataLayer.push({
+                                'event': 'productClicked-ftd',
+                                'currencyCode': 'THB',
+                                'ecommerce': {
+                                    'click': {
+                                        'actionField': { 'list': pageName },
+                                        'products': [productsInAllPages[i]]
+                                    }
+                                }
+                            });
+                        };
+
+                        productElement.getElementsByClassName('product-item-thumbnail-gtm')[0].onclick = onClickFunction;
+                        productElement.getElementsByClassName('product-item-name-gtm')[0].onclick = onClickFunction;
+                    })(i, productElement, productsInAllPages);
+                }
+
+                require(['jquery', 'WeltPixel_CategoryPage/js/productItemActions'],
+                    function ($, CategoryPage) {
+
+                        window.actions = {
+                            displayWishlist: '<?php /* @escapeNotVerified */ echo $displayWishlist; ?>',
+                            displayCompare: '<?php /* @escapeNotVerified */ echo $displayCompare; ?>',
+                            displayAddToCart: '<?php /* @escapeNotVerified */ echo $displayAddToCart; ?>',
+                            displaySwatches: '<?php /* @escapeNotVerified */ echo $displaySwatches; ?>'
+                        };
+                        CategoryPage.actions();
+
+                        var $cateView = $('.catalog-category-view .page-wrapper .category-view'),
+                            $toolBar = $('.catalog-category-view .page-wrapper .toolbar-products'),
+                            $widthContent = $('.page-main .columns').width(),
+                            $cateImage = $(".catalog-category-view .page-wrapper .category-image"),
+                            $cateBreadcrumbs = $('.catalog-category-view .page-wrapper .breadcrumbs'),
+                            $sidebar = $('.catalog-category-view .page-wrapper .sidebar-main'),
+                            $columns = $('.catalog-category-view .columns');
+
+                        $cateView.css({
+                            "width": $widthContent,
+                            "margin": "auto"
+                        });
+                        if ($cateImage.length > 0) {
+                            $($cateBreadcrumbs).appendTo($cateImage);
+                        };
+
+                        if ($(window).width() >= 769) {
+                            if ($cateView.length > 0) {
+                                $cateView.append($toolBar);
+                            }
+                        }else{
+                            if($sidebar.length <= 1){
+                                $columns.append($sidebar);
+                            }else{
+                                var $sidebar = $('.catalog-category-view .page-wrapper .category-view .sidebar-main');
+                                $sidebar.remove();
+                            }
+                        }
+                    });
+            }
+        </script>
+    </div>
+    <?= $block->getChildBlock('toolbar')->setIsBottom(true)->toHtml() ?>
+    <?php if (!$block->isRedirectToCartEnabled()): ?>
+        <script type="text/x-magento-init">
+            {
+                "[data-role=tocart-form], .form.map.checkout": {
+                    "catalogAddToCart": {
+                        "product_sku": "<?= /* @NoEscape */
+                            $_product->getSku() ?>"
+                    }
+                }
+            }
+            </script>
+    <?php endif; ?>
+<?php endif; ?>
+
+<script>
+    {
+        function callback(mutationsList) {
+            for (var i = 0; i < mutationsList.length; ++i) {
+                for (var j = 0; j < mutationsList[i].addedNodes.length; ++j) {
+                    if (mutationsList[i].addedNodes[j].className == "item product product-item") {
+
+                        window.dataLayer = window.dataLayer || [];
+                        var productsToPush = <?= json_encode($productsInOnePage) ?>;
+                        var productsInAllPages = [];
+                        productsInAllPages.concat(<?= json_encode($productsInOnePage) ?>);
+
+                        dataLayer.push({
+                            'event': 'impression-ftd',
+                            'currencyCode': 'THB',
+                            'ecommerce': {
+                                'impressions': productsToPush
+                            }
+                        });
+                        var productElements = document.getElementsByClassName('product-item-gtm');
+
+                        for (var i = 0; i < productElements.length; i++) {
+                            let productElement = productElements[i];
+                            (function (i, productElement, productsInAllPages) {
+
+                                var onClickFunction = function () {
+                                    window.dataLayer = window.dataLayer || [];
+                                    dataLayer.push({
+                                        'event': 'productClicked-ftd',
+                                        'currencyCode': 'THB',
+                                        'ecommerce': {
+                                            'click': {
+                                                'actionField': { 'list': pageName },
+                                                'products': [productsInAllPages[i]]
+                                            }
+                                        }
+                                    });
+                                };
+
+                                productElement.getElementsByClassName('product-item-thumbnail-gtm')[0].onclick = onClickFunction;
+                                productElement.getElementsByClassName('product-item-name-gtm')[0].onclick = onClickFunction;
+                            })(i, productElement, productsInAllPages);
+                        }
+
+                        return;
+                    }
+                }
+            }
+        };
+        let observer = new MutationObserver(callback);
+        const UNDEFINED = 0;
+        if (document.getElementsByClassName('products list items product-items').length !== UNDEFINED) {
+            observer.observe(document.getElementsByClassName('products list items product-items')[0], { childList: true });
+        }
+        require(['Magento_Customer/js/customer-data'], function (customerData) {
+            var firstPageLoad = true;
+            var cart = customerData.get('cart');
+            var count;
+
+            cart.subscribe(function () {
+
+                if (firstPageLoad) {
+                    firstPageLoad = false
+                    count = cart().summary_count;
+                } else if (cart().summary_count !== count && !firstPageLoad) {
+                    let amountAdded = cart().summary_count - count;
+                    count = cart().summary_count;
+                    if (amountAdded > 0) {
+                        let lastAddedItem = cart().items.find(i => i.product_id == cart().lastProductAddedId);
+                        let color = lastAddedItem.options.find(o => o.label == "Color");
+                        let size = lastAddedItem.options.find(o => o.label == "Size");
+                        window.dataLayer = window.dataLayer || [];
+                        var productsInAllPagesKeyed = <?= json_encode($productsInAllPagesKeyed) ?>;
+                        var category = productsInAllPagesKeyed[lastAddedItem.product_id] === undefined ? "" : productsInAllPagesKeyed[lastAddedItem.product_id].category
+                        dataLayer.push({
+                            'event': 'addToCart-ftd',
+                            'currencyCode': 'THB',
+                            'ecommerce': {
+                                'add': {
+                                    'products': [
+                                        {
+                                            'id': lastAddedItem.product_sku,
+                                            'name': lastAddedItem.product_name,
+                                            'brand': lastAddedItem.brand,
+                                            'price': lastAddedItem.product_price_value,
+                                            'category': category,
+                                            'variant': color === undefined ? "" : color.value,
+                                            'dimension1': size === undefined ? "" : size.value,
+                                            'quantity': 1
+                                        }
+                                    ]
+                                }
+                            }
+                        })
+                    }
+                }
+            });
+        });
+    }
+</script>
+<style>
+    .ias-load-prev {
+        display: none !important;
+    }
+</style>
+<script type="text/javascript">
+    require(['jquery'], function ($) {
+        $(window).on("scroll", function () {
+            if (window.scrollY < 500) {
+                var btn = $('.ias-load-prev');
+                if (btn.length >= 1) {
+                    btn.trigger('click');
+                }
+            }
+        });
+    });
+</script>

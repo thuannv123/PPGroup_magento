@@ -1,0 +1,28 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php
+/**
+ * Shopping cart totals template
+ * @var $block \Magento\Checkout\Block\Cart\Item\
+ */
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$counter = $this->helper('\Magento\Checkout\Helper\Cart');
+$cart = $objectManager->get('\Magento\Checkout\Model\Cart');
+$priceHelper = $objectManager->get('\Magento\Framework\Pricing\Helper\Data');
+?>
+<div id="cart-totals-items" class="cart-items">
+    <div class="noOfItems">
+        <?php echo $counter->getItemsCount(); ?>
+        <span>Items</span>
+    </div>
+    <div class="items-total-price">
+        <?php
+            $subTotal = $cart->getQuote()->getSubtotal();
+            echo $formattedPrice = $priceHelper->currency($subTotal,true,false);
+            ?>
+    </div>
+</div>

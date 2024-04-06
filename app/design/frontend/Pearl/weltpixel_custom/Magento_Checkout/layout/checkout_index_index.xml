@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+        <head>
+        <css src="Magento_Checkout/css/checkout.css"/>
+    </head>
+    <body>
+        <referenceContainer name="page.wrapper">
+            <!-- <block class="Magento\Framework\View\Element\Template" 
+                name="custom.block" 
+               before="-"  
+                template="WeltPixel_QuickCart::customblock.phtml">
+            </block> -->
+        </referenceContainer>
+        <referenceBlock name="page.main.title" remove="false"/>
+        
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="sidebar" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="note" xsi:type="array">
+                                            <item name="component" xsi:type="string">Magento_Checkout/js/view/note</item>
+                                            <item name="displayArea" xsi:type="string">note</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="template" xsi:type="string">Magento_Checkout/note</item>
+                                            </item> 
+                                            <item name="children" xsi:type="array">
+                                                <item name="mpOrderAttributes" xsi:type="array">
+                                                    <item name="component" xsi:type="string">Mageplaza_OrderAttributes/js/view/attributes</item>
+                                                    <item name="scope" xsi:type="string">mpOrderSummaryAttributes</item>
+                                                    <item name="displayArea" xsi:type="string">mpOrderAttributes</item>
+                                                    <item name="config" xsi:type="array">
+                                                        <item name="template" xsi:type="string">Mageplaza_OrderAttributes/container/order-summary-fieldset</item>
+                                                        <item name="componentDisabled" xsi:type="helper" helper="Mageplaza\OrderAttributes\Helper\Data::isDisabled"/>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                    <item name="shipping-step" xsi:type="array">
+                                                <item name="component" xsi:type="string">uiComponent</item>
+                                                <item name="sortOrder" xsi:type="string">1</item>
+                                                <item name="children" xsi:type="array">
+                                                    <item name="step-config" xsi:type="array">
+                                                        <item name="component" xsi:type="string">uiComponent</item>
+                                                        <item name="children" xsi:type="array">
+                                                            <item name="shipping-rates-validation" xsi:type="array">
+                                                                <item name="children" xsi:type="array">
+                                                                    <!--Step configuration components-->
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                    <item name="shippingAddress" xsi:type="array">
+                                                        <item name="children" xsi:type="array">
+                                                            <item name="shipping-address-fieldset" xsi:type="array">
+                                                                <item name="children" xsi:type="array">
+                                                                    <item name="postcode" xsi:type="array">
+                                                                        <item name="validation" xsi:type="array">
+                                                                            <item name="min_text_length" xsi:type="number">3</item>
+                                                                        </item>
+                                                                    </item>
+                                                                    <item name="city" xsi:type="array">
+                                                                        <item name="validation" xsi:type="array">
+                                                                            <item name="min_text_length" xsi:type="number">2</item>
+                                                                        </item>
+                                                                    </item>
+                                                                    <item name="telephone" xsi:type="array">
+                                                                        <item name="validation" xsi:type="array">
+                                                                            <item name="min_text_length_phone" xsi:type="number">10</item>
+                                                                            <item name="max_text_length_phone" xsi:type="number">10</item>
+                                                                            <item name="validate-number" xsi:type="number">10</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        <item name="billing-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="payment" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="afterMethods" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="billing-address-form" xsi:type="array">
+                                                                    <item name="children" xsi:type="array">
+                                                                        <item name="mpOrderAttributes" xsi:type="array">
+                                                                            <item name="component" xsi:type="string">Mageplaza_OrderAttributes/js/view/attributes</item>
+                                                                            <item name="scope" xsi:type="string">mpPaymentMethodBottomAttributes</item>
+                                                                            <item name="displayArea" xsi:type="string">mpOrderAttributes</item>
+                                                                            <item name="config" xsi:type="array">
+                                                                                <item name="template" xsi:type="string">Mageplaza_OrderAttributes/container/payment-method-bottom-fieldset</item>
+                                                                                <item name="componentDisabled" xsi:type="helper" helper="Mageplaza\OrderAttributes\Helper\Data::isDisabled"/>
+                                                                            </item>
+                                                                        </item>
+                                                                        <item name="form-fields" xsi:type="array">
+                                                                            <item name="children" xsi:type="array">
+                                                                                <item name="postcode" xsi:type="array">
+                                                                                    <item name="validation" xsi:type="array">
+                                                                                        <item name="min_text_length" xsi:type="number">3</item>
+                                                                                    </item>
+                                                                                </item>
+                                                                                 <item name="city" xsi:type="array">
+                                                                                    <item name="validation" xsi:type="array">
+                                                                                        <item name="min_text_length_onlycity" xsi:type="number">2</item>
+                                                                                    </item>
+                                                                                </item>
+                                                                                 <item name="subdistrict" xsi:type="array">
+                                                                                    <item name="validation" xsi:type="array">
+                                                                                        <item name="min_text_length" xsi:type="number">2</item>
+                                                                                    </item>
+                                                                                </item>
+                                                                                <item name="telephone" xsi:type="array">
+                                                                                    <item name="validation" xsi:type="array">
+                                                                                        <item name="min_text_length_phone" xsi:type="number">10</item>
+                                                                                        <item name="max_text_length_phone" xsi:type="number">10</item>
+                                                                                        <item name="validate-number" xsi:type="number">10</item>
+                                                                                    </item>
+                                                                                </item>
+                                                                            </item>
+                                                                        </item>
+                                                                    </item>
+                                                                    <!-- <item name="config" xsi:type="array">
+                                                                        <item name="componentDisabled" xsi:type="boolean">true
+                                                                        </item>
+                                                                    </item> -->
+                                                                </item>
+                                                                <item name="discount" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Magento_SalesRule/js/view/payment/discount</item>
+                                                                    <item name="sortOrder" xsi:type="string">90</item>
+                                                                    <item name="children" xsi:type="array">
+                                                                        <item name="errors" xsi:type="array">
+                                                                            <item name="sortOrder" xsi:type="string">0</item>
+                                                                            <item name="component" xsi:type="string">Magento_SalesRule/js/view/payment/discount-messages</item>
+                                                                            <item name="displayArea" xsi:type="string">messages</item>
+                                                                        </item>
+                                                                        <item name="captcha" xsi:type="array">
+                                                                            <item name="component" xsi:type="string">Magento_SalesRule/js/view/payment/captcha</item>
+                                                                            <item name="displayArea" xsi:type="string">captcha</item>
+                                                                            <item name="formId" xsi:type="string">sales_rule_coupon_request</item>
+                                                                            <item name="configSource" xsi:type="string">checkoutConfig</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="giftCardAccount" xsi:type="array">
+                                                                    <item name="config" xsi:type="array">
+                                                                        <item name="componentDisabled" xsi:type="boolean">true
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceBlock name="checkout.root">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Magento_Checkout::onepage.phtml</argument>
+            </action>
+        </referenceBlock>
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument 
+                    name="view_model" 
+                    xsi:type="object">PPGroup\Checkout\Block\Quote</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceContainer name="before.body.end">
+            <block class="PPGroup\Sales\Block\Checkout\Js" name="absolute_footer" template="PPGroup_Sales::js.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

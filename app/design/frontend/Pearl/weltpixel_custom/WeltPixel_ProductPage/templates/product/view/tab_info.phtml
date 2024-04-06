@@ -1,0 +1,80 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// phpcs:disable Magento2.Templates.ThisInTemplate.FoundThis
+
+/**
+ * Product view template
+ *
+ * @var $block \PPGroup\Catalog\Block\Product\View\TabInfo
+ */
+?>
+<?php
+$_helper = $this->helper(Magento\Catalog\Helper\Output::class);
+$_product = $block->getProduct();
+
+if (!$_product instanceof \Magento\Catalog\Model\Product) {
+    return;
+}
+
+$shortDescription = $block->getShortDescription($_helper);
+$description = $block->getDescription($_helper);
+$canShowTab = $block->canShowTab($_helper);
+$canShowDescription = $block->canShowDescription($_helper);
+$canShowShortDescription = $block->canShowShortDescription($_helper);
+?>
+
+<?php if ($canShowTab) : ?>
+    <div id="description" class="page-main-description product-full-width-section">
+        <div class="product attribute description">
+            <div data-content-type="row" data-appearance="contained" data-element="main">
+                <div data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}"
+                     data-element="inner" data-pb-style="tab-info">
+                    <div class="tab-align-left" data-content-type="tabs" data-appearance="default"
+                         data-active-tab="" data-element="main" data-pb-style="tab-align-left">
+                        <ul class="tabs-navigation" role="tablist" data-element="navigation"
+                            data-pb-style="tabs-navigation">
+                            <?php if ($canShowDescription) : ?>
+                                <li class="tab-header" role="tab" data-element="headers" data-pb-style="tab-header">
+                                    <a
+                                        class="tab-title" href="#description"><span
+                                            class="tab-title"><?= __('DETAILS') ?></span></a>
+                                </li>
+                            <?php endif; ?>
+
+                            <?php if ($canShowShortDescription) : ?>
+                                <li class="tab-header" role="tab" data-element="headers"
+                                    data-pb-style="tab-header-descrption"><a class="tab-title"
+                                                                             href="#short_description"><span
+                                            class="tab-title"><?= __('SIZE GUIDE') ?></span></a>
+                                </li>
+                            <?php endif; ?>
+                        </ul>
+                        <div class="tabs-content" data-element="content" data-pb-style="tabs-content">
+                            <?php if ($canShowDescription) : ?>
+                                <div id="description" data-content-type="tab-item" data-appearance="default"
+                                     data-tab-name="DETAILS" data-background-images="{}" data-element="main"
+                                     data-pb-style="tabs-content-description">
+                                    <div class="value" description><?= /* @noEscape */
+                                        $description ?></div>
+                                </div>
+                            <?php endif; ?>
+                            <?php if ($canShowShortDescription) : ?>
+                                <div id="short_description" data-content-type="tab-item" data-appearance="default"
+                                     data-tab-name="SIZE GUIDE" data-background-images="{}"
+                                     data-element="main" data-pb-style="tabs-content-short-description">
+                                    <div class="value" short_description><?= /* @noEscape */
+                                        $shortDescription ?></div>
+                                </div>
+                            <?php endif; ?>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>

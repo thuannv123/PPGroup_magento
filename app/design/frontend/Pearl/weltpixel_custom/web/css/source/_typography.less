@@ -1,0 +1,149 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    .lib-font-face(
+        @family-name: @font-family-name__base,
+        @font-path: '@{baseDir}fonts/ridley-grotesk/ridley-grotesk',
+        @font-weight: 400,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__base,
+        @font-path: '@{baseDir}fonts/ridley-grotesk-medium/ridley-grotesk-medium',
+        @font-weight: 600,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__silk-serif,
+        @font-path: '@{baseDir}fonts/silk-serif-extralight/silk-serif-extralight',
+        @font-weight: normal,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__tahoma,
+        @font-path: '@{baseDir}fonts/tahoma/tahoma',
+        @font-weight: normal,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__futura-medium,
+        @font-path: '@{baseDir}fonts/futura-medium/futura-medium',
+        @font-weight: normal,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__muli,
+        @font-path: '@{baseDir}fonts/muli/muli',
+        @font-weight: normal,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__brown,
+        @font-path: '@{baseDir}fonts/brown/brown',
+        @font-weight: normal,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__sweet-sans-pro,
+        @font-path: '@{baseDir}fonts/sweet-sans-pro/sweet-sans-pro',
+        @font-weight: normal,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @icon-theme__font-family,
+        @font-path: '@{baseDir}fonts/theme-icon/theme-icon',
+        @font-weight: normal,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @icon-custom__font-family,
+        @font-path: '@{baseDir}fonts/7-stroke/7-stroke',
+        @font-weight: normal,
+        @font-style: normal
+    );
+    
+    @font-face {
+        font-family: 'DB Heavent X Regular';
+        src: url('@{baseDir}fonts/DBHelvethaicaXv32.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'DB Heavent X Medium';
+        src: url('@{baseDir}fonts/DBHelvethaicaXMedv32.ttf') format('truetype');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'DB Heavent X Bold';
+        src: url('@{baseDir}fonts/DBHelvethaicaXBdv32.ttf') format('truetype');
+        font-weight: 900;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
+.lib-theme-icon() {
+    font-family: @icon-theme__font-family;
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    text-align: center;
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+
+.lib-theme-icon-detail(@content-font-arr: @icon-theme-menu, @font-size: 14px) {
+    .lib-theme-icon();
+    content: @content-font-arr;
+    font-size: @font-size;
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  h1 {
+    .lib-css(font-size, @h1__font-size-desktop);
+    .lib-css(margin-bottom, @h1__margin-bottom__desktop);
+  }
+}
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  .items {
+    .lib-list-reset-styles();
+  }
+}

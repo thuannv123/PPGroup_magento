@@ -1,0 +1,100 @@
+<?php
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_Blog
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+use PPGroup\Blog\Block\Category\Listpost;
+use Mageplaza\Blog\Model\Post;
+/** @var Listpost $block */
+$storeId = $block->getStoreId();
+$category_layout = $block->getBlogObject()->getCategoryLayout();
+$sidebar = $block->getSidebarConfig();
+?>
+
+<div class="post-list-content" id="mpblog-list-container" style="margin-top: 40px;">
+    <?php $postCollection = $block->getPostCollection(); ?>
+    <?php if ($postCollection && $postCollection->getSize()) : ?>
+        <div class="post-list-body">
+            <?php $i = 1 ?>
+            <?php /** @var Post $post */
+            foreach ($postCollection as $post) : ?>
+                <?php
+                   $result = $block->getPostCustom($post->getId(), $storeId);
+                   $name = ($result[0]['name'] != '') ? $result[0]['name'] : $post->getName();
+                   $short_description = ($result[0]['name'] != '')? $result[0]['short_description'] : $post->getShortDescription();
+                ?>
+                <div class="post-list-item col-mp<?= $block->isGridView()
+                    ? ' post-item-grid mp-6 mp-xs-12' : ' post-item-list mp-6'; ?>">
+                    <div class="post-item-wraper">
+                        <?php if ($post->getImage()) : ?>
+                            <div class="post-image">
+                                <a href="<?= $block->escapeUrl($post->getUrl()) ?>">
+                                    <img class="img-responsive"
+                                         src="<?= $block->escapeUrl($block->resizeImage($post->getImage(), '400x')) ?>"
+                                         alt="<?= $block->escapeHtml($name); ?>"/>
+                                </a>
+                            </div>
+                        <?php endif; ?>
+                        <div class="post-info-wraper">
+                            <h5 class="mp-post-title">
+                                <a class="post-link-title" title="<?= $block->escapeHtml($name); ?>"
+                                   href="<?= $block->escapeUrl($post->getUrl()) ?>">
+                                    <?= $block->escapeHtml($name) ?>
+                                </a>
+                            </h5>
+                            <div class="post-short-description">
+                                <p><?= /** @noEscape */ $block->maxShortDescription($short_description) ?></p>
+                            </div>
+                            <div class="mp-clearfix"></div>
+                            <div class="mp-post-meta-info mp-alignright">
+                                <div class="actions">
+                                    <a class="mp-read-more" href="<?= $block->escapeUrl($post->getUrl()) ?>"
+                                       title="<?= $block->escapeHtmlAttr(__('Read More')) ?>">
+                                        <?= $block->escapeHtml(__('Read More')) ?>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php $i++; ?>
+                <?php if ($i % 2 == 0) : ?>
+                    <div class="mp-clear"></div>
+                <?php endif; ?>
+            <?php endforeach; ?>
+            <div class="mp-clear"></div>
+        </div>
+        <?= $block->getPagerHtml() ?>
+    <?php else : ?>
+        <?= $block->escapeHtml(__('There are no posts at this moment')) ?>
+    <?php endif; ?>
+    <?= $block->getChildHtml('additional'); ?>
+</div>
+<script>
+     require(['jquery'], function($) {
+         $(document).ready(function () {
+             var category_layout = "<?php echo $category_layout; ?>";
+             if (category_layout === "3columns") {
+                 $('.post-list-item').removeClass('mp-6').addClass('mp-4');
+             } else if (category_layout === "1column") {
+                 $('.post-list-item').removeClass('post-item-grid mp-6 mp-xs-12').addClass('post-item-list mp-6');
+                 $('.post-list-item').wrap('<div class="row" style="display:flex; justify-content: center;"></div>');
+             }
+         });
+});
+</script>

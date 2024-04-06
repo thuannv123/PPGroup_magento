@@ -1,0 +1,703 @@
+.theme-pearl{
+    .page-wrapper{
+        #maincontent{
+            .columns {
+                h3{
+                    &:lang(th){
+                        font-size: 48px;
+                    }
+                }
+                .product-item {
+                    padding-bottom: 100px;
+                    .product-item-info {
+                       margin: 0 7px;
+                        .product-item-details {
+                            position: relative;
+                            .product-item-name {
+                                overflow: unset;
+                                word-wrap: unset;
+                                white-space: normal;
+                                max-height: 35px;
+                                margin-bottom: 10px;
+                                height: 35px;
+                                &:lang(th){
+                                    white-space: normal;
+                                    margin-bottom: 0px;
+                                    height: 5rem;
+                                    word-break: break-word;
+                                    word-wrap: break-word;
+                                    overflow: hidden;
+                                    max-height: 5.9rem;
+                                    display: -webkit-box;
+                                    -webkit-line-clamp: 2;
+                                    -webkit-box-orient: vertical;
+                                    line-height: 1.2;
+                                    // font-family: 'DB Heavent X Medium';
+                                }
+                            }
+                            .price-box{
+                                flex-direction: column;
+                                height: 40px;
+                                max-height: 40px;
+                                margin: 0;
+                                display: flex;
+                                flex-wrap: nowrap;
+                            }
+                            .product-item-inner{
+                                position: absolute;
+                                bottom: -45px;
+                                height: 90px;
+                                width: 100%;
+                                visibility: hidden;
+                                &:lang(th){
+                                    bottom: -50px;
+                                }
+                                .product.actions{
+                                    position: absolute;
+                                    bottom: 0;
+                                    width: 100%;
+                                    .actions-primary{
+                                        width: 100%;
+                                        .action.tocart{
+                                            width: 100%;
+                                            padding: 13px 20px 13px;
+                                            background: #ffffff;
+                                            border: 1px solid #E8E5E2;
+                                            span{
+                                                color: #000000;
+                                                font-size: 12px;
+                                                font-weight: 600;
+                                                &:lang(th){
+                                                    font-size: 21px;
+                                                    font-family: 'DB Heavent X Medium';
+                                                }
+                                            }
+                                        } 
+                                    }
+                                }
+                                .swatch-attribute.color{
+                                    .swatch-attribute-options{
+                                        margin-top: 5px;
+                                        display: flex;
+                                        justify-content: center;
+                                        .swatch-option{
+                                            width: 28px;
+                                            height: 28px;
+                                            border-radius: 50%;
+                                            &:hover{
+                                                border: 3px solid #ffffff !important;
+                                                outline: 1px solid #e8e5e2 !important;
+                                            }
+                                            &.selected{
+                                                border: 3px solid #ffffff !important;
+                                                outline: 1px solid #e8e5e2 !important;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &:hover{
+                            box-shadow: none !important;
+                            .product-item-details{
+                                .product-item-inner{
+                                    visibility: unset;
+                                    background: #ffffff;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+
+            }
+        //shop by brand
+            .shop-by-brand-images{
+                .item{
+                    .title-brand{
+                        display: block;
+                        margin: 20px 0;
+                        font-size: 20px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        &:lang(th){
+                            font-size: 30px;
+                            font-family: 'DB Heavent X Medium';
+                        }
+                    }
+                }
+            }
+            .pp-society-main{
+                margin: 90px 0;
+                h3{
+                    margin-bottom: 5px;
+                }
+                p{
+                    font-size: 15px;
+                    &:lang(th){
+                        font-size: 22px;
+                    }
+                }
+                .pp-society-content{
+                    display: flex;
+                    margin: 25px 0;
+                    .society-item{
+                        width: calc(100%/3);
+                    }
+                    .society-right-content{
+                        margin: 10px 0;
+                        display: block;
+                    }
+                    span{
+                        font-size: 20px;
+                        font-weight: 600;
+                        &:lang(th){
+                            font-size: 30px;
+                            font-family: 'DB Heavent X Medium';
+                        }
+                    }
+                    .btn-brand{
+                        background: transparent;
+                        border: 0;
+                        text-decoration: underline;
+                        font-weight: 600;
+                        color: #000000;
+                        &:lang(th){
+                            font-family: 'DB Heavent X Medium';
+                        }
+                    }
+                }
+                button{
+                    background: transparent;
+                    border-color: #c7c7c7;
+                    font-size: 12px;
+                    &:lang(th){
+                        font-size: 21px;
+                    }
+                    &:hover{
+                        border-color: #000000;
+                    }
+                }
+            }
+            .information{
+                display: flex;
+                .about-us{
+                    display: flex;
+                    width: 50%;
+                    justify-content: space-around;
+                    background: #E6E4DD;
+                    padding: 30px 0;
+                    height: 301px;
+                    .title{
+                        font-size: 32px;
+                        &:lang(th){
+                            font-size: 48px;
+                        }
+                    }
+                    ul{
+                        list-style: none;
+                        padding: 10px 0;
+                    }
+                }
+                .membership{
+                    width: 50%;
+                    position: relative;
+                    .content{
+                        position: absolute;
+                        top: 30px;
+                        left: 50px;
+                        text-align: left;
+                        .title{
+                            font-size: 32px;
+                            color: #ffffff;
+                            margin-bottom: 20px;
+                            &:lang(th){
+                                font-size: 48px;
+                            }
+                        }
+                        .btn-membership{
+                            background: transparent;
+                            border-color: #ffffff;
+                            a{
+                                color: #ffffff;
+                            }
+                        }
+                    }
+                }
+            }
+            .pp-service{
+                margin: 90px 0;
+                h3{
+                    margin-bottom: 25px;
+                }
+                .social-service{
+                    display: flex;
+                    padding: 0 150px;
+                    .item-service{
+                        width: calc(100%/4);
+                        .title{
+                            font-weight: 600;
+                            &:lang(th){
+                                font-family: 'DB Heavent X Medium';
+                            }
+                        }
+                    }
+                }
+            }
+            .owl-controls{
+                .owl-nav{
+                    position: absolute;
+                    width: 100%;
+                    top: 50%;
+                    [class*=owl-]{
+                        background: transparent;
+                        width: auto;
+                        height: auto;
+                        &:hover{
+                            background: transparent;
+                            .owl-prev,.owl-next{
+                                &::before{
+                                    background-color: transparent;
+                                }
+                            }
+                        }
+                    }
+                    .owl-prev{
+                        &::before{
+                            content: url(../images/arrow-left-slider.svg);
+                            display: block;
+                            -webkit-mask-image: unset;
+                            mask-image: unset;
+                            width: 100px;
+                            height: auto;
+                            background-color: transparent;
+                            position: unset;
+                        }                    
+                    }
+                    .owl-next{
+                        text-indent: unset;
+                        &::before{
+                            content: url(../images/arrow-right-slider.svg);
+                            display: block;
+                            -webkit-mask-image: unset;
+                            mask-image: unset;
+                            width: 100px;
+                            height: auto;
+                            background-color: transparent;
+                            transform: unset;
+                            position: unset;
+                        }  
+                    }
+                }
+                .owl-dots{
+                    text-align: left;
+                    left: 60px;
+                    bottom: 25px;
+                    .owl-dot{
+                        span{
+                            background: #c2c2c2;
+                            opacity: 0.5;
+                            border: 0;
+                            margin: 5px;
+                            height: 8px;
+                            width: 8px;
+                        }
+                        &.active{
+                            span{
+                                background: #ffffff;
+                                opacity: 1;
+                                border: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .modal-popup._show.amgdprcookie-bar-container{
+        background: #000000;
+        padding: 0;
+    }
+    .amgdprcookie-bar-container.modal-popup{
+        display: block;
+        .amgdprcookie-bar-block{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 10px 150px;
+            @media screen and (max-width: 768px) {
+                display: block;
+                padding: 10px 15px;
+            }
+            .amgdprcookie-policy{
+                max-width: unset;
+                width: 88.5%;
+                color: #ffffff;
+                @media screen and (max-width: 768px) { 
+                    width: 100%;
+                }
+                a{
+                    color: #ffffff;
+                }
+            }
+            .amgdprcookie-buttons-block{
+                width: 11.5%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                @media screen and (max-width: 768px) { 
+                    width: 100%;
+                }
+                button{
+                    width: 100%;
+                    background: #000000;
+                    margin: 5px 0;
+                    border: 1px solid #ffffff;
+                    @media screen and (max-width: 768px) { 
+                        margin: 5px 5px 0;
+                    }
+                }
+            }
+        }
+    }
+    .amscroll-backtotop-block{
+        bottom: 0;
+        right: 10px;
+        background: transparent !important;
+        border: 0 !important;
+        transform: none !important;
+        &::before{
+            content: url(../images/back-top.svg);
+        }
+        &::after{
+            content: url(../images/back-top.svg);
+            width: fit-content !important;
+        }
+        .amscroll-text{
+            display: none;
+        }
+    }
+    button.btt-button{
+        width: 56px;
+        height: 56px;
+        border: 0 !important;
+        box-shadow: none;
+        border-radius: 0 !important;
+        bottom: -15px !important;
+        background-color: transparent !important;
+        z-index: 999;
+        opacity: 1;
+        &:after {
+            position: unset;
+            content: url(../images/back-top.svg);
+            color: #fff;
+        }
+    }
+}
+@media(max-width: 768px){
+    .theme-pearl{
+        .page-wrapper{
+            #maincontent{
+                .columns{
+                    .custom-slider{
+                        margin-bottom: 50px;
+                        .owl-controls{
+                            .owl-dots{
+                                left: 3%;
+                                bottom: 53px;
+                            }
+                        }
+                        .owl-carousel-products-category_products{
+                            .owl-stage {
+                                padding: 0 !important;
+                            }
+                        }
+                    }
+
+                    .product-item{
+                        padding-bottom: 30px;
+                        .product-item-info{
+                            .product-item-details{
+                                .product-item-name{
+                                    max-height: unset;
+                                    height: unset;
+                                }
+                            }
+                        }
+                    }
+                }
+                h3{
+                    font-size: 28px;
+                    &:lang(th){
+                        font-size: 38px;
+                    }
+                }
+                .block-shop-by-brand{
+                    .block-title{
+                        margin-bottom: 30px;
+                    }
+                }
+                .brands-mobile{
+                    display: flex;
+                    flex-wrap: wrap;
+                    .item{
+                        width: 49%;
+                        position: relative;
+                        margin-bottom: 6px;
+                        .title-brand{
+                            position: absolute;
+                            width: 100%;
+                            bottom: 10px;
+                            color: #ffffff;
+                            margin: 0;
+                        }
+                    }
+                    #item1,#item3{
+                        margin-right: 6px;
+                    }
+                }
+                .pp-society-main{
+                    padding: 0 20px;
+                    p{
+                        font-size: 15px;
+                        &:lang(th){
+                            font-size: 22px;
+                        }
+                    }
+                    .pp-society-content{
+                        display: block;
+                        .society-item{
+                            &:first-child{
+                                width: 100%;
+                                text-align: left;
+                                margin-bottom: 50px;
+                                .btn-brand{
+                                    padding: 11px 0;
+                                }
+                                button{
+                                    width: fit-content;
+                                }
+                            }
+                            &:nth-child(2){
+                                float: left;
+                                width: 49%;
+                                position: relative;
+                            }
+                            &:nth-child(3){
+                                float: right;
+                                width: 49%;
+                                position: relative;
+                            }
+                            &:not(:first-child){
+                                .society-left-content{
+                                    float: left;
+                                    width: 35%;
+                                    a{
+                                        height: 100%;
+                                        display: block;
+                                    }
+                                }
+                                .society-right-content{
+                                    float: right;
+                                    width: 61%;
+                                    margin-top: 0;
+                                    margin-bottom: 0;
+                                    text-align: left;
+                                    &:lang(th){
+                                        line-height: 0.6;
+                                        word-wrap: normal;
+                                        span {
+                                            font-size: 21px;
+                                        }
+                                    }
+                                    span{
+                                        font-size: 12px;
+                                    }
+                                    p{
+                                        display: none;
+                                    }
+                                }
+                                .btn-brand{
+                                    padding: 0;
+                                    text-align: left;
+                                    width: 62%;
+                                    font-size: 11px;
+                                    margin-left: 4px;
+                                    position: absolute;
+                                    bottom: 3px;
+                                    font-weight: normal;
+                                    &:lang(th){
+                                        font-size: 20px;
+                                        font-family: 'DB Heavent X Regular';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    button{
+                        width: 100%;
+                        margin-top: 20px;
+                    }
+                }
+                .information{
+                    .about-us{
+                        display: none;
+                    }
+                    .membership{
+                        width: 100%;
+                        .content{
+                            
+                        }
+                    }
+                }
+                .pp-service.service-mobile {
+                    margin: 50px 0;
+                    .social-service{
+                        display: unset;
+                        padding: 0;
+                        .item-service{
+                            width: 100%;
+                            img{
+                                width: auto;
+                                margin: 0 auto 10px;
+                            }
+                            .title{
+                                font-weight: 400;
+                                font-size: 15px;
+                                margin-bottom: 10px;
+                                &:lang(th){
+                                    font-size: 22px;
+                                }
+                            }
+                            p{
+                                font-size: 13px;
+                                &:lang(th){
+                                    font-size: 21px;
+                                }
+                            }
+                        }
+                        .owl-controls{
+                            .owl-dots{
+                                position: unset;
+                                text-align: center;
+                                margin-top: 15px;
+                                .owl-dot{
+                                    span{
+                                        width: 40px;
+                                        height: 2px;
+                                        background: #c2c2c2;
+                                    }
+                                    &.active{
+                                        span{
+                                            background: #000000;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+//Carrers Page
+.retail {
+    .button-retail {
+        &::after {
+            content: url(../images/down-menu.png);
+            float: right;
+            transform: rotate(180deg);
+        }
+        &.active {
+            &::after {
+                content: url(../images/down-menu.png);
+                float: right;
+                transform: rotate(0deg);
+            }
+        }
+    }
+}
+.crm-manager {
+    .button-crm-manager {
+        &::after {
+            content: url(../images/down-menu.png);
+            float: right;
+            transform: rotate(180deg);
+        }
+        &.active {
+            &::after {
+                content: url(../images/down-menu.png);
+                float: right;
+                transform: rotate(0deg);
+            }
+        }
+    }
+}
+.senior-sales {
+    .button-senior-sales {
+        &::after {
+            content: url(../images/down-menu.png);
+            float: right;
+            transform: rotate(180deg);
+        }
+        &.active {
+            &::after {
+                content: url(../images/down-menu.png);
+                float: right;
+                transform: rotate(0deg);
+            }
+        }
+    }
+}
+.stores-manager {
+    .button-stores-manager {
+        &::after {
+            content: url(../images/down-menu.png);
+            float: right;
+            transform: rotate(180deg);
+        }
+        &.active {
+            &::after {
+                content: url(../images/down-menu.png);
+                float: right;
+                transform: rotate(0deg);
+            }
+        }
+    }
+}
+.crm-data-analyst-manager {
+    .button-crm-data-analyst-manager {
+        &::after {
+            content: url(../images/down-menu.png);
+            float: right;
+            transform: rotate(180deg);
+        }
+        &.active {
+            &::after {
+                content: url(../images/down-menu.png);
+                float: right;
+                transform: rotate(0deg);
+            }
+        }
+    }
+}
+.cafe-manager {
+    .button-cafe-manager {
+        &::after {
+            content: url(../images/down-menu.png);
+            float: right;
+            transform: rotate(180deg);
+        }
+        &.active {
+            &::after {
+                content: url(../images/down-menu.png);
+                float: right;
+                transform: rotate(0deg);
+            }
+        }
+    }
+}

@@ -1,0 +1,73 @@
+<?php
+/**
+* Product brand in product view page
+*
+* @var $block \Magento\Catalog\Block\Product\View\Description
+*/
+?>
+
+<?php
+$_product = $block->getProduct();
+if (!$_product instanceof \Magento\Catalog\Model\Product) {
+    return;
+}
+
+$_color = "";
+$_size = "";
+$_categoryNameArray = [];
+
+foreach($_product->getCategoryCollection()->addAttributeToSelect('name') as $category){
+    $_categoryNameArray[] = $category->getName(); 
+}
+$_category = join('/', $_categoryNameArray);
+
+if($_product->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE){
+    $options = $_product->getTypeInstance()->getConfigurableOptions($_product);
+    if(array_key_exists(93, $options)){
+        $_colors = $options[93];
+        $_colorsArray = [];
+        foreach($_colors as $_color){
+            $_colorsArray[] = $_color["option_title"];
+        }
+        $_color = join('/', $_colorsArray);
+    }
+    if(array_key_exists(222, $options)){
+        $_sizeOptions = $options[222];
+        $_sizeArray = [];
+        foreach($_sizeOptions as $_sizeOption){
+            $_sizeArray[] = $_sizeOption["option_title"];
+        }
+        $_size = join('/', $_sizeArray);
+    }
+}
+
+?>
+
+<div class="product-info-brand">
+    <?= $_product->getAttributeText('brand'); ?>
+</div>
+
+<script>
+    
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        "event": "productViewed-ftd",
+        "currencyCode": "THB",
+        "ecommerce": {
+            "detail":{
+                "products": [
+                    {
+                        "id": "<?php echo $_product->getSku(); ?>",
+                        "name": "<?php echo $_product->getName(); ?>",
+                        "brand": "<?php echo $_product->getAttributeText('brand'); ?>",
+                        "price": "<?php echo $_product->getFinalPrice(); ?>",
+                        "category": "<?php echo $_category; ?>",
+                        "variant": "<?php echo $_color; ?>",
+                        "dimension1": "<?php echo $_size; ?>"
+                    }
+                ]
+            }
+        }
+    })
+
+</script>

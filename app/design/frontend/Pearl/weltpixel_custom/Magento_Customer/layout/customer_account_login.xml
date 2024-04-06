@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="customer.login.container">
+            <container name="social.login.container" htmlClass="social-login-container" htmlTag="div"/>
+        </referenceContainer>
+        <move element="customer.new" destination="social.login.container" before="-"/>
+        <move element="customer.login.am-social-below_login" destination="social.login.container" after="customer.new"/>
+    </body>
+</page>

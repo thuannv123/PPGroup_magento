@@ -1,0 +1,173 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Email extend styles
+//  _____________________________________________
+
+//  This file should be used for theme-specific styles for emails that extend or modify the styles in _email.less
+//  This will allow you to edit email styles without copying and editing the _email.less file
+
+//  Custom fonts are declared here, rather than in _email-base.less, as it allows for custom fonts to be changed/removed
+//  in custom themes.
+
+//  Importing fonts from an external CSS file, rather than embedding @font-face declarations inside the <style> tag,
+//  as the latter will cause font rendering issues if the web fonts are inaccessible.
+
+@import url("@{baseUrl}css/email-fonts.css");
+.main {
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: left;
+    width: 660px;
+    background-color: #e6e4dd;
+    border-color: #73726F;
+    .header {
+        padding: 26px;
+        background-color: #e6e4dd;
+    }
+    .footer {
+        margin-left: 4%;
+        width: 96%;
+        td {
+            font-size: 11px;
+            padding-right: 10px; 
+            padding-top: 10px;
+            padding-bottom: 10px;
+            a,
+            a:hover,
+            a:active,
+            a:visited {
+                color: #232121 !important;
+            }
+            a:hover {
+                text-decoration: underline !important;
+            }
+            ul {
+                text-align: center;
+                list-style-type: none !important;
+                margin: 0 auto;
+                padding: 0;
+                display: block;
+
+                li {
+                    margin: 0;
+                    padding: 0 5px;
+                    display: inline-block !important;
+                    float: none;
+                    
+                    a,
+                    a:hover,
+                    a:active,
+                    a:visited {
+                        color: #232121 !important;
+                    }
+                    a:hover {
+                        text-decoration: underline !important;
+                    }
+
+                }
+            }
+        }
+    }
+    .email-information .order-details,
+    .email-summary,
+    .email-intro {            
+        td {
+            border-bottom: 1px solid #73726F;
+            
+            h3 {
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 1.1;
+                border-bottom: 0;
+            }
+            p {
+                margin-bottom: 10px;
+                a,
+                a:hover,
+                a:active,
+                a:visited {
+                    text-decoration: underline !important;            
+                }
+            }
+        }
+    }
+    .email-information {
+
+        .order-details {
+            td {
+                border-bottom: 0;
+            }
+        }
+        .email-items {
+            thead {
+                tr{
+                    border-bottom: 1px solid #73726F;
+                }
+            }
+            tbody {
+                tr {
+                    border-bottom: 1px solid #73726F;
+                    td {
+                        border-top: 0;
+                        img {
+                            margin-right: 25px;
+                            width: 80px;
+                            height: 80px;
+                            display: inline-block;
+                            float: left;
+                        }
+                        div.product-name {                            
+                            display: inline-block;
+                            font-weight: 400;
+                        }
+                        dl dt {
+                            display: block;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+            tfoot {
+                th, td {
+                    background-color: #e6e4dd;
+                }
+            }
+        }
+    }
+    .email-summary {
+        td {
+            h1 {
+                border-bottom: 0;
+            }
+        }
+    }
+    td {        
+        p {
+            margin-bottom: 30px !important;
+            a,
+            a:hover,
+            a:active,
+            a:visited {
+                color: #232121 !important;
+            }
+            a:hover {
+                text-decoration: underline !important;
+            }
+        }
+        .social-links a {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+    ul.account {
+        margin-left: 30px;
+        list-style: none;
+    }
+    ol {
+        margin-left: 15px;        
+    }
+}

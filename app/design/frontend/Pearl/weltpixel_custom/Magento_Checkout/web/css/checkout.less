@@ -1,0 +1,95 @@
+input:not([name*="rating"])[type="checkbox"]+label, 
+input:not([name*="rating"]).checkbox+label{
+    &:lang(th){
+        &::before{
+            top: 7px;
+        }
+    }
+}
+
+input:not([name*="rating"])[type="checkbox"]:checked+label, 
+input:not([name*="rating"]).checkbox:checked+label{
+    &:lang(th){
+        &::after{
+            top:11px
+        }
+    }
+}
+
+input:not([name*="rating"]).radio+label{
+    &:lang(th){
+        &::before{
+            top: 7px;
+        }
+    }
+}
+
+input:not([name*="rating"]).radio:checked+label{
+    &:lang(th){
+        &::after{
+            top: 10px;
+        }
+    }
+}
+@media(min-width: 769px){
+    .page-wrapper{
+        .page-main{
+            .opc-summary-wrapper{
+                .modal-inner-wrap{
+                    .items-in-cart{
+                        .minicart-items{
+                            display: block !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width: 768px){
+    .checkout-index-index{
+        .page-wrapper{
+            .page-main{
+                .opc-progress-bar{
+                    position: relative;
+                    z-index: 1;
+                }
+                .opc-sidebar.opc-summary-wrapper.custom-slide{
+                    position: unset;
+                    visibility: unset;
+                    opacity: 1;
+                    .modal-inner-wrap{
+                        overflow: unset;
+                        transform: none;
+                        background: #ffffff;
+                        position: unset;
+                        .modal-content{
+                            padding-left: 0;
+                            padding-right: 0;
+                        }
+                    }
+                    .opc-block-summary{
+                        border: 0;
+                        .items-in-cart{
+                            .title{
+                                &::after{
+                                    content: url(../../images/arrow-down.svg);
+                                }
+                            }
+                            &.active{
+                                .title{
+                                    &::after{
+                                        transform: rotate(180deg);
+                                    }
+                                }
+                                
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

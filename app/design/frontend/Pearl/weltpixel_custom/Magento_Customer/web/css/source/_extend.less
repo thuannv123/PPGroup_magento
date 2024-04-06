@@ -1,0 +1,871 @@
+& when (@media-common = true) {
+    /*MY ACCOUNT PAGE*/
+    .account.page-layout-2columns-left {
+        .columns {
+            .column.main {
+                
+                .block.block-dashboard-info {
+                    .block-content {
+                        .box-title {
+                            padding-bottom: 1%;
+                            &:lang(th){
+                                font-family: 'DB Heavent X Medium';
+                                span{
+                                    font-size: 24px;
+                                }
+                            }
+                        }
+                        .box-actions {
+                            margin-top: 0;
+                            display: flex;
+                            flex-direction: column;
+                            .action{
+                                margin: 5px 0;
+                                &:after{
+                                    display: none;
+                                }
+                                &.edit{
+                                    width: fit-content;
+                                    padding: 10px 37px;
+                                    border: 1px solid #e8e5e2;
+                                    margin-top: 20px;
+                                    span{
+                                        text-decoration: none;
+                                    }
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+                .block{
+                    .block-title{
+                        border-bottom: 0;
+                        strong,span{
+                            font-size: 20px;
+                            text-transform: uppercase;
+                            font-weight: 600;
+                            &:lang(th){
+                                font-family: 'DB Heavent X Medium';
+                                font-size: 30px;
+                            }
+                        }
+                        a{
+                            span{
+                                font-size: 12px;
+                                &:lang(th){
+                                    font-size: 21px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .block.block-dashboard-info {
+                    border-bottom: 1px solid #000000;
+                    .block-content {
+                        .box-content {
+                            span {
+                                text-transform: capitalize;
+                                &:lang(th){
+                                    font-size: 22px;
+                                }
+                            }
+                            p {
+                                font-size: 14px;
+                                &:lang(th){
+                                    font-size: 22px;
+                                }
+                            }
+                        }
+                        
+                        .box{
+                            float: unset;
+                            width: 100%;
+                            margin: 0 0 50px;
+                            .box-title{
+                                span{
+                                    text-transform: uppercase;
+                                }
+                            }
+                            &.box-newsletter{
+                                border-top: 1px solid #000000;
+                                padding-top: 30px;
+                            }
+                        }
+                        .box-actions {
+                            text-transform: uppercase;
+                            .action.edit {
+                                span {
+                                    text-decoration: underline;
+                                    &:hover {
+                                        text-decoration: none;
+                                    }
+                                }
+                            }
+                            .action.change-password {
+                                text-decoration: underline;
+                                &:hover {
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .block.block-dashboard-addresses {
+                    .block-title {
+                        a {
+                            text-decoration: underline;
+                            font-size: 12px;
+                            &:hover {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                    .box{
+                        .box-content{
+                            border: 1px solid #e8e5e2;
+                            padding: 15px;
+                            margin: 10px 0;
+                        }
+                    }
+                    .block-content {
+                        .box-title {
+                            text-transform: uppercase;
+                            font-weight: 500;
+                            span {
+                                font-size: 14px;
+                                font-weight: bold;
+                                &:lang(th){
+                                    font-size: 24px;
+                                    font-family: 'DB Heavent X Medium';
+                                }
+                            }
+                        }
+
+                        .box-content {
+                            address {
+                                font-size: 14px;
+                                &:lang(th){
+                                    font-size: 22px;
+                                }
+                            }
+                            a {
+                                font-size: 14px;
+                                &:lang(th){
+                                    font-size: 22px;
+                                }
+                            }
+                        }
+
+                        .box-actions {
+                            text-transform: uppercase;
+                            .action.edit {
+                                span {
+                                    text-decoration: underline;
+                                    &:hover {
+                                        text-decoration: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .block.block-dashboard-orders {
+                    .block-title.order {
+                        text-transform: uppercase;
+                        strong {
+                            font-size: 16px;
+                        }
+                        a {
+                            text-decoration: underline;
+                            font-size: 12px;
+                            &:hover {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+
+                    .block-content {
+                        .table-wrapper.orders-recent {
+                            #my-orders-table {
+                                thead {
+                                    th {
+                                        border-bottom: 0;
+                                        padding-left: 0;
+                                    }
+                                }
+
+                                tbody {
+                                    td {
+                                        font-size: 14px;
+                                    }
+                                    .col.actions {
+                                        text-transform: uppercase;
+                                        a:hover {
+                                                text-decoration: underline;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    /*ADDRESS BOOK PAGE*/
+    .block.block-addresses-default {
+        .block-title {
+            strong {
+                text-transform: uppercase;
+            }
+        }
+
+        .block-content {
+            .box {
+                .box-title {
+                    text-transform: uppercase;
+                    color: #404040;
+                    font-size: 14px;
+                    &:lang(th){
+                        font-size: 22px;
+                        span{
+                            font-size: 24px;
+                            font-family: 'DB Heavent X Medium';
+                        }
+                    }
+                }
+
+                .box-content {
+                    address {
+                        font-size: 14px;
+                        &:lang(th){
+                            font-size: 22px;
+                        }
+                    }
+
+                    a {
+                        font-size: 14px;
+                        &:lang(th){
+                            font-size: 22px;
+                        }
+                    }
+                }
+
+
+                .box-actions {
+                    text-transform: uppercase;
+                    .action.edit {
+                        span {
+                            text-decoration: underline;
+                            &:hover {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .block.block-addresses-list {
+        .block-title {
+            strong {
+                text-transform: uppercase;
+                font-size: 16px;
+            }
+        }
+
+        .block-content {
+            .table-wrapper.additional-addresses {
+                #additional-addresses-table {
+                    thead {
+                        th {
+                            font-size: 14px;
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            td {
+                                font-size: 14px;
+                            }
+
+                            .col.actions {
+                                a {
+                                    text-transform: uppercase;
+                                    text-decoration: underline;
+                                    &:hover {
+                                        text-decoration: none;
+                                    }
+                                }
+                                .action.delete {
+                                    color: #000000;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .customer-addresses-toolbar.toolbar.bottom {
+                .pager {
+                    .toolbar-amount {
+                        .toolbar-number {
+                            font-size: 14px;
+                        }
+                    }
+
+                    .pages {
+                        .items.pages-items {
+                            .item.current {
+                                .page {
+                                    background: white;
+                                }
+                            }
+                            .item.pages-item-next, .item.pages-item-previous {
+                                .action {
+                                    border: none;
+                                    background: white;
+                                    box-shadow: none;
+                                    margin-left: 0;
+                                    margin-right: 0;
+                                    font-size: 16px;
+                                    &:before {
+                                        font-size: 12px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .limiter {
+                        strong, span {
+                            font-size: 14px;
+                        }
+
+                        .limiter-options {
+                            background-size: 25%;
+                            background-position: 85% 45%;
+                            background-color: white;
+                            border-radius: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .actions-toolbar {
+        .primary {
+            .action.primary.add {
+                text-transform: uppercase;
+                font-size: 16px;
+            }
+        }
+    }
+    .title_guest{
+        padding-top: 30px;
+        padding-bottom: 10px;
+        font-size: 15px;
+    }
+
+    .btn-create{
+        padding-top: 30px;
+    }
+    .btn-guest{
+        line-height: 2.4rem !important;
+        padding: 9px 43px !important;
+    }
+    .guest-layout{
+        font-size: 12px !important;
+    }
+
+    /* EDIT NEWSLETTER SUBSCRIPTION PAGE */
+    .form-newsletter-manage {
+        .actions-toolbar {
+            border-top: 1px solid #c6c6c6;
+            padding-top: 3%;
+            .primary {
+                .action.save.primary {
+                    text-transform: uppercase;
+                }
+            }
+            .secondary {
+                .action.back {
+                    display: inline-block;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: 12px;
+                    margin: 0;
+                    &:lang(th){
+                        font-family: 'DB Heavent X Medium';
+                        font-size: 21px;
+                        &:before {
+                            font-size: 24px;
+                        }
+                    }
+                    &:before {
+                        content: '\e686';
+                        font-family: '7-stroke';
+                        font-size: 20px;
+                    }
+                    span {
+                        vertical-align: 20%;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    /*MY ACCOUNT PAGE*/
+    .account.page-layout-2columns-left {
+        .columns {
+            margin-top: 1%;
+            .page-title-wrapper {
+                .page-title {
+                    margin-bottom: 1%;
+                    span {
+                        font-size: 24px;
+                    }
+                }
+            }
+
+            .column.main {
+                border-left: 1px solid #ADABA6;
+                padding-left: 3%;
+                .block.block-dashboard-addresses {
+                    .block-title {
+                        padding-bottom: 0.5%;
+                        margin-bottom: 0;
+                    }
+
+                    .block-content {
+                        .box-title {
+                            margin-top: 3%;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+
+                .block.block-dashboard-orders {
+                    .block-title.order {
+                        margin-bottom: 4%;
+                        padding-bottom: 0.5%;
+                        a {
+                            float: right;
+                        }
+                    }
+
+                    .block-content {
+                        .table-wrapper.orders-recent {
+                            #my-orders-table {
+                                thead {
+                                    th {
+                                        font-size: 14px;
+                                        &:lang(th){
+                                            font-size: 22px;
+                                        }
+                                    }
+                                }
+
+                                tbody {
+                                    td {
+                                        padding: 2% 2% 2% 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .sidebar.sidebar-main {
+                .block.block-collapsible-nav {
+                    #block-collapsible-nav {
+                        padding-top: 0;
+                        width: 85%;
+                        background: #ffffff;
+                        .nav.items {
+                            .nav.item {
+                                border-bottom: 1px solid #e8e5e2;
+                                &:first-child{
+                                    border-top: 1px solid #e8e5e2;
+                                }
+                                strong{
+                                    border: 0;
+                                    font-size: 14px;
+                                    text-transform: uppercase;
+                                    font-weight: 600;
+                                    &:lang(th){
+                                        font-size: 24px;
+                                        font-family: 'DB Heavent X Medium';
+                                    }
+                                }
+                                a{
+                                    border: 0;
+                                    text-transform: uppercase;
+                                    font-weight: 600;
+                                    padding: 10px 2px;
+                                    &:lang(th){
+                                        font-size: 24px;
+                                        font-family: 'DB Heavent X Medium';
+                                    }
+                                }
+                            }
+                            .nav.item.current {
+                                margin-left: 0;
+                                opacity: 0.5;
+                                a {
+                                    padding-left: 2%;
+                                    @media (min-width: 769px) and (max-width: 1070px) {
+                                    padding-left: 5%;
+                                    }
+                                }
+                                strong {
+                                    padding: 10px 2px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    /*ADDRESS BOOK PAGE*/
+    .account.page-layout-2columns-left {
+        .columns {
+            .column.main {
+                .block.block-addresses-default {
+                    .block-title {
+                        padding-bottom: 0.5%;
+                        margin-bottom: 0;
+                        strong {
+                            font-size: 16px;
+                            font-weight: 700;
+                            &:lang(th){
+                                font-size: 24px;
+                            }
+                        }
+                    }
+
+                    .block-content {
+                        .box {
+                            margin-top: 1%;
+                        }
+                    }
+                }
+
+                .block.block-addresses-list {
+                    .block-title {
+                        padding-bottom: 0.5%;
+                        margin-bottom: 0;
+                        strong {
+                            font-size: 16px;
+                            font-weight: 700;
+                            &:lang(th){
+                                font-family: 'DB Heavent X Medium';
+                                font-size: 26px;
+                            }
+                        }
+                    }
+
+                    .block-content {
+                        margin-top: 1%;
+                        p {
+                            font-size: 14px;
+                            &:lang(th){
+                                font-size: 22px;
+                            }
+                        }
+
+                        .table-wrapper.additional-addresses {
+                            #additional-addresses-table {
+                                thead {
+                                    tr {
+                                        th {
+                                            border-bottom: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .customer-addresses-toolbar.toolbar.bottom {
+                            margin-top: 2%;
+                        }
+                    }
+                }
+
+                .actions-toolbar {
+                    .primary {
+                        .action.primary.add {
+                            width: 300px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* EDIT NEWSLETTER SUBSCRIPTION PAGE */
+    .form-newsletter-manage {
+        .actions-toolbar {
+            .primary {
+                float: right;
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    /*MY ACCOUNT PAGE*/
+    .account .page.messages {
+        margin-top: 0;
+    }
+
+    .account.page-layout-2columns-left {
+        .columns {
+            .page-title-wrapper {
+                width: 100%;
+                text-align: center;
+                .page-title {
+                    margin-bottom: 8%;
+                    margin-right: 0;
+                    span {
+                        font-weight: bold;
+                        font-size: 32px;
+                        &:lang(th){
+                            font-family: 'DB Heavent X Medium';
+                            font-size: 42px;
+                        }
+                    }
+                }
+            }
+
+            .column.main {
+                .order-links{
+                    display: flex;   
+                    .item{
+                        width: 50%;
+                        text-align: center;
+                    }
+                }
+                .page-title-wrapper{
+                    .order-date{
+                        text-align: left;
+                    }
+                }
+                .block.block-dashboard-info {
+                    margin-bottom: 5%;
+                    .block-content {
+                        .box-title {
+                            padding-bottom: 1%;
+                        }
+                        .box-actions {
+                            margin-top: 5%;
+                        }
+                        .box.box-newsletter {
+                            margin-top: 5%;
+                        }
+                    }
+                }
+
+                .block.block-dashboard-addresses {
+                    .block-title {
+                        padding-bottom: 2%;
+                        a {
+                            float: none;
+                        }
+                    }
+
+                    .block-content {
+                        .box-title {
+                            margin-top: 3%;
+                            margin-bottom: 0;
+                        }
+
+                        .box-actions {
+                            margin-top: 5%;
+                        }
+                    }
+                }
+
+                .block.block-dashboard-orders {
+                    .block-title.order {
+                        padding-bottom: 2%;
+                        border-bottom: none;
+                        @media (min-width: 640px) and (max-width: 768px) {
+                            padding-bottom: 1%;
+                            margin-bottom: 4%;
+                        }
+                    }
+
+                    .block-content {
+                        .table-wrapper.orders-recent {
+                            border-bottom: none;
+                            #my-orders-table {
+                                tbody {
+                                    tr {
+                                        border-top: 1px solid #ADABA6;
+                                        td {
+                                            padding: 3% 0 1% 0;
+                                            border-top: none;
+                                        }
+                                        .col.actions {
+                                            border-bottom: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .sidebar.sidebar-main {
+                .block.block-collapsible-nav {
+                    background-color: #E6E4DD;
+                    .title.block-collapsible-nav-title {
+                        padding: 3% 1% 3% 5%;
+                        strong {
+                            font-size: 14px;
+                            font-weight: bold;
+                            &:lang(th){
+                                font-family: 'DB Heavent X Medium';
+                                font-size: 24px;
+                            }
+                        }
+                        &:after {
+                            float: right;
+                            position: relative;
+                            content: url(../images/arrow-down.svg);
+                            margin: 0;
+                            top: 5px;
+                        }
+                    }
+                    .nav.items {
+                        .nav.item {
+                            padding: 2% 2% 2% 0;
+                            &.current{
+                                >strong{
+                                    border: 0;
+                                    opacity: 0.5;
+                                    text-transform: uppercase;
+                                }
+                            }
+                            a{
+                                color: #000000;
+                                text-transform: uppercase;
+                                font-weight: 600;
+                                font-size: 14px;
+                                border: 0;
+                                &:lang(th){
+                                    font-family: 'DB Heavent X Medium';
+                                    font-size: 24px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    /*ADDRESS BOOK PAGE*/
+    .account.page-layout-2columns-left {
+        .columns {
+            .column.main {
+                .block.block-addresses-default {
+                    .block-title {
+                        padding-bottom: 2%;
+                        margin-bottom: 0;
+                        strong {
+                            font-size: 15px;
+                            font-weight: 700;
+                            &:lang(th){
+                                font-size: 25px;
+                            }
+                        }
+                    }
+
+                    .block-content {
+                        .box {
+                            margin-top: 3%;
+                            .box-actions {
+                                a {
+                                    span {
+                                        font-size: 13px;
+                                        &:lang(th){
+                                            font-size: 21px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .block.block-addresses-list {
+                    .block-title {
+                        margin-bottom: 0;
+                        padding-bottom: 3%;
+                        strong {
+                            font-size: 16px;
+                            font-weight: 700;
+                            &:lang(th){
+                                font-size: 26px;
+                            }
+                        }
+                    }
+
+                    .block-content {
+                        p {
+                            font-size: 16px;
+                            &:lang(th){
+                                font-size: 22px;
+                            }
+                        }
+
+                        .table-wrapper.additional-addresses {
+                            border: none;
+
+                            #additional-addresses-table {
+                                tbody {
+                                    tr {
+                                        td {
+                                            border-top: none;
+                                            padding-top: 10px;
+                                            padding-bottom: 5px;
+                                            padding-left: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

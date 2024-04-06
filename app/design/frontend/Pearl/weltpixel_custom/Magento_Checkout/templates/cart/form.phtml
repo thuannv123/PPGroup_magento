@@ -1,0 +1,136 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// phpcs:disable Magento2.Templates.ThisInTemplate
+
+/**  @var $block \Magento\Checkout\Block\Cart\Grid */
+?>
+<?php $mergedCells = ($this->helper(Magento\Tax\Helper\Data::class)->displayCartBothPrices() ? 2 : 1); ?>
+<?= $block->getChildHtml('form_before') ?>
+<form action="<?= $block->escapeUrl($block->getUrl('checkout/cart/updatePost')) ?>" method="post" id="form-validate"
+    data-mage-init='{"Magento_Checkout/js/action/update-shopping-cart":
+              {"validationURL" : "<?= $block->escapeUrl($block->getUrl('checkout/cart/updateItemQty')) ?>",
+              "updateCartActionContainer": "#update_cart_action_container"}
+          }' class="form form-cart">
+    <?= $block->getBlockHtml('formkey') ?>
+    <div class="cart table-wrapper<?= $mergedCells == 2 ? ' detailed' : '' ?>">
+        <?php if ($block->getPagerHtml()): ?>
+            <div class="cart-products-toolbar cart-products-toolbar-top toolbar" data-attribute="cart-products-toolbar-top">
+                <?= $block->getPagerHtml() ?>
+            </div>
+        <?php endif ?>
+        <table id="shopping-cart-table" class="cart items data table" data-mage-init='{"shoppingCart":{"emptyCartButton": ".action.clear",
+               "updateCartActionContainer": "#update_cart_action_container"}}'>
+            <caption class="table-caption">
+                <?= $block->escapeHtml(__('Shopping Cart Items')) ?>
+            </caption>
+            <thead>
+                <tr>
+                    <th class="col item" scope="col"><span>
+                            <?= $block->escapeHtml(__('Product')) ?>
+                        </span></th>
+                    <th class="col qty" scope="col"><span>
+                            <?= $block->escapeHtml(__('Qty')) ?>
+                        </span></th>
+                    <th class="col subtotal" scope="col"><span>
+                            <?= $block->escapeHtml(__('Subtotal')) ?>
+                        </span></th>
+                </tr>
+            </thead>
+            <?php foreach ($block->getItems() as $_item): ?>
+                <?= $block->getItemHtml($_item) ?>
+            <?php endforeach ?>
+        </table>
+        <?php if ($block->getPagerHtml()): ?>
+            <div class="cart-products-toolbar cart-products-toolbar-bottom toolbar"
+                data-attribute="cart-products-toolbar-bottom">
+                <?= $block->getPagerHtml() ?>
+            </div>
+        <?php endif ?>
+    </div>
+</form>
+<?= $block->getChildHtml('checkout.cart.order.actions') ?>
+<?= $block->getChildHtml('shopping.cart.table.after') ?>
+
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$baseUrl = $objectManager->get('Magento\Store\Model\StoreManagerInterface')->getStore()->getBaseUrl();
+
+?>
+<script type="text/javascript">
+    require([
+        'jquery',
+        'Magento_Customer/js/customer-data'
+    ], function ($, customerData) {
+        $(document).ready(function () {
+            $('form.form-cart').submit(function () {
+                return false;
+            });
+
+            $('input.qty').bind('input', function (event, data) {
+                if ($(this).val() != null) {
+                    var __input = $(this);
+                    var url = '<?php echo $baseUrl . 'updateqty/index/index' ?>';
+                    var formkey = $('form.form-cart').find('input[name=form_key]').val();
+                    var itemId = $(this).attr('data-cart-id');
+                    var qty = $(this).val();
+                    var cart = {};
+                    cart[itemId] = { qty: qty };
+                    $.ajax({
+                        type: 'POST',
+                        data: { update_cart_action: 'update_qty', cart: cart, form_key: formkey },
+                        url: url,
+                        cache: false,
+                        showLoader: true,
+                        success: function (result) {
+                            if (result) {
+                                result = JSON.parse(result);
+                                console.log(result);
+                                $('.cart-container').find('.cart-summary').find('#cart-totals').find('table.totals').find('tr.sub').find('span.price').html(result.subtotal);
+                                $('.cart-container').find('.cart-summary').find('#cart-totals').find('table.totals').find('tr.grand').find('span.price').html(result.grandtotal);
+                                if (result.itemtotalprice) {
+                                    $('table#shopping-cart-table').find('#cart-' + itemId + '-qty').parents('tr.item-info').find('td.subtotal').find('span.price').html(result.itemtotalprice);
+                                }
+                                if (result.disccount) {
+                                    $('.cart-container').find('.cart-summary').find('#cart-totals').find('table.totals').find('td[data-th="Discount"]').find('span.price').html('-' + result.disccount);
+                                }
+                                var sections = ['cart'];
+                                customerData.invalidate(sections);
+                                customerData.reload(sections, true);
+                                document.location.reload();
+                            }
+                        },
+                        error: function (request) {
+                            let updateQty = (data.type === 'decrease') ? __input.val() + 1 : __input.val() - 1;
+                            __input.val(updateQty)
+                        }
+                    });
+                }
+            });
+
+            $('.btn-update-qty').on('click', function () {
+                let qtyBox = $(this).siblings('input');
+                let oldQty = parseInt(qtyBox.val());
+                let type = '';
+                if ($(this).hasClass('decrease-qty')) {
+                    if (oldQty === 1 || oldQty <= qtyBox.data('min-sale-qty')) {
+                        return false;
+                    } else {
+                        qtyBox.val(oldQty - 1);
+                    }
+                    type = 'decrease';
+                } else {
+                    if (oldQty >= qtyBox.data('max-sale-qty')) {
+                        return false;
+                    }
+                    qtyBox.val(oldQty + 1);
+                    type = 'increase';
+                }
+                qtyBox.trigger("input", { 'type': type });
+            });
+        });
+    });
+</script>
